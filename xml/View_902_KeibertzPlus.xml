@@ -189,20 +189,20 @@
 	<include name="KeibertzPlusLayoutDefault">
 		<control type="label">
             <left>100</left>
-            <top>580</top>
+            <top>595</top>
             <width>1000</width>
             <height>60</height>
             <align>left</align>
             <aligny>center</aligny>
             <font>font35_title</font>
-            <label>$VAR[ListItemLabel]</label>			
+            <label>[B]$VAR[ListItemLabel][/B]</label>			
             <textcolor>TitleTextColor</textcolor>
             <shadowcolor>shadow</shadowcolor>
             <scroll>true</scroll>
         </control>
 		<control type="label">
 			<left>100</left>
-			<top>660</top>
+			<top>675</top>
 			<width max="555">auto</width>
 			<height>40</height>
 			<align>left</align>
@@ -215,9 +215,9 @@
 		</control>
 		<control type="textbox">
             <left>100</left>
-            <top>750</top>
+            <top>765</top>
             <width>1126</width>
-            <height>270</height>
+            <height>255</height>
             <align>justify</align>
             <font>font13</font>
             <label>$INFO[ListItem.Plot]</label>			
