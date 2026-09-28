@@ -102,11 +102,13 @@
 				</control>
 				<control type="image">
 					<include content="KeibertzPlus_Poster_Icon">
+						<param name="bordersize">15</param>
 						<param name="diffuse">diffuse/fanart-poster.png</param>
 					</include>
 				</control>
 				<control type="image">
 					<include content="KeibertzPlus_Poster_Icon">
+						<param name="bordersize">15</param>
 						<param name="texture">overlays/icon-overlay.png</param>
 						<param name="diffuse">diffuse/fanart-poster.png</param>
 					</include>
