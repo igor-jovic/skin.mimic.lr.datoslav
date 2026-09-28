@@ -12,10 +12,9 @@
 				<top>190</top>
 				<width>1072</width>
 				<height>792</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>51</onup>
+				<onup>9060</onup>
 				<ondown>51</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
@@ -299,10 +298,9 @@
 				<top>165</top>
 				<width>1120</width>
 				<height>840</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>51</onup>
+				<onup>9060</onup>
 				<ondown>51</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>

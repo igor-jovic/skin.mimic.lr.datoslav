@@ -15,10 +15,9 @@
                     <orientation>vertical</orientation>
                     <movement>2</movement>
                     <focusposition>3</focusposition>
-                    <onleft>SetProperty(MediaMenu,True,home)</onleft>
-                    <onleft>SetFocus(9050)</onleft>
+                    <onleft>Back</onleft>
                     <onright>60</onright>
-                    <onup>508</onup>
+                    <onup>9060</onup>
                     <ondown>508</ondown>
                     <pagecontrol>60</pagecontrol>
                     <viewtype label="31076">list</viewtype>

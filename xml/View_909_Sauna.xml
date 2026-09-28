@@ -5,16 +5,14 @@
 		<ondown>909</ondown>
 		<onleft>909</onleft>
 		<onright>909</onright>
-		<onup>SetProperty(MediaMenu,True,home)</onup>
-		<onup>SetFocus(9050)</onup>
+		<onup>9060</onup>
 		<orientation>horizontal</orientation>
 	</include>
 	<include name="SaunaVerticalControls">
 		<ondown>909</ondown>
-		<onleft>SetProperty(MediaMenu,True,home)</onleft>
-		<onleft>SetFocus(9050)</onleft>
+		<onleft>Back</onleft>
 		<onright>909</onright>
-		<onup>909</onup>
+		<onup>9060</onup>
 		<orientation>vertical</orientation>
 	</include>
 	<!-- view -->

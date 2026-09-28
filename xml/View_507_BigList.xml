@@ -29,10 +29,9 @@
                     <top>122</top>
                     <width>1808</width>
                     <height>884</height>
-                    <onleft>SetProperty(MediaMenu,True,home)</onleft>
-                    <onleft>SetFocus(9050)</onleft>
+                    <onleft>Back</onleft>
                     <onright>60</onright>
-                    <onup>507</onup>
+                    <onup>9060</onup>
                     <ondown>507</ondown>
                     <pagecontrol>60</pagecontrol>
                     <preloaditems>2</preloaditems>

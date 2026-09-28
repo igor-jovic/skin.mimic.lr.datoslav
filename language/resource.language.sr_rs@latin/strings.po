@@ -22,3 +22,7 @@ msgstr "Ocena"
 msgctxt "#90961"
 msgid "Go back"
 msgstr "Povratak nazad"
+
+msgctxt "#90962"
+msgid "View options"
+msgstr "Opcije prikaza"

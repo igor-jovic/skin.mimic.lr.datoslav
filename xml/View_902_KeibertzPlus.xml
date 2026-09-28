@@ -45,8 +45,7 @@
 				<height>840</height>
 				<onleft>902</onleft>
 				<onright>902</onright>
-				<onup>SetProperty(MediaMenu,True,home)</onup>
-				<onup>SetFocus(9050)</onup>
+				<onup>9060</onup>
 				<orientation>Horizontal</orientation>
 				<focusposition>1</focusposition>
 				<preloaditems>2</preloaditems>

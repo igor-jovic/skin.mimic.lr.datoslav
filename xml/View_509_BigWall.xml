@@ -116,10 +116,9 @@
                 <left>20</left>
                 <width>1880</width>
                 <height>1040</height>
-                <onleft>SetProperty(MediaMenu,True,home)</onleft>
-                <onleft>SetFocus(9050)</onleft>
+                <onleft>Back</onleft>
                 <onright>60</onright>
-                <onup>509</onup>
+                <onup>9060</onup>
                 <ondown>509</ondown>
                 <orientation>vertical</orientation>
                 <viewtype label="31078">icon</viewtype>

@@ -10,10 +10,9 @@
 				<top>181</top>
 				<width>1818</width>
 				<height>714</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>500</onup>
+				<onup>9060</onup>
 				<ondown>500</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
@@ -683,10 +682,9 @@
 				<top>181</top>
 				<width>1818</width>
 				<height>714</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>500</onup>
+				<onup>9060</onup>
 				<ondown>500</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
@@ -846,10 +844,9 @@
 				<top>196</top>
 				<width>1696</width>
 				<height>714</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>510</onup>
+				<onup>9060</onup>
 				<ondown>510</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
@@ -991,10 +988,9 @@
 				<top>196</top>
 				<width>1818</width>
 				<height>714</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>520</onup>
+				<onup>9060</onup>
 				<ondown>520</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>

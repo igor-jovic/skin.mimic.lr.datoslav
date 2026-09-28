@@ -26,8 +26,7 @@
 				<top>260</top>
 				<width>1800</width>
 				<height>843</height>
-				<onup>SetProperty(MediaMenu,True,home)</onup>
-				<onup>SetFocus(9050)</onup>
+				<onup>9060</onup>
 				<ondown>60</ondown>
 				<onleft>505</onleft>
 				<onright>505</onright>

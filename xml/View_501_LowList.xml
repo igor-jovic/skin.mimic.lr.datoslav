@@ -150,10 +150,9 @@
 				<top>610</top>
 				<width>976</width>
 				<height>400</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>501</onup>
+				<onup>9060</onup>
 				<ondown>501</ondown>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31003">list</viewtype>
@@ -474,10 +473,9 @@
 				<top>632</top>
 				<width>976</width>
 				<height>402</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>501</onup>
+				<onup>9060</onup>
 				<ondown>501</ondown>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31003">list</viewtype>
@@ -788,10 +786,9 @@
 				<top>648</top>
 				<width>976</width>
 				<height>402</height>
-				<onleft>SetProperty(MediaMenu,True,home)</onleft>
-				<onleft>SetFocus(9050)</onleft>
+				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>501</onup>
+				<onup>9060</onup>
 				<ondown>501</ondown>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31003">list</viewtype>

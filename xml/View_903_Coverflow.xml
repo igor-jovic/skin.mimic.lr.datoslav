@@ -38,8 +38,7 @@
 				<ondown>-</ondown>
 				<onleft>903</onleft>
 				<onright>903</onright>
-				<onup>SetProperty(MediaMenu,True,home)</onup>
-				<onup>SetFocus(9050)</onup>
+				<onup>9060</onup>
 				<orientation>horizontal</orientation>
 				<viewtype label="$LOCALIZE[90300]">list</viewtype>
 				<itemlayout height="1" width="1"></itemlayout>
