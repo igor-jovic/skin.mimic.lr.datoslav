@@ -31,4 +31,14 @@
 		<thumb/>
 		<action>ActivateWindow(Videos,videodb://movies/genres/,return)</action>
 	</shortcut>
+	<shortcut>
+		<!-- datoslav: the full film list, sorted by title -->
+		<defaultID>allmovies</defaultID>
+		<label>90963</label>
+		<label2>Custom item</label2>
+		<icon>DefaultMovies.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://movies/titles/,return)</action>
+		<visible>Library.HasContent(Movies)</visible>
+	</shortcut>
 </shortcuts>

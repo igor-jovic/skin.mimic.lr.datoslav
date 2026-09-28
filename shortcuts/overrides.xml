@@ -198,6 +198,10 @@
     <propertydefault group="movies" defaultID="135" property="widgetTarget">videos</propertydefault>
     <propertydefault group="movies" defaultID="135" property="widgetType">movies</propertydefault>
     <propertydefault group="movies" defaultID="135" property="widgetIcon">20021</propertydefault>
+    <propertydefault group="movies" defaultID="allmovies" property="widgetPath">videodb://movies/titles/</propertydefault>
+    <propertydefault group="movies" defaultID="allmovies" property="widgetTarget">videos</propertydefault>
+    <propertydefault group="movies" defaultID="allmovies" property="widgetType">movies</propertydefault>
+    <propertydefault group="movies" defaultID="allmovies" property="widgetIcon">20021</propertydefault>
     <propertydefault group="tvshows" defaultID="31314" property="widgetPath">videodb://inprogresstvshows/</propertydefault>
     <propertydefault group="tvshows" defaultID="31314" property="widgetTarget">videos</propertydefault>
     <propertydefault group="tvshows" defaultID="31314" property="widgetType">tvshows</propertydefault>

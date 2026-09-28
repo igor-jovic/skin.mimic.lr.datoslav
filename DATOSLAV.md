@@ -22,3 +22,16 @@ and reloads the skin if it is active. It refuses while something is playing.
 ## Textures
 Upstream releases pack `media/` into `media/Textures.xbt` with Kodi's TexturePacker. This fork deploys the loose
 `media/` images instead, which Kodi reads directly. If menus feel slower to load, packing them is the fix.
+
+## Box-side dependency: Skin Shortcuts patch
+The combined home menu relies on a local patch to `script.skinshortcuts` 2.0.3 on the box
+(`resources/lib/skinshorcuts/xmlfunctions.py`, original kept as `.orig`). For a main entry with a submenu, the
+"open submenu" `SetProperty` onclick only fires while the submenu is closed. Upstream gave it the
+already-open condition, so Enter did nothing. The main entries' own action (`ClearProperty(submenuVisibility,10000)`
+in `shortcuts/mainmenu.DATA.xml`) fires while it is open, so Enter toggles. An add-on update overwrites the
+patch; if Enter on Filmovi stops opening its submenu, re-apply it.
+
+## Home menu
+`shortcuts/mainmenu.DATA.xml` (Filmovi, TV serije, Podešavanja) and the submenus in `shortcuts/*.DATA.xml`.
+Nothing is customised through the menu editor on the box; a `mainmenu.DATA.xml` in
+`userdata/addon_data/script.skinshortcuts/` would override these.

@@ -26,3 +26,7 @@ msgstr "Povratak nazad"
 msgctxt "#90962"
 msgid "View options"
 msgstr "Opcije prikaza"
+
+msgctxt "#90963"
+msgid "All movies"
+msgstr "Svi filmovi"
