@@ -39,8 +39,8 @@
 				<effect type="zoom" start="150" end="100" time="300" center="auto" tween="quadratic" easing="out" />
 			</animation>
 			<control type="fixedlist" id="902">
-				<left>-200</left>
-				<top>5</top>
+				<left>-110</left>
+				<top>21</top>
 				<width>2475</width>
 				<height>840</height>
 				<onleft>902</onleft>
@@ -189,7 +189,7 @@
 	<include name="KeibertzPlusLayoutDefault">
 		<control type="label">
             <left>100</left>
-            <top>595</top>
+            <top>439</top>
             <width>1000</width>
             <height>60</height>
             <align>left</align>
@@ -202,7 +202,7 @@
         </control>
 		<control type="label">
 			<left>100</left>
-			<top>675</top>
+			<top>519</top>
 			<width max="1126">auto</width>
 			<height>40</height>
 			<align>left</align>
@@ -215,9 +215,9 @@
 		</control>
 		<control type="textbox">
             <left>100</left>
-            <top>740</top>
+            <top>584</top>
             <width>1126</width>
-            <height>280</height>
+            <height>436</height>
             <align>justify</align>
             <font>font13</font>
             <label>$INFO[ListItem.Plot]</label>			
@@ -227,7 +227,7 @@
         </control>
         <control type="image">
             <left>606r</left>
-            <top>680</top>
+            <top>524</top>
             <width>526</width>
             <height>300</height>
             <texture>black.png</texture>
@@ -237,14 +237,14 @@
         </control>
 		<control type="videowindow">
 			<left>601r</left>
-			<top>685</top>
+			<top>529</top>
 			<width>516</width>
 			<height>290</height>
 			<visible>$EXP[GameSupport]</visible>
 		</control>
         <control type="image">
             <left>606r</left>
-            <top>680</top>
+            <top>524</top>
             <width>526</width>
             <height>300</height>
 			<fadetime>400</fadetime>

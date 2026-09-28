@@ -10,12 +10,12 @@
 		<param name="texture" default="$INFO[ListItem.Art(poster)]" />
 		<param name="texturecolor" default="false" />
 		<param name="textureborder" default="0" />
-		<param name="top" default="120" />
+		<param name="top" default="84" />
 		<definition>
 			<left>0</left>
 			<top>$PARAM[top]</top>
-			<width>300</width>
-			<height>450</height>
+			<width>210</width>
+			<height>315</height>
 			<texture background="true" border="$PARAM[textureborder]" colordiffuse="$PARAM[texturecolor]" diffuse="$PARAM[diffuse]" flipy="$PARAM[flipy]">$PARAM[texture]</texture>
 			<bordersize>$PARAM[bordersize]</bordersize>
 			<bordertexture border="5" colordiffuse="$PARAM[colordiffuse]" diffuse="$PARAM[diffuse]">$PARAM[bordertexture]</bordertexture>
@@ -23,19 +23,19 @@
 	</include>
 	<!-- poster_includes -->
 	<include name="KeibertzPlus_Poster_Includes">
-		<itemlayout width="300" height="640" condition="[Container.Content(Movies)| Container.Content(sets)] | [Container.Content(TVShows)| Container.Content(seasons)] | $EXP[GameSupport] + [!$EXP[DetectSquare] + !$EXP[DetectSlim] + !$EXP[DetectWide] + !$EXP[DetectBluray] + !$EXP[Detect3ds]]">
+		<itemlayout width="210" height="448" condition="[Container.Content(Movies)| Container.Content(sets)] | [Container.Content(TVShows)| Container.Content(seasons)] | $EXP[GameSupport] + [!$EXP[DetectSquare] + !$EXP[DetectSlim] + !$EXP[DetectWide] + !$EXP[DetectBluray] + !$EXP[Detect3ds]]">
 			<control type="group">
 				<visible>$EXP[KeibertzPlusHideReflections]</visible>
 				<control type="image">
 					<include content="KeibertzPlus_Poster_Icon">
-						<param name="top">552</param>
+						<param name="top">386</param>
 						<param name="diffuse">diffuse/generic-diffuse.png</param>
 						<param name="flipy">true</param>
 					</include>
 				</control>
 				<control type="image">
 					<include content="KeibertzPlus_Poster_Icon">
-						<param name="top">552</param>
+						<param name="top">386</param>
 						<param name="texture">overlays/icon-overlay.png</param>
 						<param name="diffuse">diffuse/generic-diffuse.png</param>
 						<param name="flipy">true</param>
@@ -56,31 +56,31 @@
   						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 			</control>
 			<include content="KeibertzPlusCommonLabel">
-				<param name="top">80</param>
-				<param name="width">270</param>
+				<param name="top">56</param>
+				<param name="width">189</param>
 			</include>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="10"/>
-				<param name="OverlayTop" value="130" />
+				<param name="OverlayLeft" value="7"/>
+				<param name="OverlayTop" value="91" />
 			</include>
 
 		</itemlayout>
-		<focusedlayout width="300" height="640" condition="[Container.Content(Movies)| Container.Content(sets)] | [Container.Content(TVShows)| Container.Content(seasons)] | $EXP[GameSupport] + [!$EXP[DetectSquare] + !$EXP[DetectSlim] + !$EXP[DetectWide] + !$EXP[DetectBluray] + !$EXP[Detect3ds]]">
+		<focusedlayout width="210" height="448" condition="[Container.Content(Movies)| Container.Content(sets)] | [Container.Content(TVShows)| Container.Content(seasons)] | $EXP[GameSupport] + [!$EXP[DetectSquare] + !$EXP[DetectSlim] + !$EXP[DetectWide] + !$EXP[DetectBluray] + !$EXP[Detect3ds]]">
 			<control type="group">
-				<animation effect="zoom" center="150,550" start="100" end="115" time="400" tween="cubic" easing="out" condition="$EXP[KeibertzPlusStaticIcons]" reversible="false">Focus</animation>
-				<animation effect="zoom" center="150,550" start="115" end="100" time="200" tween="cubic" easing="in" condition="$EXP[KeibertzPlusStaticIcons]" reversible="false">UnFocus</animation>
+				<animation effect="zoom" center="105,385" start="100" end="115" time="400" tween="cubic" easing="out" condition="$EXP[KeibertzPlusStaticIcons]" reversible="false">Focus</animation>
+				<animation effect="zoom" center="105,385" start="115" end="100" time="200" tween="cubic" easing="in" condition="$EXP[KeibertzPlusStaticIcons]" reversible="false">UnFocus</animation>
 				<control type="group">
 					<visible>$EXP[KeibertzPlusHideReflections]</visible>
 					<control type="image">
 						<include content="KeibertzPlus_Poster_Icon">
-							<param name="top">552</param>
+							<param name="top">386</param>
 							<param name="diffuse">diffuse/generic-diffuse.png</param>
 							<param name="flipy">true</param>
 						</include>
 					</control>
 					<control type="image">
 						<include content="KeibertzPlus_Poster_Icon">
-							<param name="top">552</param>
+							<param name="top">386</param>
 							<param name="texture">overlays/icon-overlay.png</param>
 							<param name="diffuse">diffuse/generic-diffuse.png</param>
 							<param name="flipy">true</param>
@@ -115,8 +115,8 @@
   						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 				</control>
 				<include content="OverlayIcons">
-					<param name="OverlayLeft" value="10"/>
-					<param name="OverlayTop" value="130" />
+					<param name="OverlayLeft" value="7"/>
+					<param name="OverlayTop" value="91" />
 				</include>
 			</control>
 		</focusedlayout>
