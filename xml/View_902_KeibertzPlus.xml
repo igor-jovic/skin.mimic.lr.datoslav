@@ -230,7 +230,7 @@
             <top>576</top>
             <width>526</width>
             <height>300</height>
-            <texture>black.png</texture>
+            <texture colordiffuse="FF0B1F4B">white.png</texture>
             <aspectratio>stretch</aspectratio>
 			<bordertexture border="5" colordiffuse="BorderDiffuse">listselect_fo.png</bordertexture>
 			<bordersize>5</bordersize>	
