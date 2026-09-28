@@ -330,7 +330,7 @@
 			<height>100</height>
 
 
-		<!-- datoslav: the tagline line ($VAR[HeaderSubLabelInfoDialog]) is removed; the item count moves up into its place. -->
+		<!-- datoslav: the tagline line is removed (the tagline now holds the actor list); the home stats line moves up. -->
 		<control type="label">
 <!-- 			<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
 			<width>FullscreenWidth</width>
