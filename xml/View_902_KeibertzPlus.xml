@@ -225,27 +225,16 @@
             <shadowcolor>shadow</shadowcolor>
             <autoscroll time="4000" delay="3000" repeat="5000">!Skin.HasSetting(Disable.AutoScroll) + Control.HasFocus(902)</autoscroll>
         </control>
-		<!-- datoslav: top 5 actors instead of the fanart box. ListItem.Cast is one name per line in billing order;
-		     the box is 5 lines of font14 (~44 px each) tall, so only the first five show. The bullets are a
-		     second textbox in the same font, so the lines match up (a name that wraps would break that). -->
+		<!-- datoslav: top 5 actors instead of the fanart box. Kodi doesn't load the cast for library list items, so
+		     borca-media-syncher writes the first five names into the tagline ("• Name[CR]• Name…"), which it does load.
+		     The tagline is shown nowhere else in this skin. -->
 		<control type="textbox">
 			<left>606r</left>
 			<top>636</top>
-			<width>30</width>
-			<height>225</height>
+			<width>526</width>
+			<height>384</height>
 			<font>font14</font>
-			<label>•[CR]•[CR]•[CR]•[CR]•</label>
-			<textcolor>NormalTextColor</textcolor>
-			<shadowcolor>shadow</shadowcolor>
-			<visible>!String.IsEmpty(ListItem.Cast)</visible>
-		</control>
-		<control type="textbox">
-			<left>576r</left>
-			<top>636</top>
-			<width>496</width>
-			<height>225</height>
-			<font>font14</font>
-			<label>$INFO[ListItem.Cast]</label>
+			<label>$INFO[ListItem.Tagline]</label>
 			<textcolor>NormalTextColor</textcolor>
 			<shadowcolor>shadow</shadowcolor>
 		</control>

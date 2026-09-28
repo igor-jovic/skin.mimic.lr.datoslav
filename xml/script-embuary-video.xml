@@ -181,7 +181,7 @@
 						<height max="580">auto</height>
 						<align>justify</align>
 						<aligny>top</aligny>
-						<label fallback="19055">$INFO[Container(10051).ListItem.Tagline,[B],[/B][CR][CR]]$INFO[Container(10051).ListItem.Plot]</label>
+						<label fallback="19055">$INFO[Container(10051).ListItem.Plot]</label>
 						<font>font13</font>
 						<shadowcolor>50000000</shadowcolor>
 <!-- 						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll> -->
