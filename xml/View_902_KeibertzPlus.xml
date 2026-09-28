@@ -189,7 +189,7 @@
 	<include name="KeibertzPlusLayoutDefault">
 		<control type="label">
             <left>100</left>
-            <top>680</top>
+            <top>625</top>
             <width>1000</width>
             <height>60</height>
             <align>left</align>
@@ -202,7 +202,7 @@
         </control>
 		<control type="label">
 			<left>100</left>
-			<top>760</top>
+			<top>705</top>
 			<width max="555">auto</width>
 			<height>40</height>
 			<align>left</align>
@@ -215,9 +215,9 @@
 		</control>
 		<control type="textbox">
             <left>100</left>
-            <top>850</top>
+            <top>795</top>
             <width>1126</width>
-            <height>170</height>
+            <height>225</height>
             <align>justify</align>
             <font>font13</font>
             <label>$INFO[ListItem.Plot]</label>			
