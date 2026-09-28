@@ -34,3 +34,7 @@ msgstr "Svi filmovi"
 msgctxt "#90964"
 msgid "Unfinished"
 msgstr "Nezavršeni"
+
+msgctxt "#90965"
+msgid "Unfinished (TV shows)"
+msgstr "Nezavršene"
