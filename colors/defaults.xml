@@ -10,7 +10,7 @@
 	<color name="invalid">FFFF6666</color>
 	<color name="shadow">AA000000</color>
 	<color name="ItemDiffuse">FF050505</color>
-    <color name="BackgroundColor">E00A1A23</color>
+    <color name="BackgroundColor">F00A1A23</color>
     <color name="BorderDiffuse">CC770044</color>
 	<color name="dialog">FF272727</color>
     <color name="ScrollBar">11FFFFFF</color>
