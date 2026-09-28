@@ -40,7 +40,7 @@
 			</animation>
 			<control type="fixedlist" id="902">
 				<left>-200</left>
-				<top>20</top>
+				<top>5</top>
 				<width>2475</width>
 				<height>840</height>
 				<onleft>902</onleft>
