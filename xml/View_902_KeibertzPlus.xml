@@ -40,7 +40,7 @@
 			</animation>
 			<control type="fixedlist" id="902">
 				<left>-200</left>
-				<top>100</top>
+				<top>60</top>
 				<width>2475</width>
 				<height>840</height>
 				<onleft>902</onleft>
@@ -189,7 +189,7 @@
 	<include name="KeibertzPlusLayoutDefault">
 		<control type="label">
             <left>100</left>
-            <top>720</top>
+            <top>680</top>
             <width>1000</width>
             <height>60</height>
             <align>left</align>
@@ -202,7 +202,7 @@
         </control>
 		<control type="label">
 			<left>100</left>
-			<top>800</top>
+			<top>760</top>
 			<width max="555">auto</width>
 			<height>40</height>
 			<align>left</align>
@@ -215,9 +215,9 @@
 		</control>
 		<control type="textbox">
             <left>100</left>
-            <top>890</top>
+            <top>850</top>
             <width>1126</width>
-            <height>125</height>
+            <height>170</height>
             <align>justify</align>
             <font>font13</font>
             <label>$INFO[ListItem.Plot]</label>			
@@ -227,7 +227,7 @@
         </control>
         <control type="image">
             <left>606r</left>
-            <top>720</top>
+            <top>680</top>
             <width>526</width>
             <height>300</height>
             <texture>black.png</texture>
@@ -237,14 +237,14 @@
         </control>
 		<control type="videowindow">
 			<left>601r</left>
-			<top>725</top>
+			<top>685</top>
 			<width>516</width>
 			<height>290</height>
 			<visible>$EXP[GameSupport]</visible>
 		</control>
         <control type="image">
             <left>606r</left>
-            <top>720</top>
+            <top>680</top>
             <width>526</width>
             <height>300</height>
 			<fadetime>400</fadetime>

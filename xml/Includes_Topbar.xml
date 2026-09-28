@@ -330,21 +330,11 @@
 			<height>100</height>
 
 
-		<control type="label">
-<!-- 			<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
-			<top>0</top>
-			<height>40</height>
-			<left>0</left>
-			<font>cirrus_30</font>
-			<textcolor>LabelTextColor</textcolor>
-			<label>$VAR[HeaderSubLabelInfoDialog]</label>
-		</control>
-
-
+		<!-- datoslav: the tagline line ($VAR[HeaderSubLabelInfoDialog]) is removed; the item count moves up into its place. -->
 		<control type="label">
 <!-- 			<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
 			<width>FullscreenWidth</width>
-			<top>40</top>
+			<top>0</top>
 			<height>40</height>
 			<left>0</left>
 			<font>cirrus_30</font>
