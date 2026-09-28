@@ -223,7 +223,7 @@
             <label>$INFO[ListItem.Plot]</label>			
             <textcolor>NormalTextColor</textcolor>
             <shadowcolor>shadow</shadowcolor>
-            <autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(Disable.AutoScroll) + Control.HasFocus(902)</autoscroll>
+            <autoscroll time="4000" delay="3000" repeat="5000">!Skin.HasSetting(Disable.AutoScroll) + Control.HasFocus(902)</autoscroll>
         </control>
         <control type="image">
             <left>606r</left>
