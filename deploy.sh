@@ -26,7 +26,9 @@ rm -f "/storage/.kodi/userdata/addon_data/script.skinshortcuts/$ID.hash"
 kodi-send -a "UpdateLocalAddons" >/dev/null
 sleep 3
 case "$(rpc '{"jsonrpc":"2.0","id":2,"method":"Settings.GetSettingValue","params":{"setting":"lookandfeel.skin"}}')" in
-  *"\"$ID\""*) kodi-send -a "ReloadSkin()" >/dev/null; echo "deployed and reloaded $ID" ;;
+  # Build the menu now (Home.xml would only do it on its next load); Skin Shortcuts reloads the skin itself.
+  *"\"$ID\""*) kodi-send -a "RunScript(script.skinshortcuts,type=buildxml&mode=single&mainmenuID=9000&group=mainmenu|quicknav)" >/dev/null
+                 echo "deployed $ID, menu rebuilding and skin reloading" ;;
   *) echo "deployed $ID (not the active skin, nothing reloaded)" ;;
 esac
 EOF

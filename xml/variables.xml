@@ -1242,7 +1242,7 @@
 	</variable>
 	<variable name="CommonBackgroundOverlay">
 		<value condition="!String.IsEmpty(Skin.String(CustomOverlay))">$INFO[Skin.String(CustomOverlay)]</value>
-		<value>background.png</value>
+		<value>white.png</value>
 	</variable>
 	<variable name="ListRightLabel">
 		<value condition="Container.Content(tvshows)">$INFO[ListItem.Rating]</value>

@@ -81,7 +81,7 @@
 						<param name="left">494</param>
 						<param name="orientation">vertical</param>
 					</include>
-					<content limit="$SKINSHORTCUTS[limit]" sortby="$SKINSHORTCUTS[sortby]" sortorder="$SKINSHORTCUTS[sortdirection]" target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
+					<content limit="$SKINSHORTCUTS[limit]" sortby="$SKINSHORTCUTS[sortby]" sortorder="$SKINSHORTCUTS[sortdirection]" target="$SKINSHORTCUTS[target]">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
 				</control>
 				<control type="group">
 					<include>VisibleFadeEffect</include>
@@ -390,7 +390,7 @@
 						<param name="left">85</param>
 						<param name="orientation">horizontal</param>
 					</include>
-					<content limit="$SKINSHORTCUTS[limit]" sortby="$SKINSHORTCUTS[sortby]" sortorder="$SKINSHORTCUTS[sortdirection]" target="$SKINSHORTCUTS[target]">$SKINSHORTCUTS[path]</content>
+					<content limit="$SKINSHORTCUTS[limit]" sortby="$SKINSHORTCUTS[sortby]" sortorder="$SKINSHORTCUTS[sortdirection]" target="$SKINSHORTCUTS[target]">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
 				</control>
 				<control type="group">
 					<include>VisibleFadeEffect</include>
