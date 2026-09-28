@@ -30,3 +30,7 @@ msgstr "Opcije prikaza"
 msgctxt "#90963"
 msgid "All movies"
 msgstr "Svi filmovi"
+
+msgctxt "#90964"
+msgid "Unfinished"
+msgstr "Nezavršeni"
