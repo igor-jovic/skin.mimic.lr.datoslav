@@ -227,9 +227,9 @@
         </control>
         <control type="image">
             <left>606r</left>
-            <top>576</top>
+            <top>636</top>
             <width>526</width>
-            <height>300</height>
+            <height>384</height>
             <texture>black.png</texture>
             <aspectratio>stretch</aspectratio>
 			<bordertexture border="5" colordiffuse="BorderDiffuse">listselect_fo.png</bordertexture>
@@ -237,16 +237,16 @@
         </control>
 		<control type="videowindow">
 			<left>601r</left>
-			<top>581</top>
+			<top>641</top>
 			<width>516</width>
-			<height>290</height>
+			<height>374</height>
 			<visible>$EXP[GameSupport]</visible>
 		</control>
         <control type="image">
             <left>606r</left>
-            <top>576</top>
+            <top>636</top>
             <width>526</width>
-            <height>300</height>
+            <height>384</height>
 			<fadetime>400</fadetime>
             <texture background="true">$VAR[MainFanartWindowVar]</texture>
             <aspectratio align="center" aligny="center">keep</aspectratio>
