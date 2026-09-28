@@ -1654,4 +1654,6 @@ msgctxt "#90960"
 msgid "Hide Reflections"
 msgstr ""
 
-
+msgctxt "#90961"
+msgid "Go back"
+msgstr ""

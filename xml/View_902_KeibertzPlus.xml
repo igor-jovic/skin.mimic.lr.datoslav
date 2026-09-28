@@ -24,7 +24,7 @@
 				<aligny>center</aligny>
 				<font>font35_title</font>
 				<textcolor>TitleTextColor</textcolor>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[ListItemLabel]</label>
 				<scroll>false</scroll>
 				<visible>$EXP[KeibertzPlusHideLabels] + Control.IsVisible(902) + !$EXP[isInfoDialog]</visible>
 			</control>
@@ -196,7 +196,7 @@
             <align>left</align>
             <aligny>center</aligny>
             <font>font35_title</font>
-            <label>$INFO[ListItem.Label]</label>			
+            <label>$VAR[ListItemLabel]</label>			
             <textcolor>TitleTextColor</textcolor>
             <shadowcolor>shadow</shadowcolor>
             <scroll>true</scroll>

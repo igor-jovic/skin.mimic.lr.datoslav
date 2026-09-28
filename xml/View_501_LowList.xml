@@ -173,7 +173,7 @@
 						<right>80</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -202,7 +202,7 @@
 						<right>80</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -223,7 +223,7 @@
 						<right>80</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -244,7 +244,7 @@
 						<right>80</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -265,7 +265,7 @@
 						<right>80</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -286,7 +286,7 @@
 						<right>80</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -497,7 +497,7 @@
 						<right>190</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -533,7 +533,7 @@
 						<right>190</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>110</left>
@@ -593,7 +593,7 @@
 						<right>190</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 						<visible>String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="image">
@@ -646,7 +646,7 @@
 						<right>190</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 						<visible>String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="image">
@@ -665,7 +665,7 @@
 						<right>15</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>15</left>
@@ -682,7 +682,7 @@
 						<right>15</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>15</left>
@@ -803,7 +803,7 @@
 						<right>15</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>15</left>
@@ -820,7 +820,7 @@
 						<right>15</right>
 						<height>67</height>
 						<font>font15</font>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 					</control>
 					<control type="label">
 						<left>15</left>

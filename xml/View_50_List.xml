@@ -568,7 +568,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -576,7 +576,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -618,7 +618,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -626,7 +626,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -665,7 +665,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -673,7 +673,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -715,7 +715,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -723,7 +723,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -936,7 +936,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -944,7 +944,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<include content="OverlayList">
@@ -978,7 +978,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -986,7 +986,7 @@
 							<right>80</right>
 							<height>60</height>
 							<font>font15</font>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<include content="OverlayList">

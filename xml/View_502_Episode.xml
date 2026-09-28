@@ -46,7 +46,7 @@
                             <height>70</height>
                             <font>font30</font>
                             <align>right</align>
-                            <label>$INFO[ListItem.Label]</label>
+                            <label>$VAR[ListItemLabel]</label>
                         </control>
                         <include content="OverlayList">
                             <param name="OverlayListLeft" value="1750" />
@@ -99,7 +99,7 @@
                             <font>font30</font>
                             <selectedcolor>SelectedColor</selectedcolor>
                             <align>right</align>
-                            <label>$INFO[ListItem.Label]</label>
+                            <label>$VAR[ListItemLabel]</label>
                         </control>
                         <control type="textbox">
                             <label>$VAR[VideoPlotVar]</label>

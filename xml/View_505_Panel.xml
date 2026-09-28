@@ -42,7 +42,7 @@
 						<left>38</left>
 						<width>525</width>
 						<height>40</height>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 						<font>font30</font>
 					</control>
 					<control type="textbox">
@@ -73,7 +73,7 @@
 						<left>38</left>
 						<width>525</width>
 						<height>40</height>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 						<font>font30</font>
 					</control>
 					<control type="textbox">

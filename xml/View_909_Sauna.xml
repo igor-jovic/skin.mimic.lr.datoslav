@@ -146,7 +146,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font52</font>
-			<label>$INFO[ListItem.Label]</label>
+			<label>$VAR[ListItemLabel]</label>
 			<textcolor>TitleTextColor</textcolor>
 			<scrollspeed>60</scrollspeed>
 			<pauseatend>1500</pauseatend>
@@ -258,7 +258,7 @@
 			<font>font32</font>
 			<textcolor>TitleTextColor</textcolor>
 			<shadowcolor>black</shadowcolor>
-			<label>$INFO[ListItem.Label]</label>
+			<label>$VAR[ListItemLabel]</label>
 			<scroll>true</scroll>
 		</control>
 		<control type="label">
@@ -377,7 +377,7 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<font>font60</font>
-			<label>$INFO[ListItem.Label]</label>
+			<label>$VAR[ListItemLabel]</label>
 			<textcolor>TitleTextColor</textcolor>
 			<scrollspeed>60</scrollspeed>
 			<pauseatend>1500</pauseatend>
@@ -422,7 +422,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font36</font>
-			<label>$INFO[ListItem.Label]</label>
+			<label>$VAR[ListItemLabel]</label>
 			<textcolor>TitleTextColor</textcolor>
 			<scrollspeed>60</scrollspeed>
 			<pauseatend>1500</pauseatend>

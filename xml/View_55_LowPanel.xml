@@ -99,7 +99,7 @@
                     <height>130</height>
                     <font>font35_title</font>
                     <wrapmultiline>true</wrapmultiline>
-                    <label>$INFO[ListItem.Label]</label>
+                    <label>$VAR[ListItemLabel]</label>
                     <visible>String.IsEqual(Control.GetLabel(9991),blank.png)</visible>
                 </control>
                 <control type="textbox">
@@ -231,7 +231,7 @@
                     <height>130</height>
                     <font>font35_title</font>
                     <wrapmultiline>true</wrapmultiline>
-                    <label>$INFO[ListItem.Label]</label>
+                    <label>$VAR[ListItemLabel]</label>
                     <visible>String.IsEqual(Control.GetLabel(9991),blank.png)</visible>
                 </control>
                 <control type="textbox">

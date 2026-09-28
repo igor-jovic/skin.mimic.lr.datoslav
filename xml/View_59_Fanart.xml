@@ -46,7 +46,7 @@
                         <width>1233</width>
                         <height>70</height>
                         <font>font36</font>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[ListItemLabel]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
@@ -97,7 +97,7 @@
                         <width>1233</width>
                         <height>70</height>
                         <font>font36</font>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[ListItemLabel]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
@@ -157,7 +157,7 @@
                         <width>915</width>
                         <height>70</height>
                         <font>font36</font>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[ListItemLabel]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
@@ -217,7 +217,7 @@
                         <width>915</width>
                         <height>70</height>
                         <font>font36</font>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[ListItemLabel]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
@@ -267,7 +267,7 @@
                         <width>1250</width>
                         <height>70</height>
                         <font>font36</font>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[ListItemLabel]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
@@ -310,7 +310,7 @@
                         <width>1250</width>
                         <height>70</height>
                         <font>font36</font>
-                        <label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[ListItemLabel]</label>
                         <scroll>true</scroll>
                     </control>
                     <control type="label">

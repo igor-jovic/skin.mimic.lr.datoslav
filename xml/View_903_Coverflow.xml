@@ -218,7 +218,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font54</font>
-			<label>$INFO[ListItem.Label]</label>
+			<label>$VAR[ListItemLabel]</label>
 			<textcolor>TitleTextColor</textcolor>
 			<shadowcolor>shadow</shadowcolor>
 			<scroll>true</scroll>
@@ -299,7 +299,7 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<font>font54</font>
-			<label>$INFO[ListItem.Label]</label>
+			<label>$VAR[ListItemLabel]</label>
 			<textcolor>TitleTextColor</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<scroll>true</scroll>

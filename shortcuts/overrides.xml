@@ -198,14 +198,6 @@
     <propertydefault group="movies" defaultID="135" property="widgetTarget">videos</propertydefault>
     <propertydefault group="movies" defaultID="135" property="widgetType">movies</propertydefault>
     <propertydefault group="movies" defaultID="135" property="widgetIcon">20021</propertydefault>
-    <propertydefault group="movies" defaultID="14022" property="widgetPath">videodb://movies/titles/</propertydefault>
-    <propertydefault group="movies" defaultID="14022" property="widgetTarget">videos</propertydefault>
-    <propertydefault group="movies" defaultID="14022" property="widgetType">movies</propertydefault>
-    <propertydefault group="movies" defaultID="14022" property="widgetIcon">20021</propertydefault>
-    <propertydefault group="movies" defaultID="24069" property="widgetPath">videodb://recentlyaddedmovies/</propertydefault>
-    <propertydefault group="movies" defaultID="24069" property="widgetTarget">videos</propertydefault>
-    <propertydefault group="movies" defaultID="24069" property="widgetType">movies</propertydefault>
-    <propertydefault group="movies" defaultID="24069" property="widgetIcon">20021</propertydefault>
     <propertydefault group="tvshows" defaultID="31314" property="widgetPath">videodb://inprogresstvshows/</propertydefault>
     <propertydefault group="tvshows" defaultID="31314" property="widgetTarget">videos</propertydefault>
     <propertydefault group="tvshows" defaultID="31314" property="widgetType">tvshows</propertydefault>
@@ -218,13 +210,5 @@
     <propertydefault group="tvshows" defaultID="135" property="widgetTarget">videos</propertydefault>
     <propertydefault group="tvshows" defaultID="135" property="widgetType">tvshows</propertydefault>
     <propertydefault group="tvshows" defaultID="135" property="widgetIcon">20021</propertydefault>
-    <propertydefault group="tvshows" defaultID="14022" property="widgetPath">videodb://inprogresstvshows/</propertydefault>
-    <propertydefault group="tvshows" defaultID="14022" property="widgetTarget">videos</propertydefault>
-    <propertydefault group="tvshows" defaultID="14022" property="widgetType">tvshows</propertydefault>
-    <propertydefault group="tvshows" defaultID="14022" property="widgetIcon">20021</propertydefault>
-    <propertydefault group="tvshows" defaultID="24069" property="widgetPath">videodb://inprogresstvshows/</propertydefault>
-    <propertydefault group="tvshows" defaultID="24069" property="widgetTarget">videos</propertydefault>
-    <propertydefault group="tvshows" defaultID="24069" property="widgetType">tvshows</propertydefault>
-    <propertydefault group="tvshows" defaultID="24069" property="widgetIcon">20021</propertydefault>
 
 </overrides>

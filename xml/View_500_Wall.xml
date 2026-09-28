@@ -523,7 +523,7 @@
 							<height>40</height>
 							<align>center</align>
 							<textoffsetx>10</textoffsetx>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 						</control>
 						<include content="OverlayIcons">
 							<param name="OverlayLeft" value="313" />
@@ -576,7 +576,7 @@
 								<height>40</height>
 								<align>center</align>
 								<textoffsetx>10</textoffsetx>
-								<label>$INFO[ListItem.Label]</label>
+								<label>$VAR[ListItemLabel]</label>
 							</control>
 						</control>
 						<include content="OverlayIcons">
@@ -601,7 +601,7 @@
 					<height>40</height>
 					<font>font30</font>
 					<scroll>true</scroll>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[ListItemLabel]</label>
 					<textoffsetx>30</textoffsetx>
 				</control>
 				<control type="label">
@@ -628,7 +628,7 @@
 					<height>40</height>
 					<font>font30</font>
 					<scroll>true</scroll>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[ListItemLabel]</label>
 					<textoffsetx>30</textoffsetx>
 				</control>
 				<control type="label">
@@ -737,7 +737,7 @@
 								<height>40</height>
 								<align>center</align>
 								<textoffsetx>10</textoffsetx>
-								<label>$INFO[ListItem.Label]</label>
+								<label>$VAR[ListItemLabel]</label>
 							</control>
 						</control>
 					</control>
@@ -798,7 +798,7 @@
 									<height>40</height>
 									<align>center</align>
 									<textoffsetx>10</textoffsetx>
-									<label>$INFO[ListItem.Label]</label>
+									<label>$VAR[ListItemLabel]</label>
 								</control>
 							</control>
 						</control>
@@ -815,7 +815,7 @@
 					<height>40</height>
 					<font>font30</font>
 					<scroll>true</scroll>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[ListItemLabel]</label>
 					<textoffsety>-2</textoffsety>
 					<textoffsetx>30</textoffsetx>
 				</control>
@@ -959,7 +959,7 @@
 						<height>42</height>
 						<font>font30</font>
 						<scroll>true</scroll>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$VAR[ListItemLabel]</label>
 						<textoffsety>-2</textoffsety>
 						<textoffsetx>30</textoffsetx>
 					</control>
@@ -1035,7 +1035,7 @@
 							<height>40</height>
 							<align>center</align>
 							<textoffsetx>10</textoffsetx>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$VAR[ListItemLabel]</label>
 						</control>
 					</control>
 				</itemlayout>
@@ -1083,7 +1083,7 @@
 								<height>40</height>
 								<align>center</align>
 								<textoffsetx>10</textoffsetx>
-								<label>$INFO[ListItem.Label]</label>
+								<label>$VAR[ListItemLabel]</label>
 							</control>
 						</control>
 					</control>
@@ -1099,7 +1099,7 @@
 					<height>40</height>
 					<font>font30</font>
 					<scroll>true</scroll>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[ListItemLabel]</label>
 					<textoffsety>-2</textoffsety>
 					<textoffsetx>30</textoffsetx>
 				</control>

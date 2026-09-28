@@ -23,20 +23,4 @@
 		<thumb/>
 		<action>ActivateWindow(Videos,videodb://tvshows/genres/,return)</action>
 	</shortcut>
-	<shortcut>
-		<defaultID>14022</defaultID>
-		<label>14022</label>
-		<label2>Custom item</label2>
-		<icon>DefaultVideo.png</icon>
-		<thumb/>
-		<action>ActivateWindow(Videos,videodb://tvshows/)</action>
-	</shortcut>
-	<shortcut>
-		<defaultID>24069</defaultID>
-		<label>24069</label>
-		<label2>Kodi Command</label2>
-		<icon>UpdateVideoLibrary.png</icon>
-		<thumb/>
-		<action>UpdateLibrary(video,,true)</action>
-	</shortcut>
 </shortcuts>

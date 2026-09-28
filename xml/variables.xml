@@ -1240,6 +1240,11 @@
 			found. You can add any item from media views to this list by using the context menu.</value> -->
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),weather) + IsEmpty(Weather.Plugin)">$LOCALIZE[31274]</value>
 	</variable>
+	<!-- datoslav: the ".." parent item is labelled "Povratak nazad" -->
+	<variable name="ListItemLabel">
+		<value condition="ListItem.IsParentFolder">$LOCALIZE[90961]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
 	<variable name="CommonBackgroundOverlay">
 		<value condition="!String.IsEmpty(Skin.String(CustomOverlay))">$INFO[Skin.String(CustomOverlay)]</value>
 		<value>white.png</value>

@@ -437,7 +437,7 @@
                                 <height>28</height>
                                 <align>center</align>
                                 <textoffsetx>4</textoffsetx>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[ListItemLabel]</label>
                             </control>
                         </control>
                     </control>
@@ -475,7 +475,7 @@
                                 <height>28</height>
                                 <align>center</align>
                                 <textoffsetx>4</textoffsetx>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[ListItemLabel]</label>
                             </control>
                         </control>
                     </control>

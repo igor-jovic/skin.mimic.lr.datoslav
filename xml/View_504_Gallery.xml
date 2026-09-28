@@ -14,7 +14,7 @@
 					<visible>![Container.Content(images) + Skin.HasSetting(PictureInfo.Disabled)]</visible>
 					<left>383</left>
 					<top>760</top>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$VAR[ListItemLabel]</label>
 					<width>1225</width>
 					<font>font30</font>
 				</control>
