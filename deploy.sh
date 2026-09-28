@@ -31,7 +31,10 @@ case "$(rpc '{"jsonrpc":"2.0","id":2,"method":"Settings.GetSettingValue","params
 esac
 EOF
 
+# The box has no base64, so the script goes over first and the tarball second.
+printf '%s\n' "$REMOTE" | "${SSH[@]}" "cat > /tmp/deploy-$ID.sh"
+
 # Repo-only files stay out of the add-on.
 git ls-files -z | grep -zvE '^(deploy\.sh|DATOSLAV\.md|\.gitignore|\.github/)' |
   COPYFILE_DISABLE=1 tar --null -T - -czf - |
-  "${SSH[@]}" "ID=$ID bash -c \"\$(echo $(printf '%s' "$REMOTE" | base64 | tr -d '\n') | base64 -d)\""
+  "${SSH[@]}" "ID=$ID bash /tmp/deploy-$ID.sh; rc=\$?; rm -f /tmp/deploy-$ID.sh; exit \$rc"
