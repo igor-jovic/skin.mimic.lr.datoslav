@@ -187,19 +187,10 @@
 	</include>
 	<!-- layout_includes -->
 	<include name="KeibertzPlusLayoutDefault">
-		<!-- datoslav: solid dark blue bar behind the title, same box as the title label -->
-		<control type="image">
-			<left>100</left>
-			<top>491</top>
-			<width>1126</width>
-			<height>60</height>
-			<texture>white.png</texture>
-			<colordiffuse>FF0B1F4B</colordiffuse>
-		</control>
 		<control type="label">
             <left>100</left>
             <top>491</top>
-            <width>1000</width>
+            <width>1126</width>
             <height>60</height>
             <align>left</align>
             <aligny>center</aligny>
