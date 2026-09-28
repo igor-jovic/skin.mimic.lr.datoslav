@@ -2,7 +2,7 @@
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <onload>SetProperty(CurrentSkin,skin.mimic.lr,home)</onload>
+    <onload>SetProperty(CurrentSkin,skin.mimic.lr.datoslav,home)</onload>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu|quicknav)</onload>
 
     <onload>ClearProperty(MediaMenu,Home)</onload>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.mimic.lr" name="Mimic-LR" version="8.2.2" provider-name="Randall">
+<addon id="skin.mimic.lr.datoslav" name="Mimic-LR (datoslav)" version="8.2.2" provider-name="Randall">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.skinshortcuts" version="1.1.4" />
@@ -10,14 +10,14 @@
 	</extension>
 
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Mimic-LR</summary>
-		<description lang="en_GB">Mimic reborn</description>
+		<summary lang="en_GB">Mimic-LR (datoslav)</summary>
+		<description lang="en_GB">Mimic reborn. Personal fork of randallspicher/skin.mimic.lr for the x96mini box.</description>
 		<platform>all</platform>
 		<license>CC BY-NC-SA 4.0</license>
 		<forum>http://forum.kodi.tv/forumdisplay.php?fid=218</forum>
 		<website></website>
 		<email></email>
-		<source>https://github.com/randallspicher/skin.mimic.lr/tree/Omega</source>
+		<source>https://github.com/igor-jovic/skin.mimic.lr.datoslav/tree/datoslav</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.png</fanart>
