@@ -5,14 +5,14 @@
 		<ondown>909</ondown>
 		<onleft>909</onleft>
 		<onright>909</onright>
-		<onup>9060</onup>
+		<onup>9061</onup>
 		<orientation>horizontal</orientation>
 	</include>
 	<include name="SaunaVerticalControls">
 		<ondown>909</ondown>
 		<onleft>Back</onleft>
 		<onright>909</onright>
-		<onup>9060</onup>
+		<onup>9061</onup>
 		<orientation>vertical</orientation>
 	</include>
 	<!-- view -->

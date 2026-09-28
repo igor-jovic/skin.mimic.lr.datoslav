@@ -143,14 +143,90 @@
 <!-- 						<animation effect="slide" end="0,60" time="0" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(50).Row,0)">Conditional</animation> -->
 <!-- 					</control> -->
 <!-- 				</control> -->
-				<control type="panel" id="50">
+				<!-- datoslav: "Povratak nazad" as the list's first row (Kodi's ".." is off: it always goes one library
+				     level up, even out of a list opened from the home menu, and the skin can't change that).
+				     A button styled like an entry sits in the first row and the list starts one row lower; Up from
+				     the first entry reaches it, Enter/Left send Back. One per entry width (2-column / normal / wide). -->
+				<control type="button" id="9062">
+					<visible>Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList)</visible>
+					<left>0</left>
+					<top>195</top>
+					<width>870</width>
+					<height>120</height>
+					<font>font30</font>
+					<textoffsetx>135</textoffsetx>
+					<aligny>center</aligny>
+					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
+					<texturenofocus />
+					<label>$LOCALIZE[90961]</label>
+					<onclick>Back</onclick>
+					<onclick>SetFocus(50)</onclick>
+					<onleft>Back</onleft>
+					<onleft>SetFocus(50)</onleft>
+					<onup>9061</onup>
+					<ondown>50</ondown>
+				</control>
+				<control type="button" id="9063">
+					<visible>!Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + !Skin.HasSetting(Enable.WideList)</visible>
+					<left>0</left>
+					<top>195</top>
+					<width>1030</width>
+					<height>120</height>
+					<font>font30</font>
+					<textoffsetx>135</textoffsetx>
+					<aligny>center</aligny>
+					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
+					<texturenofocus />
+					<label>$LOCALIZE[90961]</label>
+					<onclick>Back</onclick>
+					<onclick>SetFocus(50)</onclick>
+					<onleft>Back</onleft>
+					<onleft>SetFocus(50)</onleft>
+					<onup>9061</onup>
+					<ondown>50</ondown>
+				</control>
+				<control type="button" id="9064">
+					<visible>!Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + Skin.HasSetting(Enable.WideList)</visible>
 					<left>0</left>
 					<top>195</top>
 					<width>1740</width>
-					<height>840</height>
+					<height>120</height>
+					<font>font30</font>
+					<textoffsetx>135</textoffsetx>
+					<aligny>center</aligny>
+					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
+					<texturenofocus />
+					<label>$LOCALIZE[90961]</label>
+					<onclick>Back</onclick>
+					<onclick>SetFocus(50)</onclick>
+					<onleft>Back</onleft>
+					<onleft>SetFocus(50)</onleft>
+					<onup>9061</onup>
+					<ondown>50</ondown>
+				</control>
+				<control type="image">
+					<!-- drawn after the buttons so the focus highlight sits under the icon, like list entries -->
+					<visible>Control.IsVisible(9062) | Control.IsVisible(9063) | Control.IsVisible(9064)</visible>
+					<left>10</left>
+					<top>205</top>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio scalediffuse="false">keep</aspectratio>
+					<texture diffuse="diffuse/list-icon.png">DefaultFolderBack.png</texture>
+				</control>
+				<control type="panel" id="50">
+					<left>0</left>
+					<top>315</top>
+					<width>1740</width>
+					<height>720</height>
+					<!-- slim rows (60px) have no back row: keep the original position -->
+					<animation effect="slide" end="0,-120" time="0" condition="Skin.HasSetting(Enable.SlimList)">Conditional</animation>
 					<onleft>Back</onleft>
 					<onright condition="Container(50).HasNext | Container(50).HasPrevious">60</onright>
-					<onup>9060</onup>
+					<onup condition="Control.IsVisible(9062)">9062</onup>
+					<onup condition="Control.IsVisible(9063)">9063</onup>
+					<onup condition="Control.IsVisible(9064)">9064</onup>
+					<onup>9061</onup>
 					<ondown>50</ondown>
 					<oninfo condition="$EXP[PluginAdvancedLauncher] + System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=textviewer,header='"$INFO[ListItem.Label]"',text='"$VAR[AdvancedLauncherPlotVar]"')</oninfo>
 					<oninfo condition="System.HasAddon(script.extendedinfo) + Container.Content(actors)">RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</oninfo>

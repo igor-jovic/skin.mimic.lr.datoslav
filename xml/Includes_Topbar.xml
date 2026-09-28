@@ -121,45 +121,11 @@
 				<include>MenuButton</include>
 				<include>FullscreenButton</include>
 
-				<!-- datoslav: on-screen Back and view options for library windows, so no remote Back/Left is needed.
-				     Up from the top of any list reaches them; replaces Kodi's ".." item (filelists.showparentdiritems off). -->
-				<control type="button" id="9060">
-					<visible>$EXP[DatoslavLibraryWindow]</visible>
-					<width>auto</width>
-					<height>60</height>
-					<font>cirrus_30</font>
-					<textoffsetx>20</textoffsetx>
-					<aligny>center</aligny>
-					<textcolor>LabelTextColor</textcolor>
-					<focusedcolor>TitleTextColor</focusedcolor>
-					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
-					<texturenofocus />
-					<label>‹  $LOCALIZE[90961]</label>
-					<onclick>Back</onclick>
-					<onright>9061</onright>
-					<onleft>9061</onleft>
-					<ondown condition="Control.IsVisible(50)">50</ondown>
-					<ondown condition="Control.IsVisible(52)">52</ondown>
-					<ondown condition="Control.IsVisible(507)">507</ondown>
-					<ondown condition="Control.IsVisible(51)">51</ondown>
-					<ondown condition="Control.IsVisible(57)">57</ondown>
-					<ondown condition="Control.IsVisible(59)">59</ondown>
-					<ondown condition="Control.IsVisible(500)">500</ondown>
-					<ondown condition="Control.IsVisible(501)">501</ondown>
-					<ondown condition="Control.IsVisible(502)">502</ondown>
-					<ondown condition="Control.IsVisible(504)">504</ondown>
-					<ondown condition="Control.IsVisible(505)">505</ondown>
-					<ondown condition="Control.IsVisible(509)">509</ondown>
-					<ondown condition="Control.IsVisible(520)">520</ondown>
-					<ondown condition="Control.IsVisible(55)">55</ondown>
-					<ondown condition="Control.IsVisible(900)">900</ondown>
-					<ondown condition="Control.IsVisible(902)">902</ondown>
-					<ondown condition="Control.IsVisible(903)">903</ondown>
-					<ondown condition="Control.IsVisible(909)">909</ondown>
-					<ondown condition="Control.IsVisible(508)">508</ondown>
-					<ondown condition="Control.IsVisible(510)">510</ondown>
-				</control>
+				<!-- datoslav: view options for library windows (Left at a list edge now means Back). Up from the list reaches it. -->
 				<control type="button" id="9061">
+					<ondown condition="Control.IsVisible(9062)">9062</ondown>
+					<ondown condition="Control.IsVisible(9063)">9063</ondown>
+					<ondown condition="Control.IsVisible(9064)">9064</ondown>
 					<visible>$EXP[DatoslavLibraryWindow]</visible>
 					<width>auto</width>
 					<height>60</height>
@@ -173,8 +139,6 @@
 					<label>$LOCALIZE[90962]</label>
 					<onclick>SetProperty(MediaMenu,True,home)</onclick>
 					<onclick>SetFocus(9050)</onclick>
-					<onleft>9060</onleft>
-					<onright>9060</onright>
 					<ondown condition="Control.IsVisible(50)">50</ondown>
 					<ondown condition="Control.IsVisible(52)">52</ondown>
 					<ondown condition="Control.IsVisible(507)">507</ondown>

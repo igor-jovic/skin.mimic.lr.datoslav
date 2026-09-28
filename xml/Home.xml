@@ -7,6 +7,18 @@
 
     <onload>ClearProperty(MediaMenu,Home)</onload>
     <controls>
+        <!-- datoslav: the list's "Povratak nazad" row sends Back and then SetFocus(50) to land on the list.
+             When Back leaves for the home screen, that focus request arrives here; without a control 50
+             nothing is focused and the next key press is swallowed. This catches it and hands focus to the menu. -->
+        <control type="button" id="50">
+            <left>-10</left>
+            <top>-10</top>
+            <width>1</width>
+            <height>1</height>
+            <texturefocus />
+            <texturenofocus />
+            <onfocus>SetFocus(9000)</onfocus>
+        </control>
         <control type="wraplist" id="9033">
             <include>HiddenList</include>
             <content>$INFO[Container(9010).ListItem.Property(backgroundPlaylist)]</content>

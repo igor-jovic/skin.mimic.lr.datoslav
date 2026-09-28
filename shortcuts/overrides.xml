@@ -186,7 +186,7 @@
     <propertydefault group="movies" defaultID="31314" property="widgetTarget">videos</propertydefault>
     <propertydefault group="movies" defaultID="31314" property="widgetType">movies</propertydefault>
     <propertydefault group="movies" defaultID="31314" property="widgetIcon">20021</propertydefault>
-    <propertydefault group="movies" defaultID="575" property="widgetPath">library://video/movies/inprogressmovies.xml/</propertydefault>
+    <propertydefault group="movies" defaultID="575" property="widgetPath">special://skin/extras/inprogress_movies.xsp</propertydefault>
     <propertydefault group="movies" defaultID="575" property="widgetTarget">videos</propertydefault>
     <propertydefault group="movies" defaultID="575" property="widgetType">movies</propertydefault>
     <propertydefault group="movies" defaultID="575" property="widgetIcon">20021</propertydefault>

@@ -79,7 +79,7 @@
 				<height>700</height>
 				<onleft>900</onleft>
 				<onright>900</onright>
-				<onup>9060</onup>
+				<onup>9061</onup>
 				<onback condition="$EXP[GameSupport] + Player.HasVideo">PlayerControl(Stop)</onback>
 				<orientation>horizontal</orientation>
 				<scrolltime tween="quadratic" easing="out">400</scrolltime>
