@@ -109,6 +109,13 @@
 			<size>57</size>
 		</font>
 		<font>
+			<!-- datoslav: main home entries (Filmovi, TV serije, Podešavanja), MainMenuFont +30% -->
+			<name>DatoslavMainMenuFont</name>
+			<filename>Jaldi-Regular.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>74</size>
+		</font>
+		<font>
 			<name>SubMenuFont</name>
 			<filename>Jaldi-Regular.ttf</filename>
 			<linespacing>0</linespacing>

@@ -181,7 +181,7 @@
 						<control type="label">
 							<width>430</width>
 							<height>95</height>
-							<font>MainMenuFont</font>
+							<font>DatoslavMainMenuFont</font>
 							<textoffsetx>20</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
 							<label>$INFO[ListItem.Label]</label>
@@ -201,7 +201,7 @@
 						<control type="label">
 							<width>430</width>
 							<height>95</height>
-							<font>MainMenuFont</font>
+							<font>DatoslavMainMenuFont</font>
 							<textoffsetx>20</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
 							<label>$INFO[ListItem.Label]</label>

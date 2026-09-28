@@ -109,6 +109,13 @@
 			<size>51</size>
 		</font>
 		<font>
+			<!-- datoslav: main home entries (Filmovi, TV serije, Podešavanja), MainMenuFont +30% -->
+			<name>DatoslavMainMenuFont</name>
+			<filename>arial.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>66</size>
+		</font>
+		<font>
 			<name>SubMenuFont</name>
 			<filename>arial.ttf</filename>
 			<linespacing>0</linespacing>

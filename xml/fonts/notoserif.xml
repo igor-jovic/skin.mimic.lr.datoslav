@@ -109,6 +109,13 @@
 			<size>52</size>
 		</font>
 		<font>
+			<!-- datoslav: main home entries (Filmovi, TV serije, Podešavanja), MainMenuFont +30% -->
+			<name>DatoslavMainMenuFont</name>
+			<filename>NotoSerif-Regular.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>68</size>
+		</font>
+		<font>
 			<name>SubMenuFont</name>
 			<filename>NotoSerif-Regular.ttf</filename>
 			<linespacing>0</linespacing>
