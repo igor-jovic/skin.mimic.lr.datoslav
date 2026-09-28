@@ -225,35 +225,29 @@
             <shadowcolor>shadow</shadowcolor>
             <autoscroll time="4000" delay="3000" repeat="5000">!Skin.HasSetting(Disable.AutoScroll) + Control.HasFocus(902)</autoscroll>
         </control>
-        <control type="image">
-            <left>606r</left>
-            <top>636</top>
-            <width>526</width>
-            <height>384</height>
-            <texture>black.png</texture>
-            <aspectratio>stretch</aspectratio>
-			<bordertexture border="5" colordiffuse="BorderDiffuse">listselect_fo.png</bordertexture>
-			<bordersize>5</bordersize>	
-        </control>
-		<control type="videowindow">
-			<left>601r</left>
-			<top>641</top>
-			<width>516</width>
-			<height>374</height>
-			<visible>$EXP[GameSupport]</visible>
+		<!-- datoslav: top 5 actors instead of the fanart box. ListItem.Cast is one name per line in billing order;
+		     the box is 5 lines of font14 (~44 px each) tall, so only the first five show. The bullets are a
+		     second textbox in the same font, so the lines match up (a name that wraps would break that). -->
+		<control type="textbox">
+			<left>606r</left>
+			<top>636</top>
+			<width>30</width>
+			<height>225</height>
+			<font>font14</font>
+			<label>•[CR]•[CR]•[CR]•[CR]•</label>
+			<textcolor>NormalTextColor</textcolor>
+			<shadowcolor>shadow</shadowcolor>
+			<visible>!String.IsEmpty(ListItem.Cast)</visible>
 		</control>
-        <control type="image">
-            <left>606r</left>
-            <top>636</top>
-            <width>526</width>
-            <height>384</height>
-			<fadetime>400</fadetime>
-            <texture background="true">$VAR[MainFanartWindowVar]</texture>
-            <aspectratio align="center" aligny="center">keep</aspectratio>
-			<bordersize>5</bordersize>
-			<animation type="Conditional" condition="Player.HasVideo" reversible="false">
-				<effect type="fade" start="100" end="0" time="400" />
-			</animation>			
-        </control>
+		<control type="textbox">
+			<left>576r</left>
+			<top>636</top>
+			<width>496</width>
+			<height>225</height>
+			<font>font14</font>
+			<label>$INFO[ListItem.Cast]</label>
+			<textcolor>NormalTextColor</textcolor>
+			<shadowcolor>shadow</shadowcolor>
+		</control>
 	</include>
 </includes>
