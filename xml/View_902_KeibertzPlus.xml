@@ -208,7 +208,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font15</font>
-			<label>[UPPERCASE]$INFO[ListItem.Year]  [COLOR=TitleTextColor]•[/COLOR]  $INFO[ListItem.Genre][/UPPERCASE]</label>
+			<label>[B][UPPERCASE]$INFO[ListItem.Year]  [COLOR=TitleTextColor]•[/COLOR]  $INFO[ListItem.Genre][/UPPERCASE][/B]</label>
 			<textcolor>AltTextColor</textcolor>
 			<shadowcolor>shadow</shadowcolor>
 			<scroll>false</scroll>
@@ -220,7 +220,7 @@
             <height>384</height>
             <align>justify</align>
             <font>font13</font>
-            <label>$INFO[ListItem.Plot]</label>			
+            <label>[B]$INFO[ListItem.Plot][/B]</label>			
             <textcolor>NormalTextColor</textcolor>
             <shadowcolor>shadow</shadowcolor>
             <autoscroll time="4000" delay="3000" repeat="5000">!Skin.HasSetting(Disable.AutoScroll) + Control.HasFocus(902)</autoscroll>
