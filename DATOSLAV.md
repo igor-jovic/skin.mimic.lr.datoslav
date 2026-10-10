@@ -41,3 +41,6 @@ patch; if Enter on Filmovi stops opening its submenu, re-apply it.
 `shortcuts/mainmenu.DATA.xml` (Filmovi, TV serije, Podešavanja) and the submenus in `shortcuts/*.DATA.xml`.
 Nothing is customised through the menu editor on the box; a `mainmenu.DATA.xml` in
 `userdata/addon_data/script.skinshortcuts/` would override these.
+
+The home screen shows no widgets (the cards beside the menu): the widget group is taken out of both home
+layouts in `xml/Includes_Home.xml`. Skin Shortcuts still attaches a widget to every row; nothing draws it.

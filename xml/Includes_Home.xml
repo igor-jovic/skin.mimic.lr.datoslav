@@ -12,12 +12,7 @@
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
         </control>
-        <control type="group" id="9003">
-            <visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath)) | String.IsEqual(Container(9000).ListItem.Property(widget),weather) | String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible>
-            <control type="group">
-                <include>skinshortcuts-template-widget-vertical</include>
-            </control>
-        </control>
+        <!-- datoslav: no widgets on the home screen (was group 9003 with skinshortcuts-template-widget-vertical) -->
         <include condition="system.getbool(lookandfeel.enablerssfeeds)">rssfeed</include>
     </include>
     <include name="HomeHorizontal">
@@ -40,12 +35,7 @@
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
         </control>
-        <control type="group" id="9003">
-            <visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath)) | String.IsEqual(Container(9000).ListItem.Property(widget),weather) | String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible>
-            <control type="group">
-                <include>skinshortcuts-template-widget-horizontal</include>
-            </control>
-        </control>
+        <!-- datoslav: no widgets on the home screen (was group 9003 with skinshortcuts-template-widget-horizontal) -->
         <include condition="system.getbool(lookandfeel.enablerssfeeds)">rssfeed</include>
     </include>
     <include name="rssfeed">
