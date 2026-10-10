@@ -770,7 +770,7 @@
 						</include>
 					</control>
 				</focusedlayout>
-				<content condition="System.HasAddon(script.extendedinfo">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</content>
+				<content>$VAR[VideoInfoSimilarPath]</content>
 			</control>
 
 			<!-- <include content="PageTotals"> -->
