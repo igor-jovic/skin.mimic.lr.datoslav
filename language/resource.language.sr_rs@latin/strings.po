@@ -38,3 +38,7 @@ msgstr "Nezavršeni"
 msgctxt "#31629"
 msgid "Unfinished (TV shows)"
 msgstr "Nezavršene"
+
+msgctxt "#31630"
+msgid "Partially watched"
+msgstr "Delimično pogledano"

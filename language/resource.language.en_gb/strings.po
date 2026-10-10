@@ -1673,3 +1673,7 @@ msgstr ""
 msgctxt "#31629"
 msgid "Unfinished (TV shows)"
 msgstr ""
+
+msgctxt "#31630"
+msgid "Partially watched"
+msgstr ""

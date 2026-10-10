@@ -241,6 +241,27 @@
             <shadowcolor>shadow</shadowcolor>
             <autoscroll time="4000" delay="3000" repeat="5000">!Skin.HasSetting(Disable.AutoScroll) + Control.HasFocus(902)</autoscroll>
         </control>
+		<!-- datoslav: how far a film stopped part-way was watched, above the actors -->
+		<control type="group">
+			<visible>ListItem.IsResumable</visible>
+			<left>606r</left>
+			<top>556</top>
+			<control type="label">
+				<width>526</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<font>font14</font>
+				<label>$LOCALIZE[31630]</label>
+				<textcolor>NormalTextColor</textcolor>
+				<shadowcolor>shadow</shadowcolor>
+			</control>
+			<control type="progress">
+				<top>48</top>
+				<width>526</width>
+				<height>12</height>
+				<info>ListItem.PercentPlayed</info>
+			</control>
+		</control>
 		<!-- datoslav: top 5 actors instead of the fanart box. Kodi doesn't load the cast for library list items, so
 		     borca-media-syncher writes the first five names into the tagline ("• Name[CR]• Name…"), which it does load.
 		     The tagline is shown nowhere else in this skin. -->
