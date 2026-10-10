@@ -187,6 +187,21 @@
 	</include>
 	<!-- layout_includes -->
 	<include name="KeibertzPlusLayoutDefault">
+		<!-- datoslav: Arcade's two dark panels behind the text; the inner one stops before the actor list -->
+		<control type="image">
+			<left>60</left>
+			<top>471</top>
+			<right>60</right>
+			<bottom>40</bottom>
+			<texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
+		</control>
+		<control type="image">
+			<left>70</left>
+			<top>481</top>
+			<right>654</right>
+			<bottom>50</bottom>
+			<texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
+		</control>
 		<control type="label">
             <left>100</left>
             <top>491</top>
