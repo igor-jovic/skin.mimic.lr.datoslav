@@ -60,5 +60,9 @@ msgid "Watch trailer"
 msgstr "Pogledaj najavu"
 
 msgctxt "#31635"
-msgid "View details"
-msgstr "Pogledaj detalje"
+msgid "More about this movie..."
+msgstr "Više o ovom filmu..."
+
+msgctxt "#31636"
+msgid "This movie has no trailer"
+msgstr "Film nema najavu"

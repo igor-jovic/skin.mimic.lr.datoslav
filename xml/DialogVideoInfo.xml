@@ -1201,6 +1201,16 @@
 					<visible>ListItem.IsResumable</visible>
 					<onclick>SendClick(9)</onclick>
 				</control>
+				<control type="button" id="9506">
+					<width>900</width>
+					<height>100</height>
+					<align>center</align>
+					<font>font35_title</font>
+					<label>31636</label>
+					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<visible>String.IsEmpty(ListItem.Trailer)</visible>
+					<enable>false</enable>
+				</control>
 				<control type="button" id="9504">
 					<width>900</width>
 					<height>100</height>

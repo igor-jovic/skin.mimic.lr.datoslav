@@ -1695,5 +1695,9 @@ msgid "Watch trailer"
 msgstr ""
 
 msgctxt "#31635"
-msgid "View details"
+msgid "More about this movie..."
+msgstr ""
+
+msgctxt "#31636"
+msgid "This movie has no trailer"
 msgstr ""
