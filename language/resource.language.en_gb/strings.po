@@ -1677,3 +1677,23 @@ msgstr ""
 msgctxt "#31630"
 msgid "Partially watched"
 msgstr ""
+
+msgctxt "#31631"
+msgid "Play movie"
+msgstr ""
+
+msgctxt "#31632"
+msgid "Play from the beginning"
+msgstr ""
+
+msgctxt "#31633"
+msgid "Resume where we stopped"
+msgstr ""
+
+msgctxt "#31634"
+msgid "Watch trailer"
+msgstr ""
+
+msgctxt "#31635"
+msgid "View details"
+msgstr ""

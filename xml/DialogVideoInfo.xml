@@ -2,6 +2,9 @@
 <window>
 	<defaultcontrol always="true">8</defaultcontrol>
 	<onload>SendClick(9000,5)</onload>
+	<!-- datoslav: a film opens as a pop-up of actions (group 9500 at the end); "details" reveals this page -->
+	<onload condition="String.IsEqual(ListItem.DBTYPE,movie)">SetFocus(9500)</onload>
+	<onunload>ClearProperty(datoslav.details,movieinformation)</onunload>
 	<controls>
 		<include>Topbar</include>
 
@@ -870,6 +873,12 @@
 						<usealttexture>$EXP[isTvshow]</usealttexture>
 						<alttexturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</alttexturenofocus>
 					</control>
+					<control type="button" id="9">
+						<description>Resume (datoslav)</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>31633</label>
+						<visible>Control.IsEnabled(9)</visible>
+					</control>
 					<control type="button" id="5">
 						<description>Cast/Plot</description>
 						<include>ButtonInfoDialogsCommonValues</include>
@@ -1111,6 +1120,107 @@
 				<height>200</height>
 				<aspectratio>keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+			</control>
+		</control>
+		<control type="group">
+			<visible>$EXP[isMovie] + String.IsEmpty(Window(movieinformation).Property(datoslav.details))</visible>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture>black.png</texture>
+			</control>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true" colordiffuse="FF404040">$INFO[ListItem.Art(fanart)]</texture>
+			</control>
+			<control type="image">
+				<left>410</left>
+				<top>190</top>
+				<width>1100</width>
+				<height>700</height>
+				<texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
+			</control>
+			<control type="image">
+				<left>420</left>
+				<top>200</top>
+				<width>1080</width>
+				<height>680</height>
+				<texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
+			</control>
+			<control type="label">
+				<left>460</left>
+				<top>230</top>
+				<width>1000</width>
+				<height>60</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font35_title</font>
+				<label>[B]$INFO[ListItem.Title][/B]</label>
+				<textcolor>TitleTextColor</textcolor>
+				<scroll>true</scroll>
+			</control>
+			<control type="grouplist" id="9500">
+				<left>510</left>
+				<top>330</top>
+				<width>900</width>
+				<height>520</height>
+				<itemgap>20</itemgap>
+				<orientation>vertical</orientation>
+				<align>center</align>
+				<onleft>9500</onleft>
+				<onright>9500</onright>
+				<onup>9500</onup>
+				<ondown>9500</ondown>
+				<control type="button" id="9501">
+					<width>900</width>
+					<height>100</height>
+					<align>center</align>
+					<font>font35_title</font>
+					<label>31631</label>
+					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<visible>!ListItem.IsResumable</visible>
+					<onclick>SendClick(8)</onclick>
+				</control>
+				<control type="button" id="9502">
+					<width>900</width>
+					<height>100</height>
+					<align>center</align>
+					<font>font35_title</font>
+					<label>31632</label>
+					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<visible>ListItem.IsResumable</visible>
+					<onclick>SendClick(8)</onclick>
+				</control>
+				<control type="button" id="9503">
+					<width>900</width>
+					<height>100</height>
+					<align>center</align>
+					<font>font35_title</font>
+					<label>31633</label>
+					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<visible>ListItem.IsResumable</visible>
+					<onclick>SendClick(9)</onclick>
+				</control>
+				<control type="button" id="9504">
+					<width>900</width>
+					<height>100</height>
+					<align>center</align>
+					<font>font35_title</font>
+					<label>31634</label>
+					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
+					<onclick>SendClick(11)</onclick>
+				</control>
+				<control type="button" id="9505">
+					<width>900</width>
+					<height>100</height>
+					<align>center</align>
+					<font>font35_title</font>
+					<label>31635</label>
+					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<onclick>SetProperty(datoslav.details,1,movieinformation)</onclick>
+					<onclick>SetFocus(8)</onclick>
+				</control>
 			</control>
 		</control>
 		<control type="label" id="9940">
