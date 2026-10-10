@@ -245,7 +245,7 @@
 		<control type="group">
 			<visible>ListItem.IsResumable</visible>
 			<left>606r</left>
-			<top>556</top>
+			<top>494</top>
 			<control type="label">
 				<width>526</width>
 				<height>40</height>
