@@ -9,6 +9,12 @@ A personal fork of [randallspicher/skin.mimic.lr](https://github.com/randallspic
 
 To take upstream fixes: `git fetch upstream && git merge upstream/Omega` on `datoslav`.
 
+## Text numbers
+Every text the skin defines itself is numbered 31000 to 31999. Kodi 22 looks a skin's texts up only in that
+range (`$LOCALIZE[…]`, `<label>`); other numbers come out blank. Upstream `Omega` has 69 texts at 89000 to
+90962 and this fork had added more up to 90965; all were moved to 31556 to 31629, in the same order. New
+texts go in a free number of the range. The 9xxxx numbers still in the XML are control ids, not texts.
+
 ## Add-on id
 `skin.mimic.lr.datoslav`, so Kodi treats it as a separate skin: the official repo never overwrites it, and stock
 Mimic-LR (`skin.mimic.lr`) can stay installed as a fallback. Skin settings are stored per id

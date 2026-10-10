@@ -430,7 +430,7 @@
                     </control>
                     <control type="button" id="209">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90914</label>
+                        <label>31578</label>
                         <label2>$INFO[Skin.String(VisBackgroundMask)]</label2>
                         <onclick>Skin.SetString(VisBackgroundMask)</onclick>
                     </control>
@@ -501,13 +501,13 @@
                     </control>
                     <control type="radiobutton" id="308">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90917</label>
+                        <label>31581</label>
                         <onclick>Skin.ToggleSetting(Enable.TouchScreen)</onclick>
                         <selected>Skin.HasSetting(Enable.TouchScreen)</selected>
                     </control>
 					<control type="radiobutton" id="309">
                         <include>SkinSettingsButtonDefaults</include>
-						<label>90945</label>
+						<label>31609</label>
 						<onclick>Skin.ToggleSetting(Enable.HighlightFocused)</onclick>
 						<selected>Skin.HasSetting(Enable.HighlightFocused)</selected>
 					</control>
@@ -574,7 +574,7 @@
                     
                     <control type="radiobutton" id="408">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90912</label>
+                        <label>31576</label>
                         <onclick>Skin.ToggleSetting(Enable.RemoteWeatherIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.RemoteWeatherIcons)</selected>
                     </control>
@@ -588,47 +588,47 @@
 					</control>
                     <control type="radiobutton" id="420">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90913</label>
+                        <label>31577</label>
                         <onclick>Skin.ToggleSetting(Enable.ZoomRadar)</onclick>
                         <selected>Skin.HasSetting(Enable.ZoomRadar)</selected>
                     </control>
                     <control type="radiobutton" id="422">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90933</label>
+                        <label>31597</label>
                         <onclick>Skin.ToggleSetting(Enable.ActorLocalImages)</onclick>
                         <selected>Skin.HasSetting(Enable.ActorLocalImages)</selected>
                     </control>
                     <control type="radiobutton" id="409">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90918</label>
+                        <label>31582</label>
                         <onclick>Skin.ToggleSetting(Enable.ActorRoleImages)</onclick>
                         <selected>Skin.HasSetting(Enable.ActorRoleImages)</selected>
                     </control>
                     <control type="button" id="410">
  						<visible>Skin.HasSetting(Enable.ActorRoleImages)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90919</label>
+                        <label>31583</label>
                         <label2>$INFO[Skin.String(CustomActorRoleImages.path)]</label2>
                         <onclick>Skin.SetPath(CustomActorRoleImages.path,special://profile)</onclick>
                     </control>
                     
                     <control type="radiobutton" id="411">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90920</label>
+                        <label>31584</label>
                         <onclick>Skin.ToggleSetting(Enable.ExternalMovieGenreIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.ExternalMovieGenreIcons)</selected>
                     </control>
                     <control type="button" id="412">
  						<visible>Skin.HasSetting(Enable.ExternalMovieGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90921</label>
+                        <label>31585</label>
                         <label2>$INFO[Skin.String(CustomMovieGenreIcons.path)]</label2>
                         <onclick>Skin.SetPath(CustomMovieGenreIcons.path,special://profile)</onclick>
                     </control>
                     <control type="button" id="413">
  						<visible>!Skin.HasSetting(Enable.ExternalMovieGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90922</label>
+                        <label>31586</label>
                         <label2>$INFO[Skin.String(MovieGenreIcons.name)]</label2>
                         <onclick>RunScript(script.image.resource.select,property=MovieGenreIcons&amp;type=resource.images.moviegenreicons)</onclick>
                     </control>
@@ -636,42 +636,42 @@
 
                     <control type="radiobutton" id="414">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90923</label>
+                        <label>31587</label>
                         <onclick>Skin.ToggleSetting(Enable.ExternalTVGenreIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.ExternalTVGenreIcons)</selected>
                     </control>
                     <control type="button" id="415">
  						<visible>Skin.HasSetting(Enable.ExternalTVGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90924</label>
+                        <label>31588</label>
                         <label2>$INFO[Skin.String(CustomTVGenreIcons.path)]</label2>
                         <onclick>Skin.SetPath(CustomTVGenreIcons.path,special://profile)</onclick>
                     </control>
                     <control type="button" id="416">
  						<visible>!Skin.HasSetting(Enable.ExternalTVGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90925</label>
+                        <label>31589</label>
                         <label2>$INFO[Skin.String(TVGenreIcons.name)]</label2>
                         <onclick>RunScript(script.image.resource.select,property=TVGenreIcons&amp;type=resource.images.moviegenreicons)</onclick>
                     </control>
 
                     <control type="radiobutton" id="417">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90926</label>
+                        <label>31590</label>
                         <onclick>Skin.ToggleSetting(Enable.ExternalMusicGenreIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.ExternalMusicGenreIcons)</selected>
                     </control>
                     <control type="button" id="418">
  						<visible>Skin.HasSetting(Enable.ExternalMusicGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90927</label>
+                        <label>31591</label>
                         <label2>$INFO[Skin.String(CustomMusicGenreIcons.path)]</label2>
                         <onclick>Skin.SetPath(CustomMusicGenreIcons.path,special://profile)</onclick>
                     </control>
                     <control type="button" id="419">
  						<visible>!Skin.HasSetting(Enable.ExternalMusicGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90928</label>
+                        <label>31592</label>
                         <label2>$INFO[Skin.String(MusicGenreIcons.name)]</label2>
                         <onclick>RunScript(script.image.resource.select,property=MusicGenreIcons&amp;type=resource.images.musicgenreicons)</onclick>
                     </control>

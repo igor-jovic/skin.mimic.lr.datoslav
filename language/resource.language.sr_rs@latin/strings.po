@@ -15,26 +15,26 @@ msgctxt "#31314"
 msgid "Recent"
 msgstr "Nedavno dodato"
 
-msgctxt "#90957"
+msgctxt "#31621"
 msgid "Rating"
 msgstr "Ocena"
 
-msgctxt "#90961"
+msgctxt "#31625"
 msgid "Go back"
 msgstr "Povratak nazad"
 
-msgctxt "#90962"
+msgctxt "#31626"
 msgid "View options"
 msgstr "Opcije prikaza"
 
-msgctxt "#90963"
+msgctxt "#31627"
 msgid "All movies"
 msgstr "Svi filmovi"
 
-msgctxt "#90964"
+msgctxt "#31628"
 msgid "Unfinished"
 msgstr "Nezavršeni"
 
-msgctxt "#90965"
+msgctxt "#31629"
 msgid "Unfinished (TV shows)"
 msgstr "Nezavršene"
