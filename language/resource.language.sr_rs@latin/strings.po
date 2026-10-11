@@ -38,3 +38,31 @@ msgstr "Nezavršeni"
 msgctxt "#31629"
 msgid "Unfinished (TV shows)"
 msgstr "Nezavršene"
+
+msgctxt "#31630"
+msgid "Partially watched"
+msgstr "Delimično pogledano"
+
+msgctxt "#31631"
+msgid "Play movie"
+msgstr "Pusti film"
+
+msgctxt "#31632"
+msgid "Play from the beginning"
+msgstr "Pusti od početka"
+
+msgctxt "#31633"
+msgid "Resume where we stopped"
+msgstr "Nastavi gde smo stali"
+
+msgctxt "#31634"
+msgid "Watch trailer"
+msgstr "Pogledaj najavu"
+
+msgctxt "#31635"
+msgid "More about this movie..."
+msgstr "Više o ovom filmu..."
+
+msgctxt "#31636"
+msgid "This movie has no trailer"
+msgstr "Film nema najavu"
