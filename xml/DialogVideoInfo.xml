@@ -1135,21 +1135,21 @@
 			</control>
 			<control type="image">
 				<left>410</left>
-				<top>190</top>
+				<top>140</top>
 				<width>1100</width>
-				<height>700</height>
+				<height>800</height>
 				<texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
 			</control>
 			<control type="image">
 				<left>420</left>
-				<top>200</top>
+				<top>150</top>
 				<width>1080</width>
-				<height>680</height>
+				<height>780</height>
 				<texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
 			</control>
 			<control type="label">
 				<left>460</left>
-				<top>230</top>
+				<top>175</top>
 				<width>1000</width>
 				<height>60</height>
 				<align>center</align>
@@ -1159,11 +1159,12 @@
 				<textcolor>TitleTextColor</textcolor>
 				<scroll>true</scroll>
 			</control>
+			<!-- each row is a group so the focus frame can sit inside its button -->
 			<control type="grouplist" id="9500">
 				<left>510</left>
-				<top>330</top>
+				<top>270</top>
 				<width>900</width>
-				<height>520</height>
+				<height>620</height>
 				<itemgap>20</itemgap>
 				<orientation>vertical</orientation>
 				<align>center</align>
@@ -1171,65 +1172,121 @@
 				<onright>9500</onright>
 				<onup>9500</onup>
 				<ondown>9500</ondown>
-				<control type="button" id="9501">
+				<control type="group">
 					<width>900</width>
-					<height>100</height>
-					<align>center</align>
-					<font>font35_title</font>
-					<label>31631</label>
-					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<height>130</height>
 					<visible>!ListItem.IsResumable</visible>
-					<onclick>SendClick(8)</onclick>
+					<control type="button" id="9501">
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<font>font35_title</font>
+						<label>31631</label>
+						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+						<onclick>SendClick(8)</onclick>
+						<!-- explicit moves: the grouplist does not step over the grey row -->
+						<onup>9501</onup>
+						<ondown condition="!String.IsEmpty(ListItem.Trailer)">9504</ondown>
+						<ondown condition="String.IsEmpty(ListItem.Trailer)">9505</ondown>
+					</control>
+					<include content="FilmPopupFocusFrame">
+						<param name="id" value="9501" />
+					</include>
 				</control>
-				<control type="button" id="9502">
+				<control type="group">
 					<width>900</width>
-					<height>100</height>
-					<align>center</align>
-					<font>font35_title</font>
-					<label>31632</label>
-					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<height>130</height>
 					<visible>ListItem.IsResumable</visible>
-					<onclick>SendClick(8)</onclick>
+					<control type="button" id="9502">
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<font>font35_title</font>
+						<label>31632</label>
+						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+						<onclick>SendClick(8)</onclick>
+						<onup>9502</onup>
+						<ondown>9503</ondown>
+					</control>
+					<include content="FilmPopupFocusFrame">
+						<param name="id" value="9502" />
+					</include>
 				</control>
-				<control type="button" id="9503">
+				<control type="group">
 					<width>900</width>
-					<height>100</height>
-					<align>center</align>
-					<font>font35_title</font>
-					<label>31633</label>
-					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<height>130</height>
 					<visible>ListItem.IsResumable</visible>
-					<onclick>SendClick(9)</onclick>
+					<control type="button" id="9503">
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<font>font35_title</font>
+						<label>31633</label>
+						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+						<onclick>SendClick(9)</onclick>
+						<onup>9502</onup>
+						<ondown condition="!String.IsEmpty(ListItem.Trailer)">9504</ondown>
+						<ondown condition="String.IsEmpty(ListItem.Trailer)">9505</ondown>
+					</control>
+					<include content="FilmPopupFocusFrame">
+						<param name="id" value="9503" />
+					</include>
 				</control>
-				<control type="button" id="9506">
+				<control type="group">
 					<width>900</width>
-					<height>100</height>
-					<align>center</align>
-					<font>font35_title</font>
-					<label>31636</label>
-					<texturenofocus colordiffuse="FF4D4D4D" border="5">listselect_fo.png</texturenofocus>
-					<visible>String.IsEmpty(ListItem.Trailer)</visible>
-					<enable>false</enable>
-				</control>
-				<control type="button" id="9504">
-					<width>900</width>
-					<height>100</height>
-					<align>center</align>
-					<font>font35_title</font>
-					<label>31634</label>
-					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+					<height>130</height>
 					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
-					<onclick>SendClick(11)</onclick>
+					<control type="button" id="9504">
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<font>font35_title</font>
+						<label>31634</label>
+						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+						<onclick>SendClick(11)</onclick>
+						<onup condition="ListItem.IsResumable">9503</onup>
+						<onup condition="!ListItem.IsResumable">9501</onup>
+						<ondown>9505</ondown>
+					</control>
+					<include content="FilmPopupFocusFrame">
+						<param name="id" value="9504" />
+					</include>
 				</control>
-				<control type="button" id="9505">
+				<control type="group">
 					<width>900</width>
-					<height>100</height>
-					<align>center</align>
-					<font>font35_title</font>
-					<label>31635</label>
-					<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
-					<onclick>SetProperty(datoslav.details,1,movieinformation)</onclick>
-					<onclick>SetFocus(8)</onclick>
+					<height>130</height>
+					<visible>String.IsEmpty(ListItem.Trailer)</visible>
+					<control type="button" id="9506">
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<font>font35_title</font>
+						<label>31636</label>
+						<texturenofocus colordiffuse="FF4D4D4D" border="5">listselect_fo.png</texturenofocus>
+						<disabledcolor>FFFFFFFF</disabledcolor>
+						<enable>false</enable>
+					</control>
+				</control>
+				<control type="group">
+					<width>900</width>
+					<height>130</height>
+					<control type="button" id="9505">
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<font>font35_title</font>
+						<label>31635</label>
+						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+						<onclick>SetProperty(datoslav.details,1,movieinformation)</onclick>
+						<onclick>SetFocus(8)</onclick>
+						<onup condition="!String.IsEmpty(ListItem.Trailer)">9504</onup>
+						<onup condition="String.IsEmpty(ListItem.Trailer) + ListItem.IsResumable">9503</onup>
+						<onup condition="String.IsEmpty(ListItem.Trailer) + !ListItem.IsResumable">9501</onup>
+						<ondown>9505</ondown>
+					</control>
+					<include content="FilmPopupFocusFrame">
+						<param name="id" value="9505" />
+					</include>
 				</control>
 			</control>
 		</control>
