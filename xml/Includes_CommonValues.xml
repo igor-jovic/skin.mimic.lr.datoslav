@@ -31,14 +31,16 @@
         <font>font13</font>
         <radioposx>340</radioposx>
     </include>
-    <!-- datoslav: thick white frame drawn inside a film pop-up button while it has focus -->
-    <include name="FilmPopupFocusFrame">
+    <!-- datoslav: what marks the selected film pop-up button: a thick white frame inside it and a pointer either side -->
+    <include name="FilmPopupFocusMarks">
         <control type="group">
             <visible>Control.HasFocus($PARAM[id])</visible>
-            <control type="image"><width>900</width><height>10</height><texture>white.png</texture></control>
-            <control type="image"><top>120</top><width>900</width><height>10</height><texture>white.png</texture></control>
-            <control type="image"><width>10</width><height>130</height><texture>white.png</texture></control>
-            <control type="image"><left>890</left><width>10</width><height>130</height><texture>white.png</texture></control>
+            <control type="image"><left>100</left><width>900</width><height>10</height><texture>white.png</texture></control>
+            <control type="image"><left>100</left><top>120</top><width>900</width><height>10</height><texture>white.png</texture></control>
+            <control type="image"><left>100</left><width>10</width><height>130</height><texture>white.png</texture></control>
+            <control type="image"><left>990</left><width>10</width><height>130</height><texture>white.png</texture></control>
+            <control type="image"><left>30</left><top>35</top><width>50</width><height>60</height><texture>datoslav/pointer_right.png</texture></control>
+            <control type="image"><left>1020</left><top>35</top><width>50</width><height>60</height><texture flipx="true">datoslav/pointer_right.png</texture></control>
         </control>
     </include>
     <include name="ButtonInfoDialogsCommonValues">

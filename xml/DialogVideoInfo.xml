@@ -1159,11 +1159,12 @@
 				<textcolor>TitleTextColor</textcolor>
 				<scroll>true</scroll>
 			</control>
-			<!-- each row is a group so the focus frame can sit inside its button -->
+			<!-- each row is a group: the button (its own text hidden), the text drawn over it so it can turn bold with
+			     focus, and the focus marks. Up and down moves are explicit: the group list does not step over the grey row -->
 			<control type="grouplist" id="9500">
-				<left>510</left>
+				<left>410</left>
 				<top>270</top>
-				<width>900</width>
+				<width>1100</width>
 				<height>620</height>
 				<itemgap>20</itemgap>
 				<orientation>vertical</orientation>
@@ -1173,109 +1174,229 @@
 				<onup>9500</onup>
 				<ondown>9500</ondown>
 				<control type="group">
-					<width>900</width>
+					<width>1100</width>
 					<height>130</height>
 					<visible>!ListItem.IsResumable</visible>
 					<control type="button" id="9501">
+						<left>100</left>
 						<width>900</width>
 						<height>130</height>
-						<align>center</align>
 						<font>font35_title</font>
 						<label>31631</label>
+						<textcolor>00FFFFFF</textcolor>
+						<focusedcolor>00FFFFFF</focusedcolor>
+						<disabledcolor>00FFFFFF</disabledcolor>
+						<shadowcolor>00000000</shadowcolor>
 						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
 						<onclick>SendClick(8)</onclick>
-						<!-- explicit moves: the grouplist does not step over the grey row -->
 						<onup>9501</onup>
 						<ondown condition="!String.IsEmpty(ListItem.Trailer)">9504</ondown>
 						<ondown condition="String.IsEmpty(ListItem.Trailer)">9505</ondown>
 					</control>
-					<include content="FilmPopupFocusFrame">
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>$LOCALIZE[31631]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>!Control.HasFocus(9501)</visible>
+					</control>
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>[B]$LOCALIZE[31631][/B]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>Control.HasFocus(9501)</visible>
+					</control>
+					<include content="FilmPopupFocusMarks">
 						<param name="id" value="9501" />
 					</include>
 				</control>
 				<control type="group">
-					<width>900</width>
+					<width>1100</width>
 					<height>130</height>
 					<visible>ListItem.IsResumable</visible>
 					<control type="button" id="9502">
+						<left>100</left>
 						<width>900</width>
 						<height>130</height>
-						<align>center</align>
 						<font>font35_title</font>
 						<label>31632</label>
+						<textcolor>00FFFFFF</textcolor>
+						<focusedcolor>00FFFFFF</focusedcolor>
+						<disabledcolor>00FFFFFF</disabledcolor>
+						<shadowcolor>00000000</shadowcolor>
 						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
 						<onclick>SendClick(8)</onclick>
 						<onup>9502</onup>
 						<ondown>9503</ondown>
 					</control>
-					<include content="FilmPopupFocusFrame">
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>$LOCALIZE[31632]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>!Control.HasFocus(9502)</visible>
+					</control>
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>[B]$LOCALIZE[31632][/B]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>Control.HasFocus(9502)</visible>
+					</control>
+					<include content="FilmPopupFocusMarks">
 						<param name="id" value="9502" />
 					</include>
 				</control>
 				<control type="group">
-					<width>900</width>
+					<width>1100</width>
 					<height>130</height>
 					<visible>ListItem.IsResumable</visible>
 					<control type="button" id="9503">
+						<left>100</left>
 						<width>900</width>
 						<height>130</height>
-						<align>center</align>
 						<font>font35_title</font>
 						<label>31633</label>
+						<textcolor>00FFFFFF</textcolor>
+						<focusedcolor>00FFFFFF</focusedcolor>
+						<disabledcolor>00FFFFFF</disabledcolor>
+						<shadowcolor>00000000</shadowcolor>
 						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
 						<onclick>SendClick(9)</onclick>
 						<onup>9502</onup>
 						<ondown condition="!String.IsEmpty(ListItem.Trailer)">9504</ondown>
 						<ondown condition="String.IsEmpty(ListItem.Trailer)">9505</ondown>
 					</control>
-					<include content="FilmPopupFocusFrame">
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>$LOCALIZE[31633]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>!Control.HasFocus(9503)</visible>
+					</control>
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>[B]$LOCALIZE[31633][/B]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>Control.HasFocus(9503)</visible>
+					</control>
+					<include content="FilmPopupFocusMarks">
 						<param name="id" value="9503" />
 					</include>
 				</control>
 				<control type="group">
-					<width>900</width>
+					<width>1100</width>
 					<height>130</height>
 					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 					<control type="button" id="9504">
+						<left>100</left>
 						<width>900</width>
 						<height>130</height>
-						<align>center</align>
 						<font>font35_title</font>
 						<label>31634</label>
+						<textcolor>00FFFFFF</textcolor>
+						<focusedcolor>00FFFFFF</focusedcolor>
+						<disabledcolor>00FFFFFF</disabledcolor>
+						<shadowcolor>00000000</shadowcolor>
 						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
 						<onclick>SendClick(11)</onclick>
 						<onup condition="ListItem.IsResumable">9503</onup>
 						<onup condition="!ListItem.IsResumable">9501</onup>
 						<ondown>9505</ondown>
 					</control>
-					<include content="FilmPopupFocusFrame">
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>$LOCALIZE[31634]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>!Control.HasFocus(9504)</visible>
+					</control>
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>[B]$LOCALIZE[31634][/B]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>Control.HasFocus(9504)</visible>
+					</control>
+					<include content="FilmPopupFocusMarks">
 						<param name="id" value="9504" />
 					</include>
 				</control>
 				<control type="group">
-					<width>900</width>
+					<width>1100</width>
 					<height>130</height>
 					<visible>String.IsEmpty(ListItem.Trailer)</visible>
 					<control type="button" id="9506">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<font>font35_title</font>
+						<label>31636</label>
+						<textcolor>00FFFFFF</textcolor>
+						<focusedcolor>00FFFFFF</focusedcolor>
+						<disabledcolor>00FFFFFF</disabledcolor>
+						<shadowcolor>00000000</shadowcolor>
+						<texturenofocus colordiffuse="FF4D4D4D" border="5">listselect_fo.png</texturenofocus>
+						<enable>false</enable>
+					</control>
+					<control type="label">
+						<left>100</left>
 						<width>900</width>
 						<height>130</height>
 						<align>center</align>
+						<aligny>center</aligny>
 						<font>font35_title</font>
-						<label>31636</label>
-						<texturenofocus colordiffuse="FF4D4D4D" border="5">listselect_fo.png</texturenofocus>
-						<disabledcolor>FFFFFFFF</disabledcolor>
-						<enable>false</enable>
+						<label>$LOCALIZE[31636]</label>
+						<textcolor>FFFFFFFF</textcolor>
 					</control>
 				</control>
 				<control type="group">
-					<width>900</width>
+					<width>1100</width>
 					<height>130</height>
 					<control type="button" id="9505">
+						<left>100</left>
 						<width>900</width>
 						<height>130</height>
-						<align>center</align>
 						<font>font35_title</font>
 						<label>31635</label>
+						<textcolor>00FFFFFF</textcolor>
+						<focusedcolor>00FFFFFF</focusedcolor>
+						<disabledcolor>00FFFFFF</disabledcolor>
+						<shadowcolor>00000000</shadowcolor>
 						<texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
 						<onclick>SetProperty(datoslav.details,1,movieinformation)</onclick>
 						<onclick>SetFocus(8)</onclick>
@@ -1284,7 +1405,29 @@
 						<onup condition="String.IsEmpty(ListItem.Trailer) + !ListItem.IsResumable">9501</onup>
 						<ondown>9505</ondown>
 					</control>
-					<include content="FilmPopupFocusFrame">
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>$LOCALIZE[31635]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>!Control.HasFocus(9505)</visible>
+					</control>
+					<control type="label">
+						<left>100</left>
+						<width>900</width>
+						<height>130</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font35_title</font>
+						<label>[B]$LOCALIZE[31635][/B]</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<visible>Control.HasFocus(9505)</visible>
+					</control>
+					<include content="FilmPopupFocusMarks">
 						<param name="id" value="9505" />
 					</include>
 				</control>
