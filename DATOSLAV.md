@@ -1,7 +1,7 @@
 # Mimic-LR (datoslav)
 
-A personal fork of [randallspicher/skin.mimic.lr](https://github.com/randallspicher/skin.mimic.lr) for the x96mini Kodi box
-(LibreELEC 12 / Kodi 21 Omega). The box's setup lives in the `x96mini` repo, `kodi/SETUP.md`.
+A personal fork of [randallspicher/skin.mimic.lr](https://github.com/randallspicher/skin.mimic.lr) for two Kodi boxes, one
+on Kodi 21 (Omega) and one on Kodi 22 (Piers). The boxes' own setup is recorded elsewhere, not in this repo.
 
 ## Branches
 - `datoslav` (default): our changes, based on upstream `Omega` (the Kodi 21 branch).
