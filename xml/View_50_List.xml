@@ -158,7 +158,7 @@
 					<aligny>center</aligny>
 					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
 					<texturenofocus />
-					<label>$LOCALIZE[90961]</label>
+					<label>$LOCALIZE[31625]</label>
 					<onclick>Back</onclick>
 					<onclick>SetFocus(50)</onclick>
 					<onleft>Back</onleft>
@@ -177,7 +177,7 @@
 					<aligny>center</aligny>
 					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
 					<texturenofocus />
-					<label>$LOCALIZE[90961]</label>
+					<label>$LOCALIZE[31625]</label>
 					<onclick>Back</onclick>
 					<onclick>SetFocus(50)</onclick>
 					<onleft>Back</onleft>
@@ -196,7 +196,7 @@
 					<aligny>center</aligny>
 					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
 					<texturenofocus />
-					<label>$LOCALIZE[90961]</label>
+					<label>$LOCALIZE[31625]</label>
 					<onclick>Back</onclick>
 					<onclick>SetFocus(50)</onclick>
 					<onleft>Back</onleft>

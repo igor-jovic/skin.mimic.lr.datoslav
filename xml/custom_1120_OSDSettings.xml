@@ -69,7 +69,7 @@
 			<control type="button" id="90203">
 				<description>Background Scaling</description>
 				<width>1074</width>
-				<label>90936</label>
+				<label>31600</label>
 				<label2>$VAR[VizBackgroundAspectLabel]</label2>
 
 				<onclick condition="String.IsEmpty(Skin.String(musicvis.background_aspect))">
@@ -104,7 +104,7 @@
 			</control>
 			<control type="button" id="90206">
 				<width>1074</width>
-				<label>90914</label>
+				<label>31578</label>
 				<label2>$INFO[Skin.String(VisBackgroundMask)]</label2>
 				<onclick>Skin.SetString(VisBackgroundMask)</onclick>
 			</control>
@@ -112,7 +112,7 @@
 			<control type="button" id="90207">
 				<description>View</description>
 				<width>1074</width>
-				<label>90915</label>
+				<label>31579</label>
 				<label2>$INFO[Skin.String(musicvis.view)]</label2>
 				<onclick condition="String.IsEmpty(Skin.String(musicvis.view)) | String.IsEqual(Skin.String(musicvis.view),StandardView)">Skin.SetString(musicvis.view,CoverView)</onclick>
 				<onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView)">Skin.SetString(musicvis.view,CoverView2)</onclick>

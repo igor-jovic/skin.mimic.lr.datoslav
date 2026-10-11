@@ -9,7 +9,7 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>575</defaultID>
-		<label>90964</label>
+		<label>31628</label>
 		<label2>Custom item</label2>
 		<icon>DefaultFolder.png</icon>
 		<thumb/>
@@ -34,7 +34,7 @@
 	<shortcut>
 		<!-- datoslav: the full film list, sorted by title -->
 		<defaultID>allmovies</defaultID>
-		<label>90963</label>
+		<label>31627</label>
 		<label2>Custom item</label2>
 		<icon>DefaultMovies.png</icon>
 		<thumb />

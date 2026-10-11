@@ -283,7 +283,7 @@
 			<enable>!Skin.HasSetting(Enable.WideList)</enable>
 		</control>
 		<control type="radiobutton" id="1900">
-			<label>90945</label>
+			<label>31609</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Enable.HighlightFocused)</onclick>
 			<selected>Skin.HasSetting(Enable.HighlightFocused)</selected>
@@ -1387,7 +1387,7 @@
 			</item>
 			<item id="7">
 				<label>$LOCALIZE[13000]</label>
-				<label2>$LOCALIZE[90929] • $LOCALIZE[90930] • $LOCALIZE[14094] • $LOCALIZE[14095]</label2>
+				<label2>$LOCALIZE[31593] • $LOCALIZE[31594] • $LOCALIZE[14094] • $LOCALIZE[14095]</label2>
 				<icon>DefaultProgram.png</icon>
 				<onclick>ActivateWindow(SystemSettings)</onclick>
 			</item>

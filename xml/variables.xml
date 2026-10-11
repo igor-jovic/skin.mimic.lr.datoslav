@@ -87,11 +87,11 @@
 		<value>scale</value>
 	</variable>
 	<variable name="VizBackgroundAspectLabel">
-		<value condition="String.IsEqual(Skin.String(musicvis.background_aspect),keep)">$LOCALIZE[90934]</value>
+		<value condition="String.IsEqual(Skin.String(musicvis.background_aspect),keep)">$LOCALIZE[31598]</value>
 		<!-- <value condition="String.IsEqual(Skin.String(musicvis.background_aspect),stretch)">stretch</value> -->
-		<value condition="String.IsEqual(Skin.String(musicvis.background_aspect),scale)">$LOCALIZE[90935]</value>
+		<value condition="String.IsEqual(Skin.String(musicvis.background_aspect),scale)">$LOCALIZE[31599]</value>
 		<!-- <value condition="String.IsEqual(Skin.String(musicvis.background_aspect),center)">center</value> -->
-		<value>$LOCALIZE[90935]</value>
+		<value>$LOCALIZE[31599]</value>
 	</variable>
 
 
@@ -1122,6 +1122,10 @@
 		<value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,album)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Label] $LOCALIZE[558]</value>
 		<value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,song)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Title]</value>
 	</variable>
+	<!-- datoslav: Kodi 22 ignores a condition on <content> and offers to install the add-on, so the path is empty without it -->
+	<variable name="VideoInfoSimilarPath">
+		<value condition="System.HasAddon(script.extendedinfo)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+	</variable>
 	<variable name="VideoInfoYoutubePath">
 		<value condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,movie)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Title] $LOCALIZE[20338] $LOCALIZE[20410]</value>
 		<value condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,tvshow)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Title] $LOCALIZE[20364]</value>
@@ -1231,7 +1235,7 @@
 	</variable>
 	<!-- datoslav: the ".." parent item is labelled "Povratak nazad" -->
 	<variable name="ListItemLabel">
-		<value condition="ListItem.IsParentFolder">$LOCALIZE[90961]</value>
+		<value condition="ListItem.IsParentFolder">$LOCALIZE[31625]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="CommonBackgroundOverlay">
@@ -1271,30 +1275,30 @@
 	</variable>
 	<variable name="LayoutLabelVar">
 		<value
-			condition="Control.IsVisible(900) + [Container.Content(Episodes) + Skin.HasSetting(ArcadeEpisodesReversed) | Container.Content(Movies) + Skin.HasSetting(ArcadeMoviesReversed) | Container.Content(TVShows) + Skin.HasSetting(ArcadeTVShowsReversed) | $EXP[GameSupport] + Skin.HasSetting(Arcade.Games.Reversed)]">$LOCALIZE[90002]</value>
-		<value condition="Control.IsVisible(900) + [$EXP[GameSupport] + Skin.HasSetting(Arcade.Games.Adaptive)]">$LOCALIZE[90003]</value>
+			condition="Control.IsVisible(900) + [Container.Content(Episodes) + Skin.HasSetting(ArcadeEpisodesReversed) | Container.Content(Movies) + Skin.HasSetting(ArcadeMoviesReversed) | Container.Content(TVShows) + Skin.HasSetting(ArcadeTVShowsReversed) | $EXP[GameSupport] + Skin.HasSetting(Arcade.Games.Reversed)]">$LOCALIZE[31563]</value>
+		<value condition="Control.IsVisible(900) + [$EXP[GameSupport] + Skin.HasSetting(Arcade.Games.Adaptive)]">$LOCALIZE[31564]</value>
 		<value
-			condition="Control.IsVisible(900) + [Container.Content(Episodes) + Skin.HasSetting(ArcadeEpisodesBigInfo) | Container.Content(Movies) + Skin.HasSetting(ArcadeMoviesBigInfo) | Container.Content(TVShows) + Skin.HasSetting(ArcadeTVShowsBigInfo) | $EXP[GameSupport] + Skin.HasSetting(Arcade.Games.BigInfo)]">$LOCALIZE[90004]</value>
+			condition="Control.IsVisible(900) + [Container.Content(Episodes) + Skin.HasSetting(ArcadeEpisodesBigInfo) | Container.Content(Movies) + Skin.HasSetting(ArcadeMoviesBigInfo) | Container.Content(TVShows) + Skin.HasSetting(ArcadeTVShowsBigInfo) | $EXP[GameSupport] + Skin.HasSetting(Arcade.Games.BigInfo)]">$LOCALIZE[31565]</value>
 		<value
-			condition="Control.IsVisible(900) + [Container.Content(Episodes) + Skin.HasSetting(ArcadeEpisodesMini) | Container.Content(Movies) + Skin.HasSetting(ArcadeMoviesMini) | Container.Content(TVShows) + Skin.HasSetting(ArcadeTVShowsMini) | $EXP[GameSupport] + Skin.HasSetting(Arcade.Games.Mini)]">$LOCALIZE[90005]</value>
+			condition="Control.IsVisible(900) + [Container.Content(Episodes) + Skin.HasSetting(ArcadeEpisodesMini) | Container.Content(Movies) + Skin.HasSetting(ArcadeMoviesMini) | Container.Content(TVShows) + Skin.HasSetting(ArcadeTVShowsMini) | $EXP[GameSupport] + Skin.HasSetting(Arcade.Games.Mini)]">$LOCALIZE[31566]</value>
 		<value
-			condition="Control.IsVisible(903) + [$EXP[GameSupport] + Skin.HasSetting(CoverflowGamesBasic) | Container.Content(Movies) + Skin.HasSetting(CoverflowMoviesBasic) | Container.Content(TVShows) + Skin.HasSetting(CoverflowTVShowsBasic)]">$LOCALIZE[90301]</value>
-		<value condition="Control.IsVisible(909) + Skin.HasSetting(SaunaBoxshot)">$LOCALIZE[90902]</value>
-		<value condition="Control.IsVisible(909) + Skin.HasSetting(SaunaDouble)">$LOCALIZE[90903]</value>
+			condition="Control.IsVisible(903) + [$EXP[GameSupport] + Skin.HasSetting(CoverflowGamesBasic) | Container.Content(Movies) + Skin.HasSetting(CoverflowMoviesBasic) | Container.Content(TVShows) + Skin.HasSetting(CoverflowTVShowsBasic)]">$LOCALIZE[31569]</value>
+		<value condition="Control.IsVisible(909) + Skin.HasSetting(SaunaBoxshot)">$LOCALIZE[31572]</value>
+		<value condition="Control.IsVisible(909) + Skin.HasSetting(SaunaDouble)">$LOCALIZE[31573]</value>
 		<value>Default</value>
 	</variable>
 	<variable name="ImageLabelVar">
 		<value
-			condition="Control.IsVisible(900) + Skin.HasSetting(ArcadeSnaps) | Control.IsVisible(902) + Skin.HasSetting(KeibertzPlusSnaps) | Control.IsVisible(909) + Skin.HasSetting(SaunaSnaps)">$LOCALIZE[89001]</value>
+			condition="Control.IsVisible(900) + Skin.HasSetting(ArcadeSnaps) | Control.IsVisible(902) + Skin.HasSetting(KeibertzPlusSnaps) | Control.IsVisible(909) + Skin.HasSetting(SaunaSnaps)">$LOCALIZE[31557]</value>
 		<value
-			condition="Control.IsVisible(900) + Skin.HasSetting(ArcadeTitles) | Control.IsVisible(902) + Skin.HasSetting(KeibertzPlusTitles) | Control.IsVisible(909) + Skin.HasSetting(SaunaTitles)">$LOCALIZE[89002]</value>
+			condition="Control.IsVisible(900) + Skin.HasSetting(ArcadeTitles) | Control.IsVisible(902) + Skin.HasSetting(KeibertzPlusTitles) | Control.IsVisible(909) + Skin.HasSetting(SaunaTitles)">$LOCALIZE[31558]</value>
 		<value
-			condition="Control.IsVisible(900) + [Container.Content(Movies) + Skin.HasSetting(Movies_900_Landscape) | Container.Content(TVShows) + Skin.HasSetting(TVShows_900_Landscape)] | Control.IsVisible(902) + [Container.Content(Movies) + Skin.HasSetting(Movies_902_Landscape) | Container.Content(TVShows) + Skin.HasSetting(TVShows_902_Landscape)]">$LOCALIZE[89003]</value>
+			condition="Control.IsVisible(900) + [Container.Content(Movies) + Skin.HasSetting(Movies_900_Landscape) | Container.Content(TVShows) + Skin.HasSetting(TVShows_900_Landscape)] | Control.IsVisible(902) + [Container.Content(Movies) + Skin.HasSetting(Movies_902_Landscape) | Container.Content(TVShows) + Skin.HasSetting(TVShows_902_Landscape)]">$LOCALIZE[31559]</value>
 		<value>$LOCALIZE[20445]</value>
 	</variable>
 	<variable name="2ndImageLabelVar">
-		<value condition="Control.IsVisible(909) + Skin.HasSetting(Sauna2ndSnaps)">$LOCALIZE[89001]</value>
-		<value condition="Control.IsVisible(909) + Skin.HasSetting(Sauna2ndTitles)">$LOCALIZE[89002]</value>
+		<value condition="Control.IsVisible(909) + Skin.HasSetting(Sauna2ndSnaps)">$LOCALIZE[31557]</value>
+		<value condition="Control.IsVisible(909) + Skin.HasSetting(Sauna2ndTitles)">$LOCALIZE[31558]</value>
 		<value>$LOCALIZE[20445]</value>
 	</variable>
 	<variable name="MovementLabelVar">
@@ -1323,9 +1327,9 @@
 		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31079])">Shift</value>
 		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[20445])">Fanart</value>
 		<value condition="String.IsEqual(Container.Viewmode,Arcade)">Arcade</value>
-		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[90200])">KeibertzPlus</value>
-		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[90300])">Covereflow</value>
-		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[90900])">Sauna</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31567])">KeibertzPlus</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31568])">Covereflow</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31570])">Sauna</value>
 		<value>List</value>
 	</variable>
 

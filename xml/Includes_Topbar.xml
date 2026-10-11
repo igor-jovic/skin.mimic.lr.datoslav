@@ -136,7 +136,7 @@
 					<focusedcolor>TitleTextColor</focusedcolor>
 					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
 					<texturenofocus />
-					<label>$LOCALIZE[90962]</label>
+					<label>$LOCALIZE[31626]</label>
 					<onclick>SetProperty(MediaMenu,True,home)</onclick>
 					<onclick>SetFocus(9050)</onclick>
 					<ondown condition="Control.IsVisible(50)">50</ondown>
