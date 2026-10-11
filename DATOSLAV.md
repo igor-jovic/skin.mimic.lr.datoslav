@@ -55,7 +55,13 @@ every view. A skin cannot change what Enter does in one view.
   Button 9 is the fork's addition; while it exists Kodi makes 8 always start from the beginning instead of
   asking. That also holds for episodes.
 - "Details" sets the window property `datoslav.details` on `movieinformation`; it is cleared when the page closes.
-- Each row is a group: the button with its own text made invisible, the text drawn over it (regular, or bold
-  with focus, which a button cannot do itself) and the include `FilmPopupFocusMarks` (white frame and pointers).
-- Up and down moves are written on every button. Left to the group list, focus would not step over the grey row.
-
+- Back on the details page returns to the pop-up on its last row (include `FilmDetailsBack`, on the page's lists,
+  scrollbars and button group). It needs both a move to that row and `allowhiddenfocus` on the pop-up: with
+  only actions, Kodi runs them and closes the page anyway, and a hidden group refuses focus.
+- The pop-up always opens on its first row; the page's `onload` focuses it by id.
+- Each selectable row is a group holding the include `FilmPopupRow`: the button with its own text made
+  invisible, the text drawn over it (regular, or bold with focus, which a button cannot do itself) and
+  `FilmPopupFocusMarks` (white frame and pointers). The button's actions are written inside the include tag and
+  land at `<nested />`, which Kodi fills only when it is a direct child of a top-level control of the include.
+- Up and down moves are written on every button. Left to the group list, focus would not step over the grey
+  row, which is a picture and text, not a button.

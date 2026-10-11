@@ -43,6 +43,55 @@
             <control type="image"><left>1020</left><top>35</top><width>50</width><height>60</height><texture flipx="true">datoslav/pointer_right.png</texture></control>
         </control>
     </include>
+    <!-- datoslav: what goes inside one selectable row (a 1100 x 130 group) of the film pop-up. Params: id, label
+         (text number). What the button does and where Up and Down go is written inside the include tag and lands
+         at <nested />, which Kodi only fills when it is a direct child of a top-level control here -->
+    <include name="FilmPopupRow">
+        <control type="button" id="$PARAM[id]">
+            <left>100</left>
+            <width>900</width>
+            <height>130</height>
+            <font>font35_title</font>
+            <label>$PARAM[label]</label>
+            <textcolor>00FFFFFF</textcolor>
+            <focusedcolor>00FFFFFF</focusedcolor>
+            <shadowcolor>00000000</shadowcolor>
+            <texturenofocus colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texturenofocus>
+            <nested />
+        </control>
+        <include content="FilmPopupRowText">
+            <param name="label" value="$LOCALIZE[$PARAM[label]]" />
+            <param name="visible" value="!Control.HasFocus($PARAM[id])" />
+        </include>
+        <include content="FilmPopupRowText">
+            <param name="label" value="[B]$LOCALIZE[$PARAM[label]][/B]" />
+            <param name="visible" value="Control.HasFocus($PARAM[id])" />
+        </include>
+        <include content="FilmPopupFocusMarks">
+            <param name="id" value="$PARAM[id]" />
+        </include>
+    </include>
+    <!-- datoslav: a pop-up row's text, drawn over the button because a button cannot turn bold with focus -->
+    <include name="FilmPopupRowText">
+        <control type="label">
+            <left>100</left>
+            <width>900</width>
+            <height>130</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font35_title</font>
+            <label>$PARAM[label]</label>
+            <textcolor>FFFFFFFF</textcolor>
+            <visible>$PARAM[visible]</visible>
+        </control>
+    </include>
+    <!-- datoslav: Back on a film's details page returns to the pop-up, on its last row. The second line is a
+         move to that row: without a control to move to, Kodi runs the first line and then closes the page anyway.
+         Goes on the lists and scrollbars, and on the button group, whose buttons inherit it -->
+    <include name="FilmDetailsBack">
+        <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details))">ClearProperty(datoslav.details,movieinformation)</onback>
+        <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details))">9505</onback>
+    </include>
     <include name="ButtonInfoDialogsCommonValues">
         <width>277</width>
         <align>center</align>
