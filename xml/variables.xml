@@ -1122,6 +1122,10 @@
 		<value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,album)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Label] $LOCALIZE[558]</value>
 		<value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,song)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Title]</value>
 	</variable>
+	<!-- datoslav: Kodi 22 ignores a condition on <content> and offers to install the add-on, so the path is empty without it -->
+	<variable name="VideoInfoSimilarPath">
+		<value condition="System.HasAddon(script.extendedinfo)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+	</variable>
 	<variable name="VideoInfoYoutubePath">
 		<value condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,movie)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Title] $LOCALIZE[20338] $LOCALIZE[20410]</value>
 		<value condition="System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBTYPE,tvshow)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Title] $LOCALIZE[20364]</value>
