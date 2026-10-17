@@ -1701,3 +1701,47 @@ msgstr ""
 msgctxt "#31636"
 msgid "This movie has no trailer"
 msgstr ""
+
+msgctxt "#31950"
+msgid "Seasons"
+msgstr ""
+
+msgctxt "#31951"
+msgid "Available"
+msgstr ""
+
+msgctxt "#31952"
+msgid "Requested"
+msgstr ""
+
+msgctxt "#31953"
+msgid "Accepted"
+msgstr ""
+
+msgctxt "#31954"
+msgid "Declined"
+msgstr ""
+
+msgctxt "#31955"
+msgid "unwatched"
+msgstr ""
+
+msgctxt "#31956"
+msgid "seasons"
+msgstr ""
+
+msgctxt "#31957"
+msgid "seasons (2-4)"
+msgstr ""
+
+msgctxt "#31958"
+msgid "episodes"
+msgstr ""
+
+msgctxt "#31959"
+msgid "episodes (2-4)"
+msgstr ""
+
+msgctxt "#31960"
+msgid "Other seasons"
+msgstr ""

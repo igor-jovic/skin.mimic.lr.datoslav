@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timers>
+	<!-- datoslav: on a show's details page whose "more like this" row loaded empty, focus moves to "Ostale sezone" -->
+	<timer>
+		<name>datoslav_show_empty_row</name>
+		<start reset="true">Window.IsActive(movieinformation) + String.StartsWith(Window(movieinformation).Property(datoslav.rowfor),tvshow-) + Control.HasFocus(350) + !Container(350).IsUpdating + Integer.IsEqual(Container(350).NumItems,0)</start>
+		<stop>true</stop>
+		<onstart>SetFocus(9601)</onstart>
+	</timer>
+</timers>

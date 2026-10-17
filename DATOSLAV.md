@@ -65,3 +65,26 @@ every view. A skin cannot change what Enter does in one view.
   land at `<nested />`, which Kodi fills only when it is a direct child of a top-level control of the include.
 - Up and down moves are written on every button. Left to the group list, focus would not step over the grey
   row, which is a picture and text, not a button.
+
+## Details page
+The details page (`DialogVideoInfo.xml`) is cut down to what you read before choosing what to watch next: info
+lines that fit one page, a description of about 4 lines that scrolls by itself, and a "more like this" row of
+suggested titles at the bottom. Playing, resuming and the trailer are in the film pop-up.
+
+- The info lines differ per type: a film shows year, length, rating, genre and director; a show its premiere,
+  rating, genre and a seasons line ("1 sezona · 8 epizoda · 8 neodgledano", with the Serbian plural from
+  `MltSeasonsWord` and `MltEpisodesWord` in `variables.xml`); an episode its premiere, length and rating.
+- The row (panel 350) is filled by the video add-on `plugin.video.videoteka`, whose item paths open its own
+  pop-up. Each item has the properties `badge` (`available`, `requested`, `accepted`, `declined` or empty, drawn
+  as a coloured strip) and `row.for`. The row is always visible, because Kodi does not fill a hidden list; an
+  empty one draws nothing.
+- Kodi keeps the previous title's items until the new list arrives. The page sets `datoslav.rowfor` on
+  `movieinformation` to `<type>-<dbid>` when it opens, and an item is drawn only when its `row.for` matches.
+- Focus starts on the row. "Više o ovom filmu..." in the film pop-up puts focus on the row, or on the invisible
+  button 9600 when the row is empty, so Back still returns to the pop-up.
+- A show's page has one button, "Ostale sezone" (9601), which opens the add-on's pop-up for the show itself.
+  Up from the row goes to it, down from it to the row. When the row loads empty, the timer in `Timers.xml`
+  moves focus to it.
+- The description gets the full height once the row has loaded empty (textbox 401 instead of 400).
+- Kodi's own buttons (grouplist 9000) are hidden, not removed: the film pop-up clicks 8, 9 and 11, and the
+  page's `onload` clicks 5.
