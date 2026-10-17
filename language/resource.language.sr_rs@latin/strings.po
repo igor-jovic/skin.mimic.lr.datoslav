@@ -110,3 +110,7 @@ msgstr "epizode"
 msgctxt "#31960"
 msgid "Other seasons"
 msgstr "Ostale sezone"
+
+msgctxt "#31961"
+msgid "Add new"
+msgstr "Dodaj novi"

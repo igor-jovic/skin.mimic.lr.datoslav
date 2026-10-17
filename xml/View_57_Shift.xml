@@ -6,6 +6,7 @@
             <include>Animation.Common</include>
             <animation effect="slide" time="300" tween="sine" easing="inout" start="0,0" end="0,-180" condition="[[Window.IsActive(videos) + Skin.HasSetting(Enable.ShiftPlot)] | [!Window.IsActive(videos) + Skin.HasSetting(Enable.ShiftDescription)]] + !Container.Content(files)">Conditional</animation>
             <control type="fixedlist" id="57">
+                <visible>!$EXP[isVideotekaList]</visible>
                 <include condition="Window.IsActive(videos)">Contents57VideoList</include>
                 <include condition="!Window.IsActive(videos)">Contents57AlbumList</include>
             </control>

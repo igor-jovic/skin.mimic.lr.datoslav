@@ -112,6 +112,7 @@
                 <animation effect="slide" end="260,0" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(509).Column,0)">Conditional</animation>
             </control>
             <control type="panel" id="509">
+                <visible>!$EXP[isVideotekaList]</visible>
                 <top>20</top>
                 <left>20</left>
                 <width>1880</width>

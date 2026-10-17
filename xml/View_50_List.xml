@@ -215,6 +215,7 @@
 					<texture diffuse="diffuse/list-icon.png">DefaultFolderBack.png</texture>
 				</control>
 				<control type="panel" id="50">
+					<visible>!$EXP[isVideotekaList]</visible>
 					<left>0</left>
 					<top>315</top>
 					<width>1740</width>

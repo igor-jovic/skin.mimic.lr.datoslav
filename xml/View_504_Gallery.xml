@@ -57,6 +57,7 @@
 			</control>
 			<!--container -->
 			<control type="wraplist" id="504">
+				<visible>!$EXP[isVideotekaList]</visible>
 				<viewtype label="31054">info</viewtype>
 				<left>-791</left>
 				<top>209</top>

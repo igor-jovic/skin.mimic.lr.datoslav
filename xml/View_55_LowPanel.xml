@@ -25,6 +25,7 @@
                 </control>
             </control>
             <control type="panel" id="55">
+                <visible>!$EXP[isVideotekaList]</visible>
                 <left>43</left>
                 <top>636</top>
                 <width>1834</width>

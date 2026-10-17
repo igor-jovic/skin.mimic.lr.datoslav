@@ -73,6 +73,7 @@
 				<effect type="zoom" center="auto" start="150" end="100" delay="200" time="400" tween="quadratic" easing="out" />
 			</animation>
 			<control type="wraplist" id="900">
+				<visible>!$EXP[isVideotekaList]</visible>
 				<left>0</left>
 				<top>580</top>
 				<width>4500</width>

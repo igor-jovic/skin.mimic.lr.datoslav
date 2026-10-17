@@ -40,6 +40,7 @@
 				<visible>Control.IsVisible(909)</visible>
 			</control>
 			<control type="panel" id="909">
+				<visible>!$EXP[isVideotekaList]</visible>
 				<left>45</left>
 				<top>615</top>
 				<width>1830</width>

@@ -30,6 +30,7 @@
 				<effect type="zoom" end="75" start="100" time="200" center="auto" tween="quadratic" easing="in" />
 			</animation>
 			<control type="list" id="903">
+				<visible>!$EXP[isVideotekaList]</visible>
 				<description>Coverflow</description>
 				<left>0</left>
 				<top>0</top>

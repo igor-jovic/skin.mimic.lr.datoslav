@@ -17,6 +17,7 @@
                     <texture background="true">$INFO[ListItem.Art(tvshow.clearlogo)]</texture>
                 </control>
                 <control type="fixedlist" id="502">
+                    <visible>!$EXP[isVideotekaList]</visible>
                     <left>60</left>
                     <top>180</top>
                     <width>1820</width>
