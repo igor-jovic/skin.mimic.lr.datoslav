@@ -23,4 +23,14 @@
 		<thumb/>
 		<action>ActivateWindow(Videos,videodb://tvshows/genres/,return)</action>
 	</shortcut>
+	<shortcut>
+		<!-- datoslav: videoteka's lists, to request what the library does not have -->
+		<defaultID>addnew</defaultID>
+		<label>31961</label>
+		<label2>Custom item</label2>
+		<icon>DefaultAddSource.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,plugin://plugin.video.videoteka/?action=browse&amp;type=tv,return)</action>
+		<visible>System.HasAddon(plugin.video.videoteka)</visible>
+	</shortcut>
 </shortcuts>

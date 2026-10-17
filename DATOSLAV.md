@@ -42,6 +42,20 @@ patch; if Enter on Filmovi stops opening its submenu, re-apply it.
 Nothing is customised through the menu editor on the box; a `mainmenu.DATA.xml` in
 `userdata/addon_data/script.skinshortcuts/` would override these.
 
+The Filmovi and TV serije submenus end with "Dodaj novi", which opens the lists of the video add-on
+`plugin.video.videoteka` (titles that can be requested). The entry is shown only when that add-on is installed.
+
+## The add-on's lists
+The film and show lists of `plugin.video.videoteka` open only in KeibertzPlus: every other view in
+`MyVideoNav.xml` has `<visible>!$EXP[isVideotekaList]</visible>` (Kodi requires all of a control's visible
+conditions), and the expression in `xml/includes.xml` is true only in that add-on's film and show lists. Kodi keeps
+a view per list address with no default for an add-on, so without this each list would open in the plain list
+view. The library is not affected. The add-on's choice of lists has no content type and stays in the list view.
+
+KeibertzPlus's poster layout draws the add-on's `badge` property as the same coloured strip as the "more like
+this" row (`BadgeStrips` in `Includes_CommonValues.xml`). Library items have no badge, so nothing changes
+there.
+
 The home screen shows no widgets (the cards beside the menu): the widget group is taken out of both home
 layouts in `xml/Includes_Home.xml`. Skin Shortcuts still attaches a widget to every row; nothing draws it.
 

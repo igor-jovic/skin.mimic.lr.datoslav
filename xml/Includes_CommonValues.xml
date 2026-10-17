@@ -135,26 +135,7 @@
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </control>
-                <include content="MoreLikeThisBadge">
-                    <param name="badge" value="available" />
-                    <param name="color" value="E62E7D32" />
-                    <param name="label" value="31951" />
-                </include>
-                <include content="MoreLikeThisBadge">
-                    <param name="badge" value="requested" />
-                    <param name="color" value="E61565C0" />
-                    <param name="label" value="31952" />
-                </include>
-                <include content="MoreLikeThisBadge">
-                    <param name="badge" value="accepted" />
-                    <param name="color" value="E600897B" />
-                    <param name="label" value="31953" />
-                </include>
-                <include content="MoreLikeThisBadge">
-                    <param name="badge" value="declined" />
-                    <param name="color" value="E6B71C1C" />
-                    <param name="label" value="31954" />
-                </include>
+                <include content="BadgeStrips" />
                 <control type="textbox">
                     <visible>!$PARAM[focused]</visible>
                     <top>246</top>
@@ -178,22 +159,77 @@
             </control>
         </definition>
     </include>
-    <!-- datoslav: the request status strip across the top of a "more like this" poster -->
-    <include name="MoreLikeThisBadge">
+    <!-- datoslav: the request status strip across the top of a poster: the "more like this" row's by default,
+         and the poster views' for the add-on's lists. Library items have no badge, so it never shows there. -->
+    <include name="BadgeStrips">
+        <param name="left" default="0" />
+        <param name="top" default="10" />
+        <param name="width" default="150" />
+        <param name="height" default="34" />
+        <param name="font" default="font10" />
+        <definition>
+            <control type="group">
+                <visible>!String.IsEmpty(ListItem.Property(badge))</visible>
+                <include content="BadgeStrip">
+                    <param name="badge" value="available" />
+                    <param name="color" value="E62E7D32" />
+                    <param name="label" value="31951" />
+                    <param name="top" value="$PARAM[top]" />
+                    <param name="left" value="$PARAM[left]" />
+                    <param name="width" value="$PARAM[width]" />
+                    <param name="height" value="$PARAM[height]" />
+                    <param name="font" value="$PARAM[font]" />
+                </include>
+                <include content="BadgeStrip">
+                    <param name="badge" value="requested" />
+                    <param name="color" value="E61565C0" />
+                    <param name="label" value="31952" />
+                    <param name="top" value="$PARAM[top]" />
+                    <param name="left" value="$PARAM[left]" />
+                    <param name="width" value="$PARAM[width]" />
+                    <param name="height" value="$PARAM[height]" />
+                    <param name="font" value="$PARAM[font]" />
+                </include>
+                <include content="BadgeStrip">
+                    <param name="badge" value="accepted" />
+                    <param name="color" value="E600897B" />
+                    <param name="label" value="31953" />
+                    <param name="top" value="$PARAM[top]" />
+                    <param name="left" value="$PARAM[left]" />
+                    <param name="width" value="$PARAM[width]" />
+                    <param name="height" value="$PARAM[height]" />
+                    <param name="font" value="$PARAM[font]" />
+                </include>
+                <include content="BadgeStrip">
+                    <param name="badge" value="declined" />
+                    <param name="color" value="E6B71C1C" />
+                    <param name="label" value="31954" />
+                    <param name="top" value="$PARAM[top]" />
+                    <param name="left" value="$PARAM[left]" />
+                    <param name="width" value="$PARAM[width]" />
+                    <param name="height" value="$PARAM[height]" />
+                    <param name="font" value="$PARAM[font]" />
+                </include>
+            </control>
+        </definition>
+    </include>
+    <include name="BadgeStrip">
         <definition>
             <control type="group">
                 <visible>String.IsEqual(ListItem.Property(badge),$PARAM[badge])</visible>
                 <control type="image">
-                    <top>10</top>
-                    <width>150</width>
-                    <height>34</height>
+                    <left>$PARAM[left]</left>
+                    <top>$PARAM[top]</top>
+                    <width>$PARAM[width]</width>
+                    <height>$PARAM[height]</height>
                     <texture colordiffuse="$PARAM[color]">white.png</texture>
                 </control>
                 <control type="label">
-                    <top>10</top>
-                    <width>150</width>
-                    <height>34</height>
-                    <font>font10</font>
+                    <left>$PARAM[left]</left>
+                    <top>$PARAM[top]</top>
+                    <width>$PARAM[width]</width>
+                    <height>$PARAM[height]</height>
+                    <font>$PARAM[font]</font>
                     <align>center</align>
                     <aligny>center</aligny>
                     <textcolor>FFFFFFFF</textcolor>

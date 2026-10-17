@@ -1745,3 +1745,7 @@ msgstr ""
 msgctxt "#31960"
 msgid "Other seasons"
 msgstr ""
+
+msgctxt "#31961"
+msgid "Add new"
+msgstr ""

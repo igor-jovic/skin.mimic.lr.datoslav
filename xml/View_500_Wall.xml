@@ -6,6 +6,7 @@
 			<visible>Control.IsVisible(500) + !$EXP[isInfoDialog]</visible>
 			<include>Animation.Common</include>
 			<control type="panel" id="500">
+				<visible>!$EXP[isVideotekaList]</visible>
 				<left>51</left>
 				<top>181</top>
 				<width>1818</width>
@@ -984,6 +985,7 @@
 		<control type="group">
 			<visible>Control.IsVisible(520) + !$EXP[isInfoDialog]</visible>
 			<control type="panel" id="520">
+				<visible>!$EXP[isVideotekaList]</visible>
 				<left>51</left>
 				<top>196</top>
 				<width>1818</width>

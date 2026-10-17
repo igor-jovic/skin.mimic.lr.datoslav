@@ -8,6 +8,7 @@
 			<include>Animation.Common</include>
 			<top>0</top>
 			<control type="panel" id="51">
+				<visible>!$EXP[isVideotekaList]</visible>
 				<left>68</left>
 				<top>190</top>
 				<width>1072</width>

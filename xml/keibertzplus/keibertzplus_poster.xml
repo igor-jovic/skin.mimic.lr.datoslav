@@ -63,6 +63,14 @@
 				<param name="OverlayLeft" value="8"/>
 				<param name="OverlayTop" value="104" />
 			</include>
+			<!-- datoslav: the videoteka add-on's request status, inside the poster's border -->
+			<include content="BadgeStrips">
+				<param name="left" value="10" />
+				<param name="top" value="106" />
+				<param name="width" value="220" />
+				<param name="height" value="44" />
+				<param name="font" value="font12" />
+			</include>
 
 		</itemlayout>
 		<focusedlayout width="240" height="512" condition="[Container.Content(Movies)| Container.Content(sets)] | [Container.Content(TVShows)| Container.Content(seasons)] | $EXP[GameSupport] + [!$EXP[DetectSquare] + !$EXP[DetectSlim] + !$EXP[DetectWide] + !$EXP[DetectBluray] + !$EXP[Detect3ds]]">
@@ -119,6 +127,13 @@
 				<include content="OverlayIcons">
 					<param name="OverlayLeft" value="8"/>
 					<param name="OverlayTop" value="104" />
+				</include>
+				<include content="BadgeStrips">
+					<param name="left" value="15" />
+					<param name="top" value="111" />
+					<param name="width" value="210" />
+					<param name="height" value="44" />
+					<param name="font" value="font12" />
 				</include>
 			</control>
 		</focusedlayout>

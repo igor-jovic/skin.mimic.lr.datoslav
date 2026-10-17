@@ -19,6 +19,7 @@
                 <colordiffuse>ItemDiffuse</colordiffuse>
             </control>
             <control type="fixedlist" id="59">
+                <visible>!$EXP[isVideotekaList]</visible>
                 <width>FullscreenWidth</width>
                 <height>370</height>
                 <onleft>59</onleft>
