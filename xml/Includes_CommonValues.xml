@@ -92,6 +92,116 @@
         <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details))">ClearProperty(datoslav.details,movieinformation)</onback>
         <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details))">9505</onback>
     </include>
+    <!-- datoslav: one poster of the details page's "more like this" row. Items left over from the previous title
+         stay until the new list arrives, so an item is drawn only when its row.for matches the page -->
+    <include name="MoreLikeThisItem">
+        <param name="focused" default="false" />
+        <definition>
+            <control type="group">
+                <visible>String.IsEqual(ListItem.Property(row.for),Window(movieinformation).Property(datoslav.rowfor))</visible>
+                <control type="image">
+                    <visible>$PARAM[focused]</visible>
+                    <left>-6</left>
+                    <top>4</top>
+                    <width>162</width>
+                    <height>237</height>
+                    <texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
+                </control>
+                <control type="image">
+                    <top>10</top>
+                    <width>150</width>
+                    <height>225</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+                </control>
+                <!-- a title without a poster gets a plain tile with its name -->
+                <control type="group">
+                    <visible>String.IsEmpty(ListItem.Art(poster))</visible>
+                    <control type="image">
+                        <top>10</top>
+                        <width>150</width>
+                        <height>225</height>
+                        <texture colordiffuse="33FFFFFF">white.png</texture>
+                    </control>
+                    <control type="textbox">
+                        <left>10</left>
+                        <top>54</top>
+                        <width>130</width>
+                        <height>171</height>
+                        <font>font12</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </control>
+                <include content="MoreLikeThisBadge">
+                    <param name="badge" value="available" />
+                    <param name="color" value="E62E7D32" />
+                    <param name="label" value="31951" />
+                </include>
+                <include content="MoreLikeThisBadge">
+                    <param name="badge" value="requested" />
+                    <param name="color" value="E61565C0" />
+                    <param name="label" value="31952" />
+                </include>
+                <include content="MoreLikeThisBadge">
+                    <param name="badge" value="accepted" />
+                    <param name="color" value="E600897B" />
+                    <param name="label" value="31953" />
+                </include>
+                <include content="MoreLikeThisBadge">
+                    <param name="badge" value="declined" />
+                    <param name="color" value="E6B71C1C" />
+                    <param name="label" value="31954" />
+                </include>
+                <control type="textbox">
+                    <visible>!$PARAM[focused]</visible>
+                    <top>246</top>
+                    <width>150</width>
+                    <height>62</height>
+                    <font>font10</font>
+                    <align>center</align>
+                    <textcolor>LabelTextColor</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="textbox">
+                    <visible>$PARAM[focused]</visible>
+                    <top>246</top>
+                    <width>150</width>
+                    <height>62</height>
+                    <font>font10</font>
+                    <align>center</align>
+                    <textcolor>SelectedColor</textcolor>
+                    <label>[B]$INFO[ListItem.Label][/B]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- datoslav: the request status strip across the top of a "more like this" poster -->
+    <include name="MoreLikeThisBadge">
+        <definition>
+            <control type="group">
+                <visible>String.IsEqual(ListItem.Property(badge),$PARAM[badge])</visible>
+                <control type="image">
+                    <top>10</top>
+                    <width>150</width>
+                    <height>34</height>
+                    <texture colordiffuse="$PARAM[color]">white.png</texture>
+                </control>
+                <control type="label">
+                    <top>10</top>
+                    <width>150</width>
+                    <height>34</height>
+                    <font>font10</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label>[B]$LOCALIZE[$PARAM[label]][/B]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
     <include name="ButtonInfoDialogsCommonValues">
         <width>277</width>
         <align>center</align>

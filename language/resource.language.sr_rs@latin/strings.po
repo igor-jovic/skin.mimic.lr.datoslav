@@ -66,3 +66,47 @@ msgstr "Više o ovom filmu..."
 msgctxt "#31636"
 msgid "This movie has no trailer"
 msgstr "Film nema najavu"
+
+msgctxt "#31950"
+msgid "Seasons"
+msgstr "Sezone"
+
+msgctxt "#31951"
+msgid "Available"
+msgstr "Dostupno"
+
+msgctxt "#31952"
+msgid "Requested"
+msgstr "Naručeno"
+
+msgctxt "#31953"
+msgid "Accepted"
+msgstr "Prihvaćeno"
+
+msgctxt "#31954"
+msgid "Declined"
+msgstr "Odbijeno"
+
+msgctxt "#31955"
+msgid "unwatched"
+msgstr "neodgledano"
+
+msgctxt "#31956"
+msgid "seasons"
+msgstr "sezona"
+
+msgctxt "#31957"
+msgid "seasons (2-4)"
+msgstr "sezone"
+
+msgctxt "#31958"
+msgid "episodes"
+msgstr "epizoda"
+
+msgctxt "#31959"
+msgid "episodes (2-4)"
+msgstr "epizode"
+
+msgctxt "#31960"
+msgid "Other seasons"
+msgstr "Ostale sezone"

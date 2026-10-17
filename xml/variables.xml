@@ -1738,4 +1738,13 @@
 	</variable>
 
 
+	<!-- datoslav: Serbian plural for the details page's seasons line: numbers ending in 2-4, but not 12-14, take the second form -->
+	<variable name="MltSeasonsWord">
+		<value condition="[String.EndsWith(ListItem.Property(TotalSeasons),2) | String.EndsWith(ListItem.Property(TotalSeasons),3) | String.EndsWith(ListItem.Property(TotalSeasons),4)] + ![String.EndsWith(ListItem.Property(TotalSeasons),12) | String.EndsWith(ListItem.Property(TotalSeasons),13) | String.EndsWith(ListItem.Property(TotalSeasons),14)]">$LOCALIZE[31957]</value>
+		<value>$LOCALIZE[31956]</value>
+	</variable>
+	<variable name="MltEpisodesWord">
+		<value condition="[String.EndsWith(ListItem.Property(TotalEpisodes),2) | String.EndsWith(ListItem.Property(TotalEpisodes),3) | String.EndsWith(ListItem.Property(TotalEpisodes),4)] + ![String.EndsWith(ListItem.Property(TotalEpisodes),12) | String.EndsWith(ListItem.Property(TotalEpisodes),13) | String.EndsWith(ListItem.Property(TotalEpisodes),14)]">$LOCALIZE[31959]</value>
+		<value>$LOCALIZE[31958]</value>
+	</variable>
 </includes>
