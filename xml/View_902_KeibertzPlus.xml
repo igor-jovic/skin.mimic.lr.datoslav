@@ -40,6 +40,8 @@
 				<effect type="zoom" start="150" end="100" time="300" center="auto" tween="quadratic" easing="out" />
 			</animation>
 			<control type="fixedlist" id="902">
+				<!-- datoslav: only for library titles, so other lists fall back to List by default (MyVideoNav's views) -->
+				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<left>-140</left>
 				<top>16</top>
 				<width>2475</width>

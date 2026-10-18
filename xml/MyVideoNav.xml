@@ -6,7 +6,10 @@
     <defaultcontrol always="true">50</defaultcontrol>
     <menucontrol>9051</menucontrol>
     <allowoverlay>true</allowoverlay>
-    <views>50,52,507,51,57,59,500,501,502,504,505,509,520,55,900,902,903,909</views>
+    <!-- datoslav: KeibertzPlus first. With no view saved for a folder, Kodi takes the first visible view of the
+         default type (list), so library films, shows, seasons and episodes open in KeibertzPlus and the rest, where
+         it is hidden, in List -->
+    <views>902,50,52,507,51,57,59,500,501,502,504,505,509,520,55,900,903,909</views>
     <onload>SetProperty(Window.HasSettings,True,home)</onload>
     <onload>ClearProperty(MediaMenu,Home)</onload>
     <onunload>ClearProperty(MediaMenu,Home)</onunload>
