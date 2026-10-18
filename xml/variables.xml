@@ -1246,6 +1246,11 @@
 		<value condition="ListItem.IsParentFolder">$LOCALIZE[31625]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
+	<!-- datoslav: a KeibertzPlus episode tile's label: "1x6 Title" inside one show, "Show 1x6" across shows -->
+	<variable name="KeibertzPlusEpisodeLabel">
+		<value condition="!String.IsEmpty(Container.ShowTitle)">$INFO[ListItem.Season]x$INFO[ListItem.Episode] $INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
+	</variable>
 	<variable name="CommonBackgroundOverlay">
 		<value condition="!String.IsEmpty(Skin.String(CustomOverlay))">$INFO[Skin.String(CustomOverlay)]</value>
 		<value>white.png</value>

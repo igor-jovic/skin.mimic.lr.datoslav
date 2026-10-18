@@ -66,6 +66,11 @@ back to the first visible list-type view, so `MyVideoNav.xml` lists 902 first an
 `movies`, `tvshows`, `seasons` and `episodes` content. Everything else (genres, files, add-ons) has no visible 902
 and opens in List (50) as before. A view chosen in the view menu is still saved per folder and wins.
 
+Episodes have a KeibertzPlus layout of their own (`KeibertzPlus_Episode_Includes`): a 480 x 270 still whose bottom
+lines up with the posters', so it stays above the info panel, and a focused still that grows upwards from its bottom
+edge. The label above it is "1x6 Title" in one show's list and "Show 1x6" in a list of several shows
+(`KeibertzPlusEpisodeLabel`, by `Container.ShowTitle`).
+
 ## The add-on's lists
 The film and show lists of `plugin.video.videoteka` open only in KeibertzPlus: every other view in
 `MyVideoNav.xml` has `<visible>!$EXP[isVideotekaList]</visible>` (Kodi requires all of a control's visible
