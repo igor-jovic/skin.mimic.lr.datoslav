@@ -148,7 +148,7 @@
 				     A button styled like an entry sits in the first row and the list starts one row lower; Up from
 				     the first entry reaches it, Enter/Left send Back. One per entry width (2-column / normal / wide). -->
 				<control type="button" id="9062">
-					<visible>Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList)</visible>
+					<visible>Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + !$EXP[isVideotekaMenu]</visible>
 					<left>0</left>
 					<top>195</top>
 					<width>870</width>
@@ -204,6 +204,34 @@
 					<onup>9061</onup>
 					<ondown>50</ondown>
 				</control>
+				<control type="button" id="9065">
+					<visible>Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + $EXP[isVideotekaMenu]</visible>
+					<left>0</left>
+					<top>195</top>
+					<width>870</width>
+					<height>105</height>
+					<font>font30</font>
+					<textoffsetx>120</textoffsetx>
+					<aligny>center</aligny>
+					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
+					<texturenofocus />
+					<label>$LOCALIZE[31625]</label>
+					<onclick>Back</onclick>
+					<onclick>SetFocus(50)</onclick>
+					<onleft>Back</onleft>
+					<onleft>SetFocus(50)</onleft>
+					<onup>9061</onup>
+					<ondown>50</ondown>
+				</control>
+				<control type="image">
+					<visible>Control.IsVisible(9065)</visible>
+					<left>10</left>
+					<top>205</top>
+					<width>85</width>
+					<height>85</height>
+					<aspectratio scalediffuse="false">keep</aspectratio>
+					<texture diffuse="diffuse/list-icon.png">DefaultFolderBack.png</texture>
+				</control>
 				<control type="image">
 					<!-- drawn after the buttons so the focus highlight sits under the icon, like list entries -->
 					<visible>Control.IsVisible(9062) | Control.IsVisible(9063) | Control.IsVisible(9064)</visible>
@@ -219,11 +247,16 @@
 					<left>0</left>
 					<top>315</top>
 					<width>1740</width>
-					<height>720</height>
+					<!-- 735: room for 7 of Dodaj novi's rows; the other layouts still show 6 rows of 120 or 12 of 60 -->
+					<height>735</height>
 					<!-- slim rows (60px) have no back row: keep the original position -->
 					<animation effect="slide" end="0,-120" time="0" condition="Skin.HasSetting(Enable.SlimList)">Conditional</animation>
+					<animation effect="slide" end="0,-15" time="0" condition="$EXP[isVideotekaMenu]">Conditional</animation>
 					<onleft>Back</onleft>
-					<onright condition="Container(50).HasNext | Container(50).HasPrevious">60</onright>
+					<!-- Dodaj novi has no scrollbar: Right on its right column stays put (without an action the panel wraps) -->
+					<onright condition="[Container(50).HasNext | Container(50).HasPrevious] + !$EXP[isVideotekaMenu]">60</onright>
+					<onright condition="$EXP[isVideotekaMenu]">Action(noop)</onright>
+					<onup condition="Control.IsVisible(9065)">9065</onup>
 					<onup condition="Control.IsVisible(9062)">9062</onup>
 					<onup condition="Control.IsVisible(9063)">9063</onup>
 					<onup condition="Control.IsVisible(9064)">9064</onup>
@@ -816,7 +849,47 @@
 						</include>
 					</focusedlayout>
 
-					<itemlayout height="120" width="870" condition="Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList)">
+					<!-- datoslav: the videoteka add-on's menu (Dodaj novi) has shorter rows, so its 8 rows fit without scrolling -->
+					<itemlayout height="105" width="870" condition="Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + $EXP[isVideotekaMenu]">
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>85</width>
+							<height>85</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="diffuse/list-icon.png">$VAR[ListIcon]</texture>
+						</control>
+						<control type="label">
+							<left>120</left>
+							<right>80</right>
+							<height>105</height>
+							<aligny>center</aligny>
+							<font>font30</font>
+							<label>$VAR[ListMainLabelVar]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="105" width="870" condition="Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + $EXP[isVideotekaMenu]">
+						<control type="image">
+							<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>85</width>
+							<height>85</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" diffuse="diffuse/list-icon.png">$VAR[ListIcon]</texture>
+						</control>
+						<control type="label">
+							<left>120</left>
+							<right>80</right>
+							<height>105</height>
+							<aligny>center</aligny>
+							<font>font30</font>
+							<label>$VAR[ListMainLabelVar]</label>
+						</control>
+					</focusedlayout>
+					<itemlayout height="120" width="870" condition="Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + !$EXP[isVideotekaMenu]">
 						<control type="image">
 							<visible>!$EXP[externalGenreIcon]+!String.IsEqual(Container.SortMethod,$LOCALIZE[13409]) + !Container.Content(addons) + !String.IsEqual(Container.Content,sources)</visible>
 							<left>10</left>
@@ -902,7 +975,7 @@
 						</include>
 					</itemlayout>
 
-					<focusedlayout height="120" width="870" condition="Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList)">
+					<focusedlayout height="120" width="870" condition="Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + !$EXP[isVideotekaMenu]">
 					<control type="image">
 						<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
 					</control>

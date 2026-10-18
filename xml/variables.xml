@@ -95,6 +95,13 @@
 	</variable>
 
 
+	<!-- datoslav: KeibertzPlus's line under the title: year, rating and genres, with a "•" only between two of them -->
+	<variable name="KeibertzPlusInfoLine">
+		<value condition="!String.IsEmpty(ListItem.Year) + !String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Year]  [COLOR=TitleTextColor]•[/COLOR]  $LOCALIZE[31963]: $INFO[ListItem.Rating]$INFO[ListItem.Genre,  [COLOR=TitleTextColor]•[/COLOR]  ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Year)">$INFO[ListItem.Year]$INFO[ListItem.Genre,  [COLOR=TitleTextColor]•[/COLOR]  ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Rating)">$LOCALIZE[31963]: $INFO[ListItem.Rating]$INFO[ListItem.Genre,  [COLOR=TitleTextColor]•[/COLOR]  ,]</value>
+		<value>$INFO[ListItem.Genre]</value>
+	</variable>
 	<variable name="BreadcrumbsInfoVar">
 		<value condition="String.IsEqual(ListItem.DBTYPE,episode)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
@@ -114,7 +121,7 @@
 		<value condition="Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(title)]</value>
 		<value condition="Window.IsActive(favouritesbrowser)">$LOCALIZE[1036]</value>
 		<value condition="$EXP[GameSupport]">$LOCALIZE[10821]</value>
-		<value condition="$EXP[isVideotekaList] + !String.IsEmpty(Container.PluginCategory)">$INFO[Container.PluginCategory]</value>
+		<value condition="String.IsEqual(Container.PluginName,plugin.video.videoteka) + !String.IsEmpty(Container.PluginCategory)">$INFO[Container.PluginCategory]</value>
 		<value condition="Container.Content(Movies)">Movies</value>
 		<value condition="Container.Content(TVShows)">TV Shows</value>
 		<value condition="Window.IsActive(script-The Big Picture-main.xml)">$INFO[Container(100).ListItem.Property(album_title)]</value>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- datoslav: Nezavršeni / Nezavršene with nothing in progress: a message and Povratak, in the style of the film
+     pop-up. The home menu sets Window(home).Property(datoslav.noprogress) to movies or tvshows before opening it -->
+<window id="1140" type="dialog">
+    <defaultcontrol always="true">9701</defaultcontrol>
+    <include>Animation.Dialog</include>
+    <onunload>ClearProperty(datoslav.noprogress,home)</onunload>
+    <controls>
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <texture colordiffuse="CC000000">white.png</texture>
+        </control>
+        <control type="image">
+            <left>410</left>
+            <top>330</top>
+            <width>1100</width>
+            <height>420</height>
+            <texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
+        </control>
+        <control type="image">
+            <left>420</left>
+            <top>340</top>
+            <width>1080</width>
+            <height>400</height>
+            <texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
+        </control>
+        <control type="label">
+            <left>460</left>
+            <top>380</top>
+            <width>1000</width>
+            <height>120</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font35_title</font>
+            <label>[B]$LOCALIZE[31964][/B]</label>
+            <textcolor>TitleTextColor</textcolor>
+            <visible>String.IsEqual(Window(home).Property(datoslav.noprogress),movies)</visible>
+        </control>
+        <control type="label">
+            <left>460</left>
+            <top>380</top>
+            <width>1000</width>
+            <height>120</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font35_title</font>
+            <label>[B]$LOCALIZE[31965][/B]</label>
+            <textcolor>TitleTextColor</textcolor>
+            <visible>String.IsEqual(Window(home).Property(datoslav.noprogress),tvshows)</visible>
+        </control>
+        <control type="group">
+            <left>410</left>
+            <top>560</top>
+            <width>1100</width>
+            <height>130</height>
+            <include content="FilmPopupRow">
+                <param name="id" value="9701" />
+                <param name="label" value="31966" />
+                <onclick>Close</onclick>
+                <onup>9701</onup>
+                <ondown>9701</ondown>
+                <onleft>9701</onleft>
+                <onright>9701</onright>
+            </include>
+        </control>
+    </controls>
+</window>

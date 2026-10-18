@@ -224,7 +224,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font15</font>
-			<label>[B][UPPERCASE]$INFO[ListItem.Year]  [COLOR=TitleTextColor]•[/COLOR]  $INFO[ListItem.Genre][/UPPERCASE][/B]</label>
+			<label>[B][UPPERCASE]$VAR[KeibertzPlusInfoLine][/UPPERCASE][/B]</label>
 			<textcolor>AltTextColor</textcolor>
 			<shadowcolor>shadow</shadowcolor>
 			<scroll>false</scroll>
@@ -275,6 +275,18 @@
 			<label>$INFO[ListItem.Tagline]</label>
 			<textcolor>NormalTextColor</textcolor>
 			<shadowcolor>shadow</shadowcolor>
+		</control>
+		<!-- datoslav: the videoteka add-on's titles have no actors; their status takes that place as a large strip -->
+		<control type="group">
+			<visible>$EXP[isVideotekaList]</visible>
+			<left>606r</left>
+			<top>636</top>
+			<include content="BadgeStrips">
+				<param name="top" value="0" />
+				<param name="width" value="526" />
+				<param name="height" value="110" />
+				<param name="font" value="font35_title" />
+			</include>
 		</control>
 	</include>
 </includes>

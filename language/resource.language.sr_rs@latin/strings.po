@@ -80,8 +80,8 @@ msgid "Requested"
 msgstr "Naručeno"
 
 msgctxt "#31953"
-msgid "Accepted"
-msgstr "Prihvaćeno"
+msgid "In preparation"
+msgstr "U pripremi"
 
 msgctxt "#31954"
 msgid "Declined"
@@ -118,3 +118,19 @@ msgstr "Dodaj novi"
 msgctxt "#31962"
 msgid "You may also like"
 msgstr "Možda će ti se svideti i ovo"
+
+msgctxt "#31963"
+msgid "Rating"
+msgstr "Ocena"
+
+msgctxt "#31964"
+msgid "You have no unfinished films"
+msgstr "Nemate nedovršene filmove"
+
+msgctxt "#31965"
+msgid "You have no unfinished shows"
+msgstr "Nemate nedovršene serije"
+
+msgctxt "#31966"
+msgid "Back"
+msgstr "Povratak"

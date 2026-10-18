@@ -7,6 +7,26 @@
 
     <onload>ClearProperty(MediaMenu,Home)</onload>
     <controls>
+        <!-- datoslav: Nezavršeni and Nezavršene look here before opening, to show a pop-up instead of an empty list.
+             Kodi fills only a list that is visible, so these are visible but one pixel and off the screen -->
+        <control type="list" id="9311">
+            <left>-10</left>
+            <top>-10</top>
+            <width>1</width>
+            <height>1</height>
+            <itemlayout width="1" height="1" />
+            <focusedlayout width="1" height="1" />
+            <content target="videos" limit="1">special://skin/extras/inprogress_movies.xsp</content>
+        </control>
+        <control type="list" id="9312">
+            <left>-10</left>
+            <top>-10</top>
+            <width>1</width>
+            <height>1</height>
+            <itemlayout width="1" height="1" />
+            <focusedlayout width="1" height="1" />
+            <content target="videos" limit="1">library://video/tvshows/inprogressshows.xml/</content>
+        </control>
         <!-- datoslav: the list's "Povratak nazad" row sends Back and then SetFocus(50) to land on the list.
              When Back leaves for the home screen, that focus request arrives here; without a control 50
              nothing is focused and the next key press is swallowed. This catches it and hands focus to the menu. -->
