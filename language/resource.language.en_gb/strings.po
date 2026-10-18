@@ -1667,11 +1667,11 @@ msgid "All movies"
 msgstr ""
 
 msgctxt "#31628"
-msgid "Unfinished"
+msgid "Started - continue watching"
 msgstr ""
 
 msgctxt "#31629"
-msgid "Unfinished (TV shows)"
+msgid "Started - continue watching (TV shows)"
 msgstr ""
 
 msgctxt "#31630"
@@ -1759,13 +1759,17 @@ msgid "Rating"
 msgstr ""
 
 msgctxt "#31964"
-msgid "You have no unfinished films"
+msgid "No films you have started"
 msgstr ""
 
 msgctxt "#31965"
-msgid "You have no unfinished shows"
+msgid "No shows you have started"
 msgstr ""
 
 msgctxt "#31966"
 msgid "Back"
+msgstr ""
+
+msgctxt "#31967"
+msgid "Series"
 msgstr ""

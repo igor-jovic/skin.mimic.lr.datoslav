@@ -148,27 +148,27 @@
 			<control type="group">
 				<animation effect="fade" start="100" end="50" time="300" condition="!Control.HasFocus(9000)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(9010)">Conditional</animation>
-				<animation effect="slide" start="-470,0" end="0,0" time="400" tween="quadratic" easing="out" condition="!Control.HasFocus(9010)">Conditional</animation>
+				<animation effect="slide" start="-640,0" end="0,0" time="400" tween="quadratic" easing="out" condition="!Control.HasFocus(9010)">Conditional</animation>
 				<control type="image">
 					<top>100</top>
 					<left>35</left>
-					<width>430</width>
-					<height>95</height>
+					<width>600</width>
+					<height>105</height>
 					<animation effect="fade" start="100" end="60" time="300" condition="!Control.HasFocus(9000)">Conditional</animation>
 					<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
-					<animation effect="slide" end="0,95" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,6)">Conditional</animation>
-					<animation effect="slide" end="0,95" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,5)">Conditional</animation>
-					<animation effect="slide" end="0,95" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,4)">Conditional</animation>
-					<animation effect="slide" end="0,95" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,3)">Conditional</animation>
-					<animation effect="slide" end="0,95" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,2)">Conditional</animation>
-					<animation effect="slide" end="0,95" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,1)">Conditional</animation>
-					<animation effect="slide" end="0,95" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,0)">Conditional</animation>
+					<animation effect="slide" end="0,105" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,6)">Conditional</animation>
+					<animation effect="slide" end="0,105" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,5)">Conditional</animation>
+					<animation effect="slide" end="0,105" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,4)">Conditional</animation>
+					<animation effect="slide" end="0,105" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,3)">Conditional</animation>
+					<animation effect="slide" end="0,105" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,2)">Conditional</animation>
+					<animation effect="slide" end="0,105" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,1)">Conditional</animation>
+					<animation effect="slide" end="0,105" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(9000).Row,0)">Conditional</animation>
 				</control>
 				<control type="panel" id="9000">
 					<left>35</left>
 					<top>98</top>
-					<width>430</width>
-					<height>760</height>
+					<width>600</width>
+					<height>840</height>
 					<onright condition="!String.IsEmpty(Container(9000).ListItem.Property(widget))">9003</onright>
 					<onleft condition="!Skin.HasSetting(Enable.CombineMenus)">9010</onleft>
 					<ondown>9000</ondown>
@@ -177,10 +177,10 @@
 					<pagecontrol />
 					<scrolltime tween="quadratic" easing="out">300</scrolltime>
 					<orientation>Vertical</orientation>
-					<itemlayout height="95" width="430">
+					<itemlayout height="105" width="600">
 						<control type="label">
-							<width>430</width>
-							<height>95</height>
+							<width>600</width>
+							<height>105</height>
 							<font>DatoslavMainMenuFont</font>
 							<textoffsetx>20</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
@@ -188,19 +188,19 @@
 							<visible>String.IsEmpty(ListItem.Property(isSubmenu))</visible>
 						</control>
 						<control type="label">
-							<width>430</width>
-							<height>95</height>
+							<width>600</width>
+							<height>105</height>
 							<font>SubMenuFont</font>
-							<textoffsetx>20</textoffsetx>
+							<textoffsetx>60</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
-							<label>[I]$INFO[ListItem.Label][/I]</label>
+							<label>$INFO[ListItem.Label]</label>
 							<visible>!String.IsEmpty(ListItem.Property(isSubmenu))</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout height="95" width="430">
+					<focusedlayout height="105" width="600">
 						<control type="label">
-							<width>430</width>
-							<height>95</height>
+							<width>600</width>
+							<height>105</height>
 							<font>DatoslavMainMenuFont</font>
 							<textoffsetx>20</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
@@ -208,21 +208,21 @@
 							<visible>String.IsEmpty(ListItem.Property(isSubmenu))</visible>
 						</control>
 						<control type="label">
-							<width>430</width>
-							<height>95</height>
+							<width>600</width>
+							<height>105</height>
 							<font>SubMenuFont</font>
-							<textoffsetx>20</textoffsetx>
+							<textoffsetx>60</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
-							<label>[I]$INFO[ListItem.Label][/I]</label>
+							<label>$INFO[ListItem.Label]</label>
 							<visible>!String.IsEmpty(ListItem.Property(isSubmenu))</visible>
 						</control>
 						<control type="group">
 							<animation effect="fade" end="0" start="100" time="200">UnFocus</animation>
 							<animation effect="fade" start="0" end="100" time="400" delay="400">Focus</animation>
 							<control type="label">
-								<left>390</left>
+								<left>560</left>
 								<width>30</width>
-								<height>88</height>
+								<height>98</height>
 								<label>$VAR[Icon-Play]</label>
 								<font>IconSmall</font>
 								<align>right</align>
@@ -243,7 +243,7 @@
 					<visible>Control.HasFocus(9000)</visible>
 					<height>30</height>
 					<top>38</top>
-					<left>235</left>
+					<left>320</left>
 					<control type="label">
 						<visible>Container(9000).HasPrevious</visible>
 						<width>30</width>
@@ -255,7 +255,7 @@
 					</control>
 					<control type="label">
 						<visible>Container(9000).HasNext</visible>
-						<top>858</top>
+						<top>938</top>
 						<width>30</width>
 						<height>30</height>
 						<align>center</align>

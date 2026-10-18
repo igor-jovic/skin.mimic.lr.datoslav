@@ -109,11 +109,12 @@
 			<size>57</size>
 		</font>
 		<font>
-			<!-- datoslav: main home entries (Filmovi, TV serije, Podešavanja), MainMenuFont +30% -->
+			<!-- datoslav: main home entries (Filmovi, Serije, Podešavanja): bold, about 1.7 times MainMenuFont -->
 			<name>DatoslavMainMenuFont</name>
 			<filename>Changa-ExtraLight.ttf</filename>
 			<linespacing>0</linespacing>
-			<size>74</size>
+			<style>bold</style>
+			<size>96</size>
 		</font>
 		<font>
 			<name>SubMenuFont</name>

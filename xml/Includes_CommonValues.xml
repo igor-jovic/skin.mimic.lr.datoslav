@@ -93,18 +93,21 @@
         <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details))">9505</onback>
     </include>
     <!-- datoslav: one poster of the details page's "more like this" row. Items left over from the previous title
-         stay until the new list arrives, so an item is drawn only when its row.for matches the page -->
+         stay until the new list arrives, so an item is drawn only when its row.for matches the page. The poster
+         sits 18 px in and 3 px down, so that the panel, which clips its items, keeps the focus frame whole -->
     <include name="MoreLikeThisItem">
         <param name="focused" default="false" />
         <definition>
             <control type="group">
                 <visible>String.IsEqual(ListItem.Property(row.for),Window(movieinformation).Property(datoslav.rowfor))</visible>
+                <left>18</left>
+                <top>3</top>
                 <control type="image">
                     <visible>$PARAM[focused]</visible>
-                    <left>-9</left>
-                    <top>6</top>
-                    <width>243</width>
-                    <height>355</height>
+                    <left>-18</left>
+                    <top>-3</top>
+                    <width>261</width>
+                    <height>373</height>
                     <texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
                 </control>
                 <control type="image">

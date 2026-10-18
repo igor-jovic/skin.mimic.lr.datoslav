@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- datoslav: home menu is Filmovi, TV serije, Podešavanja only.
+<!-- datoslav: home menu is Filmovi, Serije, Podešavanja only.
      With "Combine main menu and submenu" on, Enter on a closed entry opens its submenu (the SetProperty
      Skin Shortcuts adds) and Enter on an open one runs the action below, which closes it again. The full
      film list is "Svi filmovi" in the Filmovi submenu. Needs the patched Skin Shortcuts toggle (DATOSLAV.md). -->
@@ -14,7 +14,7 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>tvshows</defaultID>
-		<label>20343</label>
+		<label>31967</label>
 		<label2>Custom item</label2>
 		<icon>DefaultTVShows.png</icon>
 		<thumb>DefaultTVShows.png</thumb>
