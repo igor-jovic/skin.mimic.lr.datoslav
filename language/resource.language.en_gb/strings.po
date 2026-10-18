@@ -1749,3 +1749,7 @@ msgstr ""
 msgctxt "#31961"
 msgid "Add new"
 msgstr ""
+
+msgctxt "#31962"
+msgid "You may also like"
+msgstr ""

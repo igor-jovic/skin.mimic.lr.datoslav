@@ -81,9 +81,11 @@ every view. A skin cannot change what Enter does in one view.
   row, which is a picture and text, not a button.
 
 ## Details page
-The details page (`DialogVideoInfo.xml`) is cut down to what you read before choosing what to watch next: info
-lines that fit one page, a description of about 4 lines that scrolls by itself, and a "more like this" row of
-suggested titles at the bottom. Playing, resuming and the trailer are in the film pop-up.
+The details page (`DialogVideoInfo.xml`) is cut down to what you read before choosing what to watch next. A
+film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
+scrolls by itself, on the right, side by side; the "more like this" row runs along the bottom under the heading
+"Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions. Playing, resuming
+and the trailer are in the film pop-up.
 
 - The info lines differ per type: a film shows year, length, rating, genre and director; a show its premiere,
   rating, genre and a seasons line ("1 sezona · 8 epizoda · 8 neodgledano", with the Serbian plural from
@@ -100,5 +102,7 @@ suggested titles at the bottom. Playing, resuming and the trailer are in the fil
   Up from the row goes to it, down from it to the row. When the row loads empty, the timer in `Timers.xml`
   moves focus to it.
 - The description gets the full height once the row has loaded empty (textbox 401 instead of 400).
+- KeibertzPlus draws no name above the posters in the videoteka add-on's lists (`isVideotekaList`); the
+  library's show lists keep theirs.
 - Kodi's own buttons (grouplist 9000) are hidden, not removed: the film pop-up clicks 8, 9 and 11, and the
   page's `onload` clicks 5.

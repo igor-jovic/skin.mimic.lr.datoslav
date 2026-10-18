@@ -26,7 +26,8 @@
 				<textcolor>TitleTextColor</textcolor>
 				<label>$VAR[ListItemLabel]</label>
 				<scroll>false</scroll>
-				<visible>$EXP[KeibertzPlusHideLabels] + Control.IsVisible(902) + !$EXP[isInfoDialog]</visible>
+				<!-- datoslav: not over the videoteka add-on's posters -->
+				<visible>$EXP[KeibertzPlusHideLabels] + Control.IsVisible(902) + !$EXP[isInfoDialog] + !$EXP[isVideotekaList]</visible>
 			</control>
 		</definition>
 	</include>
