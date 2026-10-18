@@ -6,6 +6,24 @@
     <shortcut label="$LOCALIZE[31174]" type="$ADDON[script.skinshortcuts 32034]" thumbnail="DefaultIconPower.png" icon="DefaultIconPower.png">ActivateWindow(shutdownmenu)</shortcut>
 <!--     <shortcut label="$LOCALIZE[1036]" type="$ADDON[script.skinshortcuts 32034]" thumbnail="DefaultIconFavourite.png" icon="DefaultIconFavourite.png">ActivateWindow(favouritesbrowser)</shortcut> -->
 
+	<!-- datoslav: Nezavršeni / Nezavršene open their list only when something is in progress (Home's lists 9311
+	     and 9312 know); otherwise a pop-up says there is nothing -->
+	<override action="ActivateWindow(Videos,special://skin/extras/inprogress_movies.xsp,return)">
+		<condition>Integer.IsGreater(Container(9311).NumItems,0)</condition>
+	</override>
+	<override action="ActivateWindow(Videos,special://skin/extras/inprogress_movies.xsp,return)">
+		<condition>!Integer.IsGreater(Container(9311).NumItems,0)</condition>
+		<action>SetProperty(datoslav.noprogress,movies,home)</action>
+		<action>ActivateWindow(1140)</action>
+	</override>
+	<override action="ActivateWindow(Videos,library://video/tvshows/inprogressshows.xml/,return)">
+		<condition>Integer.IsGreater(Container(9312).NumItems,0)</condition>
+	</override>
+	<override action="ActivateWindow(Videos,library://video/tvshows/inprogressshows.xml/,return)">
+		<condition>!Integer.IsGreater(Container(9312).NumItems,0)</condition>
+		<action>SetProperty(datoslav.noprogress,tvshows,home)</action>
+		<action>ActivateWindow(1140)</action>
+	</override>
 	<override action="ActivateWindow(Favourites)">
 		<action>ActivateWindow(favouritesbrowser)</action>
 	</override>

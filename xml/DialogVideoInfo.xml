@@ -137,7 +137,7 @@
 					<left>820</left>
 					<top>118</top>
 					<width>940</width>
-					<height>440</height>
+					<height>340</height>
 					<font>font15_textbox</font>
 					<label>$VAR[VideoInfoPlotVar]</label>
 					<pagecontrol>60</pagecontrol>
@@ -498,7 +498,7 @@
 			<!-- the row's heading, only once it holds this title's suggestions -->
 			<control type="label">
 				<left>5</left>
-				<top>630</top>
+				<top>470</top>
 				<width>1760</width>
 				<height>50</height>
 				<font>font15</font>
@@ -511,9 +511,9 @@
 				<include>FilmDetailsBack</include>
 				<description>More like this</description>
 				<left>-3</left>
-				<top>680</top>
+				<top>520</top>
 				<width>1782</width>
-				<height>320</height>
+				<height>480</height>
 				<onleft>350</onleft>
 				<onright>350</onright>
 				<onup condition="$EXP[isTvshow]">9601</onup>
@@ -521,12 +521,12 @@
 				<ondown>350</ondown>
 				<orientation>horizontal</orientation>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
-				<itemlayout height="320" width="165">
+				<itemlayout height="480" width="248">
 					<include content="MoreLikeThisItem">
 						<param name="focused" value="false" />
 					</include>
 				</itemlayout>
-				<focusedlayout height="320" width="165">
+				<focusedlayout height="480" width="248">
 					<include content="MoreLikeThisItem">
 						<param name="focused" value="true" />
 					</include>

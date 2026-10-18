@@ -45,6 +45,12 @@ Nothing is customised through the menu editor on the box; a `mainmenu.DATA.xml` 
 The Filmovi and TV serije submenus end with "Dodaj novi", which opens the lists of the video add-on
 `plugin.video.videoteka` (titles that can be requested). The entry is shown only when that add-on is installed.
 
+Nezavršeni (Filmovi) and Nezavršene (TV serije) open their list only when something is in progress. Otherwise
+they open a small pop-up in the style of the film pop-up, "Nemate nedovršene filmove" (or "serije") with one
+button, Povratak (`custom_1140_NoProgress.xml`), and the home screen stays. Home holds two lists, 9311 and 9312,
+fed by the same paths with `limit="1"`, one pixel in size and off the screen (Kodi fills only a visible list), so
+the count is known before OK; the entries' conditional actions come from `shortcuts/overrides.xml`.
+
 ## The add-on's lists
 The film and show lists of `plugin.video.videoteka` open only in KeibertzPlus: every other view in
 `MyVideoNav.xml` has `<visible>!$EXP[isVideotekaList]</visible>` (Kodi requires all of a control's visible
@@ -52,13 +58,21 @@ conditions), and the expression in `xml/includes.xml` is true only in that add-o
 a view per list address with no default for an add-on, so without this each list would open in the plain list
 view. The library is not affected. The add-on's choice of lists has no content type and stays in the list view.
 
-The top bar shows the list's own heading (the add-on's plugin category, such as "Popularno" or "Pretraga:
-matrix") in place of "Movies" or "TV Shows" (`BreadcrumbsVar` in `xml/variables.xml`). A list without a heading
-keeps "Movies" or "TV Shows".
+That choice of lists (Dodaj novi, `isVideotekaMenu`) has rows of 105 instead of 120 in the two-column list
+(`View_50_List.xml`, with its own "Povratak nazad" button 9065), so all 8 rows of the films' menu fit: the panel
+is 735 high, which still holds 6 rows of 120. It has no scrollbar, and Right on its right column does nothing.
+
+The top bar shows the add-on's own heading for the list (its plugin category, such as "Videoteka: Filmovi",
+"Popularno" or "Pretraga: matrix") in place of "Movies", "TV Shows" or the add-on's name (`BreadcrumbsVar` in
+`xml/variables.xml`). A list without a heading keeps the old label.
 
 KeibertzPlus's poster layout draws the add-on's `badge` property as the same coloured strip as the "more like
-this" row (`BadgeStrips` in `Includes_CommonValues.xml`). Library items have no badge, so nothing changes
-there.
+this" row (`BadgeStrips` in `Includes_CommonValues.xml`), and the right-hand panel, where the library shows the
+top actors, shows it again as a large strip. Library items have no badge, so nothing changes there. The strips
+read Dostupno, Naručeno, U pripremi (videoteka's "accepted") and Odbijeno.
+
+KeibertzPlus's line under the title (`KeibertzPlusInfoLine` in `variables.xml`) reads year, "Ocena: 8.5" and
+genres, in every list, the library's too, and draws a "•" only between two of them.
 
 The home screen shows no widgets (the cards beside the menu): the widget group is taken out of both home
 layouts in `xml/Includes_Home.xml`. Skin Shortcuts still attaches a widget to every row; nothing draws it.
@@ -88,7 +102,9 @@ every view. A skin cannot change what Enter does in one view.
 The details page (`DialogVideoInfo.xml`) is cut down to what you read before choosing what to watch next. A
 film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
 scrolls by itself, on the right, side by side; the "more like this" row runs along the bottom under the heading
-"Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions. Playing, resuming
+"Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions. Its posters are
+225 x 337 with their names in `font16`; to fit them, the row starts at 520 and the description above it
+(textbox 400) is 340 high and scrolls by itself. Playing, resuming
 and the trailer are in the film pop-up.
 
 - The info lines differ per type: a film shows year, length, rating, genre and director; a show its premiere,

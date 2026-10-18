@@ -1715,7 +1715,7 @@ msgid "Requested"
 msgstr ""
 
 msgctxt "#31953"
-msgid "Accepted"
+msgid "In preparation"
 msgstr ""
 
 msgctxt "#31954"
@@ -1752,4 +1752,20 @@ msgstr ""
 
 msgctxt "#31962"
 msgid "You may also like"
+msgstr ""
+
+msgctxt "#31963"
+msgid "Rating"
+msgstr ""
+
+msgctxt "#31964"
+msgid "You have no unfinished films"
+msgstr ""
+
+msgctxt "#31965"
+msgid "You have no unfinished shows"
+msgstr ""
+
+msgctxt "#31966"
+msgid "Back"
 msgstr ""
