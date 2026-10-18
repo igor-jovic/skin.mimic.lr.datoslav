@@ -31,6 +31,66 @@
 			</control>
 		</definition>
 	</include>
+	<!-- datoslav: episodes as 16:9 stills whose bottom lines up with the posters', so they stay above the info panel.
+	     The label is "1x6 Title" inside one show and "Show 1x6" in a list of several shows -->
+	<include name="KeibertzPlus_Episode_Still">
+		<param name="bordersize" default="10" />
+		<param name="texture" default="$INFO[ListItem.Art(thumb)]" />
+		<param name="texturecolor" default="false" />
+		<param name="textureborder" default="0" />
+		<definition>
+			<left>0</left>
+			<top>186</top>
+			<width>480</width>
+			<height>270</height>
+			<aspectratio>scale</aspectratio>
+			<texture background="true" border="$PARAM[textureborder]" colordiffuse="$PARAM[texturecolor]">$PARAM[texture]</texture>
+			<bordersize>$PARAM[bordersize]</bordersize>
+		</definition>
+	</include>
+	<include name="KeibertzPlus_Episode_Label">
+		<control type="label">
+			<!-- clear of the focused still, which grows 27 px upwards -->
+			<left>15</left>
+			<top>110</top>
+			<width>450</width>
+			<height>40</height>
+			<aligny>center</aligny>
+			<font>font35_title</font>
+			<textcolor>TitleTextColor</textcolor>
+			<label>$VAR[KeibertzPlusEpisodeLabel]</label>
+			<visible>$EXP[KeibertzPlusHideLabels] + Control.IsVisible(902) + !$EXP[isInfoDialog]</visible>
+		</control>
+	</include>
+	<include name="KeibertzPlus_Episode_Includes">
+		<itemlayout width="500" height="512" condition="Container.Content(episodes)">
+			<control type="image">
+				<include content="KeibertzPlus_Episode_Still" />
+			</control>
+			<include>KeibertzPlus_Episode_Label</include>
+		</itemlayout>
+		<focusedlayout width="500" height="512" condition="Container.Content(episodes)">
+			<control type="group">
+				<!-- grows upwards from its bottom edge, so the frame stays above the panel -->
+				<animation effect="zoom" center="240,456" start="100" end="110" time="400" tween="cubic" easing="out" reversible="false">Focus</animation>
+				<animation effect="zoom" center="240,456" start="110" end="100" time="200" tween="cubic" easing="in" reversible="false">UnFocus</animation>
+				<control type="image">
+					<include content="KeibertzPlus_Episode_Still">
+						<param name="bordersize">0</param>
+						<param name="texture">listselect_fo.png</param>
+						<param name="textureborder">5</param>
+						<param name="texturecolor">FocusColor</param>
+					</include>
+				</control>
+				<control type="image">
+					<include content="KeibertzPlus_Episode_Still">
+						<param name="bordersize">12</param>
+					</include>
+				</control>
+			</control>
+			<include>KeibertzPlus_Episode_Label</include>
+		</focusedlayout>
+	</include>
 	<!-- view -->
 	<include name="View_902_KeibertzPlus">
 		<control type="group">
@@ -40,6 +100,8 @@
 				<effect type="zoom" start="150" end="100" time="300" center="auto" tween="quadratic" easing="out" />
 			</animation>
 			<control type="fixedlist" id="902">
+				<!-- datoslav: only for library titles, so other lists fall back to List by default (MyVideoNav's views) -->
+				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<left>-140</left>
 				<top>16</top>
 				<width>2475</width>
@@ -52,6 +114,7 @@
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="sine" easing="out">400</scrolltime>
 				<viewtype label="$LOCALIZE[31567]">list</viewtype>
+				<include>KeibertzPlus_Episode_Includes</include>
 				<include>KeibertzPlus_Square_Includes</include>
 <!-- 				<include>KeibertzPlus_Fanart_Includes</include> -->
 				<include>KeibertzPlus_Bluray_Includes</include>

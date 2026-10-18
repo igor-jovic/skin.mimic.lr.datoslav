@@ -59,6 +59,18 @@ button, Povratak (`custom_1140_NoProgress.xml`), and the home screen stays. Home
 fed by the same paths with `limit="1"`, one pixel in size and off the screen (Kodi fills only a visible list), so
 the count is known before OK; the entries' conditional actions come from `shortcuts/overrides.xml`.
 
+## Library views
+Library films, shows, seasons and episodes open in KeibertzPlus (902) unless a view was chosen for that folder.
+With nothing saved, Kodi takes the first visible view of the folder type's default view type in `<views>`, falling
+back to the first visible list-type view, so `MyVideoNav.xml` lists 902 first and the control is visible only for
+`movies`, `tvshows`, `seasons` and `episodes` content. Everything else (genres, files, add-ons) has no visible 902
+and opens in List (50) as before. A view chosen in the view menu is still saved per folder and wins.
+
+Episodes have a KeibertzPlus layout of their own (`KeibertzPlus_Episode_Includes`): a 480 x 270 still whose bottom
+lines up with the posters', so it stays above the info panel, and a focused still that grows upwards from its bottom
+edge. The label above it is "1x6 Title" in one show's list and "Show 1x6" in a list of several shows
+(`KeibertzPlusEpisodeLabel`, by `Container.ShowTitle`).
+
 ## The add-on's lists
 The film and show lists of `plugin.video.videoteka` open only in KeibertzPlus: every other view in
 `MyVideoNav.xml` has `<visible>!$EXP[isVideotekaList]</visible>` (Kodi requires all of a control's visible
