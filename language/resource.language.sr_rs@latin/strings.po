@@ -114,3 +114,7 @@ msgstr "Ostale sezone"
 msgctxt "#31961"
 msgid "Add new"
 msgstr "Dodaj novi"
+
+msgctxt "#31962"
+msgid "You may also like"
+msgstr "Možda će ti se svideti i ovo"
