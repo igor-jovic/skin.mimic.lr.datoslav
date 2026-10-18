@@ -145,18 +145,24 @@
 					<size>55</size>
 				</font>
 				<font>
-					<!-- datoslav: main home entries (Filmovi, Serije, Podešavanja): bold, about 1.7 times MainMenuFont -->
+					<!-- datoslav: main home entries (Filmovi, Serije, Podešavanja), about 1.5 times MainMenuFont -->
 					<name>DatoslavMainMenuFont</name>
 					<filename>$PARAM[filename]</filename>
 					<linespacing>0</linespacing>
-					<style>bold</style>
-					<size>94</size>
+					<size>84</size>
 				</font>
 				<font>
 					<name>SubMenuFont</name>
 					<filename>$PARAM[filename]</filename>
 					<linespacing>0</linespacing>
 					<size>40</size>
+				</font>
+				<font>
+					<!-- datoslav: the home menu's submenu entries, SubMenuFont x1.3 -->
+					<name>DatoslavSubMenuFont</name>
+					<filename>$PARAM[filename]</filename>
+					<linespacing>0</linespacing>
+					<size>52</size>
 				</font>
 				<font>
 					<name>BigAssFont</name>

@@ -42,10 +42,10 @@ patch; if Enter on Filmovi stops opening its submenu, re-apply it.
 Nothing is customised through the menu editor on the box; a `*.DATA.xml` in
 `userdata/addon_data/script.skinshortcuts/` would override these, and keep its own labels and order.
 
-The main entries use `DatoslavMainMenuFont` (bold, 94 in the default font set); the submenu entries
-`SubMenuFont` (40), upright and indented 40 px further. Rows are 105 high and the menu 600 wide, so
-"Podešavanja" and "Započeti - Nastavi gledanje" fit without scrolling; the menu starts 40 px higher than the
-original so eight rows fit on screen. "Serije" is the skin's own text 31967, not Kodi's "TV shows".
+The main entries use `DatoslavMainMenuFont` (84 in the default font set); the submenu entries
+`DatoslavSubMenuFont` (52, `SubMenuFont` x1.3, which the other menus keep), upright and indented 52 px further,
+about two characters. Rows are 105 high and the menu 760 wide, so "Započeti - Nastavi gledanje" fits without
+scrolling; the menu starts 114 px higher than the original, 68 px under the top bar, so eight rows fit on screen. "Serije" is the skin's own text 31967, not Kodi's "TV shows".
 
 The Filmovi and Serije submenus start with "Započeti - Nastavi gledanje" and end with "Dodaj novi", which opens the lists of the video add-on
 `plugin.video.videoteka` (titles that can be requested). The entry is shown only when that add-on is installed.
