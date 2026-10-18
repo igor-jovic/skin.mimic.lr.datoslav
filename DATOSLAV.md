@@ -111,8 +111,11 @@ The details page (`DialogVideoInfo.xml`) is cut down to what you read before cho
 film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
 scrolls by itself, on the right, side by side; the "more like this" row runs along the bottom under the heading
 "Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions. Its posters are
-225 x 337 with their names in `font16`; to fit them, the row starts at 461 and the description above it
-(textbox 400) is 340 high and scrolls by itself. The blocks start 59 px under the top bar. The focused poster has
+225 x 337 with their names in `font16`. The film's or show's title, bold in `font30`, starts about 72 px under the top
+bar; a title too long for the left column is cut with "…" rather than scrolled, so the page stays still. The info
+lines start under it (list 62 at 204). The row starts at 546, so that its
+two-line titles end 72 px above the bottom of the screen, the same space as under the top bar, and the description
+(textbox 400) is 425 high and scrolls by itself. The focused poster has
 an 18 px frame (a plate of `listselect_fo.png` 18 px larger than the poster on each side). A panel clips its items
 at its own edges, so `MoreLikeThisItem` sets the poster 18 px in and 3 px down and the panel sits that much further
 out; otherwise the first poster's frame is cut off on the left. The backdrop is dimmed by the same overlay as the

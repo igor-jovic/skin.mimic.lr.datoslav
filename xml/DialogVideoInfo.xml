@@ -27,7 +27,7 @@
 					<onup>62</onup>
 					<ondown>61</ondown>
 					<left>5</left>
-					<top>118</top>
+					<top>203</top>
 					<width>760</width>
 					<height>450</height>
 					<viewtype>list</viewtype>
@@ -111,6 +111,17 @@
 				</control>
 
 
+				<!-- the title above the info lines; a title too long for the column is cut with "…" -->
+				<control type="label">
+					<left>5</left>
+					<top>118</top>
+					<width>760</width>
+					<height>70</height>
+					<font>font30</font>
+					<label>[B]$INFO[ListItem.Title][/B]</label>
+					<visible>$EXP[isMovie] | $EXP[isTvshow]</visible>
+				</control>
+
 				<!-- PLOT -->
 				<control type="scrollbar" id="61">
 					<include>FilmDetailsBack</include>
@@ -137,7 +148,7 @@
 					<left>820</left>
 					<top>118</top>
 					<width>940</width>
-					<height>340</height>
+					<height>425</height>
 					<font>font15_textbox</font>
 					<label>$VAR[VideoInfoPlotVar]</label>
 					<pagecontrol>60</pagecontrol>
@@ -162,7 +173,7 @@
 					<left>1766</left>
 					<top>118</top>
 					<width>10</width>
-					<height>440</height>
+					<height>525</height>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
 					<orientation>vertical</orientation>
@@ -498,7 +509,7 @@
 			<!-- the row's heading, only once it holds this title's suggestions -->
 			<control type="label">
 				<left>5</left>
-				<top>411</top>
+				<top>496</top>
 				<width>1760</width>
 				<height>50</height>
 				<font>font15</font>
@@ -511,7 +522,7 @@
 				<include>FilmDetailsBack</include>
 				<description>More like this</description>
 				<left>-21</left>
-				<top>458</top>
+				<top>543</top>
 				<width>1782</width>
 				<height>480</height>
 				<onleft>350</onleft>
@@ -554,7 +565,7 @@
 				<include>ButtonInfoDialogsCommonValues</include>
 				<visible>$EXP[isTvshow]</visible>
 				<left>5</left>
-				<top>336</top>
+				<top>421</top>
 				<height>60</height>
 				<label>31960</label>
 				<onclick>RunScript(plugin.video.videoteka,action=seasons,tvshowid=$INFO[ListItem.DBID])</onclick>
