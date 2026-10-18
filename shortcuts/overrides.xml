@@ -208,10 +208,6 @@
     <propertydefault group="movies" defaultID="575" property="widgetTarget">videos</propertydefault>
     <propertydefault group="movies" defaultID="575" property="widgetType">movies</propertydefault>
     <propertydefault group="movies" defaultID="575" property="widgetIcon">20021</propertydefault>
-    <propertydefault group="movies" defaultID="20434" property="widgetPath">videodb://movies/sets/</propertydefault>
-    <propertydefault group="movies" defaultID="20434" property="widgetTarget">videos</propertydefault>
-    <propertydefault group="movies" defaultID="20434" property="widgetType">movies</propertydefault>
-    <propertydefault group="movies" defaultID="20434" property="widgetIcon">20021</propertydefault>
     <propertydefault group="movies" defaultID="135" property="widgetPath">videodb://movies/genres/</propertydefault>
     <propertydefault group="movies" defaultID="135" property="widgetTarget">videos</propertydefault>
     <propertydefault group="movies" defaultID="135" property="widgetType">movies</propertydefault>
@@ -232,5 +228,9 @@
     <propertydefault group="tvshows" defaultID="135" property="widgetTarget">videos</propertydefault>
     <propertydefault group="tvshows" defaultID="135" property="widgetType">tvshows</propertydefault>
     <propertydefault group="tvshows" defaultID="135" property="widgetIcon">20021</propertydefault>
+    <propertydefault group="tvshows" defaultID="allshows" property="widgetPath">videodb://tvshows/titles/</propertydefault>
+    <propertydefault group="tvshows" defaultID="allshows" property="widgetTarget">videos</propertydefault>
+    <propertydefault group="tvshows" defaultID="allshows" property="widgetType">tvshows</propertydefault>
+    <propertydefault group="tvshows" defaultID="allshows" property="widgetIcon">20021</propertydefault>
 
 </overrides>

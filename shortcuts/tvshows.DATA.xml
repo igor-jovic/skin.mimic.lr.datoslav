@@ -9,7 +9,7 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>31314</defaultID>
-		<label>31314</label>
+		<label>31971</label>
 		<label2>Videos</label2>
 		<icon>DefaultRecentlyAddedEpisodes.png</icon>
 		<thumb/>
@@ -17,16 +17,26 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>135</defaultID>
-		<label>135</label>
+		<label>31972</label>
 		<label2>TV shows</label2>
 		<icon>DefaultGenre.png</icon>
 		<thumb/>
 		<action>ActivateWindow(Videos,videodb://tvshows/genres/,return)</action>
 	</shortcut>
 	<shortcut>
+		<!-- datoslav: the full show list, sorted by title -->
+		<defaultID>allshows</defaultID>
+		<label>31973</label>
+		<label2>Custom item</label2>
+		<icon>DefaultTVShows.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://tvshows/titles/,return)</action>
+		<visible>Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<shortcut>
 		<!-- datoslav: videoteka's lists, to request what the library does not have -->
 		<defaultID>addnew</defaultID>
-		<label>31961</label>
+		<label>31974</label>
 		<label2>Custom item</label2>
 		<icon>DefaultAddSource.png</icon>
 		<thumb />

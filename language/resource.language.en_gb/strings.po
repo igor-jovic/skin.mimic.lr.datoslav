@@ -1773,3 +1773,31 @@ msgstr ""
 msgctxt "#31967"
 msgid "Series"
 msgstr ""
+
+msgctxt "#31968"
+msgid "Recently added movies"
+msgstr ""
+
+msgctxt "#31969"
+msgid "Movies by genre"
+msgstr ""
+
+msgctxt "#31970"
+msgid "Add a new movie"
+msgstr ""
+
+msgctxt "#31971"
+msgid "Recently added shows"
+msgstr ""
+
+msgctxt "#31972"
+msgid "Shows by genre"
+msgstr ""
+
+msgctxt "#31973"
+msgid "All shows"
+msgstr ""
+
+msgctxt "#31974"
+msgid "Add a new show"
+msgstr ""

@@ -109,11 +109,11 @@
 			<size>55</size>
 		</font>
 		<font>
-			<!-- datoslav: main home entries (Filmovi, Serije, Podešavanja), about 1.5 times MainMenuFont -->
+			<!-- datoslav: main home entries (Filmovi, Serije, Podešavanja), about 1.7 times MainMenuFont -->
 			<name>DatoslavMainMenuFont</name>
 			<filename>Kanit-ExtraLight.ttf</filename>
 			<linespacing>0</linespacing>
-			<size>84</size>
+			<size>94</size>
 		</font>
 		<font>
 			<name>SubMenuFont</name>

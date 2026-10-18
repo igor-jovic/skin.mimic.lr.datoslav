@@ -37,7 +37,7 @@ msgstr "Započeti - Nastavi gledanje"
 
 msgctxt "#31629"
 msgid "Started - continue watching (TV shows)"
-msgstr "Započeti - Nastavi gledanje"
+msgstr "Započete - Nastavi gledanje"
 
 msgctxt "#31630"
 msgid "Partially watched"
@@ -138,3 +138,31 @@ msgstr "Povratak"
 msgctxt "#31967"
 msgid "Series"
 msgstr "Serije"
+
+msgctxt "#31968"
+msgid "Recently added movies"
+msgstr "Nedavno dodati filmovi"
+
+msgctxt "#31969"
+msgid "Movies by genre"
+msgstr "Filmovi po žanru"
+
+msgctxt "#31970"
+msgid "Add a new movie"
+msgstr "Dodaj novi film"
+
+msgctxt "#31971"
+msgid "Recently added shows"
+msgstr "Nedavno dodate serije"
+
+msgctxt "#31972"
+msgid "Shows by genre"
+msgstr "Serije po žanru"
+
+msgctxt "#31973"
+msgid "All shows"
+msgstr "Sve serije"
+
+msgctxt "#31974"
+msgid "Add a new show"
+msgstr "Dodaj novu seriju"
