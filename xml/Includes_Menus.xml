@@ -148,11 +148,11 @@
 			<control type="group">
 				<animation effect="fade" start="100" end="50" time="300" condition="!Control.HasFocus(9000)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="300" condition="Control.HasFocus(9010)">Conditional</animation>
-				<animation effect="slide" start="-640,0" end="0,0" time="400" tween="quadratic" easing="out" condition="!Control.HasFocus(9010)">Conditional</animation>
+				<animation effect="slide" start="-850,0" end="0,0" time="400" tween="quadratic" easing="out" condition="!Control.HasFocus(9010)">Conditional</animation>
 				<control type="image">
 					<top>100</top>
 					<left>35</left>
-					<width>600</width>
+					<width>760</width>
 					<height>105</height>
 					<animation effect="fade" start="100" end="60" time="300" condition="!Control.HasFocus(9000)">Conditional</animation>
 					<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
@@ -167,7 +167,7 @@
 				<control type="panel" id="9000">
 					<left>35</left>
 					<top>98</top>
-					<width>600</width>
+					<width>760</width>
 					<height>840</height>
 					<onright condition="!String.IsEmpty(Container(9000).ListItem.Property(widget))">9003</onright>
 					<onleft condition="!Skin.HasSetting(Enable.CombineMenus)">9010</onleft>
@@ -177,9 +177,9 @@
 					<pagecontrol />
 					<scrolltime tween="quadratic" easing="out">300</scrolltime>
 					<orientation>Vertical</orientation>
-					<itemlayout height="105" width="600">
+					<itemlayout height="105" width="760">
 						<control type="label">
-							<width>600</width>
+							<width>760</width>
 							<height>105</height>
 							<font>DatoslavMainMenuFont</font>
 							<textoffsetx>20</textoffsetx>
@@ -188,18 +188,20 @@
 							<visible>String.IsEmpty(ListItem.Property(isSubmenu))</visible>
 						</control>
 						<control type="label">
-							<width>600</width>
+							<!-- indented by the left edge: Kodi takes textoffsetx off both sides of the text -->
+							<left>52</left>
+							<width>708</width>
 							<height>105</height>
-							<font>SubMenuFont</font>
-							<textoffsetx>60</textoffsetx>
+							<font>DatoslavSubMenuFont</font>
+							<textoffsetx>20</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
 							<label>$INFO[ListItem.Label]</label>
 							<visible>!String.IsEmpty(ListItem.Property(isSubmenu))</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout height="105" width="600">
+					<focusedlayout height="105" width="760">
 						<control type="label">
-							<width>600</width>
+							<width>760</width>
 							<height>105</height>
 							<font>DatoslavMainMenuFont</font>
 							<textoffsetx>20</textoffsetx>
@@ -208,10 +210,12 @@
 							<visible>String.IsEmpty(ListItem.Property(isSubmenu))</visible>
 						</control>
 						<control type="label">
-							<width>600</width>
+							<!-- indented by the left edge: Kodi takes textoffsetx off both sides of the text -->
+							<left>52</left>
+							<width>708</width>
 							<height>105</height>
-							<font>SubMenuFont</font>
-							<textoffsetx>60</textoffsetx>
+							<font>DatoslavSubMenuFont</font>
+							<textoffsetx>20</textoffsetx>
 							<textcolor>TitleTextColor</textcolor>
 							<label>$INFO[ListItem.Label]</label>
 							<visible>!String.IsEmpty(ListItem.Property(isSubmenu))</visible>
@@ -220,7 +224,7 @@
 							<animation effect="fade" end="0" start="100" time="200">UnFocus</animation>
 							<animation effect="fade" start="0" end="100" time="400" delay="400">Focus</animation>
 							<control type="label">
-								<left>560</left>
+								<left>720</left>
 								<width>30</width>
 								<height>98</height>
 								<label>$VAR[Icon-Play]</label>
@@ -243,7 +247,7 @@
 					<visible>Control.HasFocus(9000)</visible>
 					<height>30</height>
 					<top>38</top>
-					<left>320</left>
+					<left>365</left>
 					<control type="label">
 						<visible>Container(9000).HasPrevious</visible>
 						<width>30</width>
