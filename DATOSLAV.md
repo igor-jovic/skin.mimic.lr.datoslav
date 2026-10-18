@@ -52,6 +52,10 @@ conditions), and the expression in `xml/includes.xml` is true only in that add-o
 a view per list address with no default for an add-on, so without this each list would open in the plain list
 view. The library is not affected. The add-on's choice of lists has no content type and stays in the list view.
 
+The top bar shows the list's own heading (the add-on's plugin category, such as "Popularno" or "Pretraga:
+matrix") in place of "Movies" or "TV Shows" (`BreadcrumbsVar` in `xml/variables.xml`). A list without a heading
+keeps "Movies" or "TV Shows".
+
 KeibertzPlus's poster layout draws the add-on's `badge` property as the same coloured strip as the "more like
 this" row (`BadgeStrips` in `Includes_CommonValues.xml`). Library items have no badge, so nothing changes
 there.

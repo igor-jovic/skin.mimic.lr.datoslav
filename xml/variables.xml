@@ -114,6 +114,7 @@
 		<value condition="Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(title)]</value>
 		<value condition="Window.IsActive(favouritesbrowser)">$LOCALIZE[1036]</value>
 		<value condition="$EXP[GameSupport]">$LOCALIZE[10821]</value>
+		<value condition="$EXP[isVideotekaList] + !String.IsEmpty(Container.PluginCategory)">$INFO[Container.PluginCategory]</value>
 		<value condition="Container.Content(Movies)">Movies</value>
 		<value condition="Container.Content(TVShows)">TV Shows</value>
 		<value condition="Window.IsActive(script-The Big Picture-main.xml)">$INFO[Container(100).ListItem.Property(album_title)]</value>
