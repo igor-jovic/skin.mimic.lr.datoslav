@@ -122,11 +122,12 @@
 			<size>37</size>
 		</font>
 		<font>
-			<!-- datoslav: the home menu's submenu entries, SubMenuFont x1.3 -->
+			<!-- datoslav: the home menu's submenu entries, SubMenuFont x1.3 plus one: at 52 one box's GPU drew a
+			     sliver of the neighbouring glyph left of each "d"; another size packs the glyphs differently -->
 			<name>DatoslavSubMenuFont</name>
 			<filename>NotoSans-Regular.ttf</filename>
 			<linespacing>0</linespacing>
-			<size>48</size>
+			<size>49</size>
 		</font>
 		<font>
 			<name>BigAssFont</name>

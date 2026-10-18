@@ -43,7 +43,8 @@ Nothing is customised through the menu editor on the box; a `*.DATA.xml` in
 `userdata/addon_data/script.skinshortcuts/` would override these, and keep its own labels and order.
 
 The main entries use `DatoslavMainMenuFont` (94 in the default font set, not bold); the submenu entries
-`DatoslavSubMenuFont` (52, `SubMenuFont` x1.3, which the other menus keep), upright and indented 52 px further,
+`DatoslavSubMenuFont` (53, `SubMenuFont` x1.3 plus one, which the other menus keep; at 52 one box drew a
+sliver of the neighbouring glyph left of every "d"), upright and indented 52 px further,
 about two characters. Rows are 105 high and the menu 760 wide, so "Započeti - Nastavi gledanje" fits without
 scrolling; the menu starts 114 px higher than the original, 68 px under the top bar, so eight rows fit on screen. "Serije" is the skin's own text 31967, not Kodi's "TV shows".
 
