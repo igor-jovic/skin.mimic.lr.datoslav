@@ -38,15 +38,20 @@ in `shortcuts/mainmenu.DATA.xml`) fires while it is open, so Enter toggles. An a
 patch; if Enter on Filmovi stops opening its submenu, re-apply it.
 
 ## Home menu
-`shortcuts/mainmenu.DATA.xml` (Filmovi, TV serije, Podešavanja) and the submenus in `shortcuts/*.DATA.xml`.
-Nothing is customised through the menu editor on the box; a `mainmenu.DATA.xml` in
-`userdata/addon_data/script.skinshortcuts/` would override these.
+`shortcuts/mainmenu.DATA.xml` (Filmovi, Serije, Podešavanja) and the submenus in `shortcuts/*.DATA.xml`.
+Nothing is customised through the menu editor on the box; a `*.DATA.xml` in
+`userdata/addon_data/script.skinshortcuts/` would override these, and keep its own labels and order.
 
-The Filmovi and TV serije submenus end with "Dodaj novi", which opens the lists of the video add-on
+The main entries use `DatoslavMainMenuFont` (bold, 94 in the default font set); the submenu entries
+`SubMenuFont` (40), upright and indented 40 px further. Rows are 105 high and the menu 600 wide, so
+"Podešavanja" and "Započeti - Nastavi gledanje" fit without scrolling; the menu starts 40 px higher than the
+original so eight rows fit on screen. "Serije" is the skin's own text 31967, not Kodi's "TV shows".
+
+The Filmovi and Serije submenus start with "Započeti - Nastavi gledanje" and end with "Dodaj novi", which opens the lists of the video add-on
 `plugin.video.videoteka` (titles that can be requested). The entry is shown only when that add-on is installed.
 
-Nezavršeni (Filmovi) and Nezavršene (TV serije) open their list only when something is in progress. Otherwise
-they open a small pop-up in the style of the film pop-up, "Nemate nedovršene filmove" (or "serije") with one
+"Započeti - Nastavi gledanje" opens its list only when something is in progress. Otherwise
+it opens a small pop-up in the style of the film pop-up, "Nema filmova koje ste započeli" (or "serija") with one
 button, Povratak (`custom_1140_NoProgress.xml`), and the home screen stays. Home holds two lists, 9311 and 9312,
 fed by the same paths with `limit="1"`, one pixel in size and off the screen (Kodi fills only a visible list), so
 the count is known before OK; the entries' conditional actions come from `shortcuts/overrides.xml`.
@@ -103,8 +108,12 @@ The details page (`DialogVideoInfo.xml`) is cut down to what you read before cho
 film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
 scrolls by itself, on the right, side by side; the "more like this" row runs along the bottom under the heading
 "Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions. Its posters are
-225 x 337 with their names in `font16`; to fit them, the row starts at 520 and the description above it
-(textbox 400) is 340 high and scrolls by itself. Playing, resuming
+225 x 337 with their names in `font16`; to fit them, the row starts at 461 and the description above it
+(textbox 400) is 340 high and scrolls by itself. The blocks start 59 px under the top bar. The focused poster has
+an 18 px frame (a plate of `listselect_fo.png` 18 px larger than the poster on each side). A panel clips its items
+at its own edges, so `MoreLikeThisItem` sets the poster 18 px in and 3 px down and the panel sits that much further
+out; otherwise the first poster's frame is cut off on the left. The backdrop is dimmed by the same overlay as the
+lists (`CommonBackground`). Playing, resuming
 and the trailer are in the film pop-up.
 
 - The info lines differ per type: a film shows year, length, rating, genre and director; a show its premiere,

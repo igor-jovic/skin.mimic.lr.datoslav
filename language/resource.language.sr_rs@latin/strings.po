@@ -32,12 +32,12 @@ msgid "All movies"
 msgstr "Svi filmovi"
 
 msgctxt "#31628"
-msgid "Unfinished"
-msgstr "Nezavršeni"
+msgid "Started - continue watching"
+msgstr "Započeti - Nastavi gledanje"
 
 msgctxt "#31629"
-msgid "Unfinished (TV shows)"
-msgstr "Nezavršene"
+msgid "Started - continue watching (TV shows)"
+msgstr "Započeti - Nastavi gledanje"
 
 msgctxt "#31630"
 msgid "Partially watched"
@@ -124,13 +124,17 @@ msgid "Rating"
 msgstr "Ocena"
 
 msgctxt "#31964"
-msgid "You have no unfinished films"
-msgstr "Nemate nedovršene filmove"
+msgid "No films you have started"
+msgstr "Nema filmova koje ste započeli"
 
 msgctxt "#31965"
-msgid "You have no unfinished shows"
-msgstr "Nemate nedovršene serije"
+msgid "No shows you have started"
+msgstr "Nema serija koje ste započeli"
 
 msgctxt "#31966"
 msgid "Back"
 msgstr "Povratak"
+
+msgctxt "#31967"
+msgid "Series"
+msgstr "Serije"

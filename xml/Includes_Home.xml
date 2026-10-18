@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="HomeVertical">
+        <!-- datoslav: 40 px higher, so eight rows of the larger menu fit on screen -->
         <control type="group">
-            <top>120</top>
+            <top>80</top>
             <include>MainMenuVertical</include>
             <control type="button">
                 <width>10</width>
