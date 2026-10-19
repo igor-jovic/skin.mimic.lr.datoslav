@@ -7,4 +7,12 @@
 		<stop>true</stop>
 		<onstart>SetFocus(9601)</onstart>
 	</timer>
+	<!-- datoslav: Slični filmovi had focus while the film pop-up's row loaded, and it loaded without this film's
+	     suggestions: the row turned grey, so focus goes back to "Više o ovom filmu..." -->
+	<timer>
+		<name>datoslav_film_no_similar</name>
+		<start reset="true">Window.IsActive(movieinformation) + Control.HasFocus(9506) + !Container(350).IsUpdating + ![Integer.IsGreater(Container(350).NumItems,0) + String.IsEqual(Container(350).ListItemAbsolute(0).Property(row.for),Window(movieinformation).Property(datoslav.rowfor))]</start>
+		<stop>true</stop>
+		<onstart>SetFocus(9505)</onstart>
+	</timer>
 </timers>

@@ -118,7 +118,10 @@ every view. A skin cannot change what Enter does in one view.
   land at `<nested />`, which Kodi fills only when it is a direct child of a top-level control of the include.
 - "Slični filmovi" runs `RunScript(plugin.video.videoteka,action=similar,dbid=…)`, which closes the page and
   opens the film's suggestions as a list of the add-on, like its genre lists. The row is greyed out by the
-  expression `hasSimilarFilms` (`includes.xml`): the details page's row (panel 350) holds this film's items.
+  expression `hasSimilarFilms` (`includes.xml`): the details page's row (panel 350) holds this film's items, or
+  is still loading. The row loads as the pop-up opens, so it counts as having films until it has loaded empty
+  or with another title's items; a click meanwhile opens the list anyway. When the row turns grey under the
+  focus, the timer `datoslav_film_no_similar` in `Timers.xml` moves focus to "Više o ovom filmu...".
 - Up and down moves are written on every button. Left to the group list, focus would not step over the grey
   row, which is a picture and text, not a button.
 
