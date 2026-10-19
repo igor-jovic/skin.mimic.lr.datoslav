@@ -142,8 +142,8 @@
 					<include>HiddenObject</include>
 				</control>
 
-				<!-- beside the info lines, above the "more like this" row; the full height for a film, or once the row
-				     has loaded empty -->
+				<!-- beside the info lines, above the "more like this" row; the full height for a film or an episode, or
+				     once the row has loaded empty -->
 				<control type="textbox" id="400">
 					<description>Plot</description>
 					<animation effect="fade" time="300" start="0" end="100" delay="100">Visible</animation>
@@ -155,7 +155,7 @@
 					<label>$VAR[VideoInfoPlotVar]</label>
 					<pagecontrol>60</pagecontrol>
 					<include>AutoscrollDefault</include>
-					<visible>!$EXP[isMovie] + [Container(350).IsUpdating | Integer.IsGreater(Container(350).NumItems,0)]</visible>
+					<visible>!$EXP[isMovie] + !$EXP[isEpisode] + [Container(350).IsUpdating | Integer.IsGreater(Container(350).NumItems,0)]</visible>
 				</control>
 				<control type="textbox" id="401">
 					<description>Plot, no suggestions</description>
@@ -517,12 +517,12 @@
 				<font>font15</font>
 				<textcolor>LabelTextColor</textcolor>
 				<label>$LOCALIZE[31962]</label>
-				<visible>!$EXP[isMovie] + Integer.IsGreater(Container(350).NumItems,0) + String.IsEqual(Container(350).ListItem(0).Property(row.for),Window(movieinformation).Property(datoslav.rowfor))</visible>
+				<visible>!$EXP[isMovie] + !$EXP[isEpisode] + Integer.IsGreater(Container(350).NumItems,0) + String.IsEqual(Container(350).ListItem(0).Property(row.for),Window(movieinformation).Property(datoslav.rowfor))</visible>
 			</control>
 			<!-- MORE LIKE THIS: always visible, because Kodi does not fill a hidden list; an empty one draws nothing.
-			     A film's row is not drawn: it only tells the pop-up whether Slični filmovi has titles -->
+			     A film's or an episode's row is not drawn: it only tells the pop-up whether its similar button has titles -->
 			<control type="panel" id="350">
-				<animation effect="fade" start="0" end="0" time="0" condition="$EXP[isMovie]">Conditional</animation>
+				<animation effect="fade" start="0" end="0" time="0" condition="$EXP[isMovie] | $EXP[isEpisode]">Conditional</animation>
 				<include>FilmDetailsBack</include>
 				<description>More like this</description>
 				<left>-21</left>
@@ -548,7 +548,7 @@
 				</focusedlayout>
 				<content target="videos">plugin://plugin.video.videoteka/?action=row&amp;type=$INFO[ListItem.DBType]&amp;dbid=$INFO[ListItem.DBID]&amp;showdbid=$INFO[ListItem.TvShowDBID]</content>
 			</control>
-			<!-- holds focus on a film without suggestions, so Back still returns to the film menu -->
+			<!-- holds focus on a film's or an episode's details page, so Back still returns to the pop-up -->
 			<control type="button" id="9600">
 				<include>FilmDetailsBack</include>
 				<visible allowhiddenfocus="true">false</visible>
@@ -987,8 +987,8 @@
 				</control>
 			</control>
 			<!-- rows come from the include FilmPopupRow. Up and down moves are explicit: the group list does not step
-			     over the grey "no trailer" and "no similar films" rows, which is a picture and text, not a button.
-			     An episode has no trailer or similar rows, and its own "play" and "more about" rows -->
+			     over the grey "no trailer" and "no similar" rows, which is a picture and text, not a button.
+			     An episode has no trailer row, and its own "play", "more about" and "similar shows" rows -->
 			<control type="grouplist" id="9500">
 				<left>410</left>
 				<top>250</top>
@@ -1092,8 +1092,8 @@
 						<onup condition="!String.IsEmpty(ListItem.Trailer)">9504</onup>
 						<onup condition="String.IsEmpty(ListItem.Trailer) + ListItem.IsResumable">9503</onup>
 						<onup condition="String.IsEmpty(ListItem.Trailer) + !ListItem.IsResumable">9501</onup>
-						<ondown condition="$EXP[hasSimilarFilms]">9506</ondown>
-						<ondown condition="!$EXP[hasSimilarFilms]">9505</ondown>
+						<ondown condition="$EXP[hasSimilar]">9506</ondown>
+						<ondown condition="!$EXP[hasSimilar]">9505</ondown>
 					</include>
 				</control>
 				<control type="group">
@@ -1107,17 +1107,18 @@
 						<onclick>SetFocus(9600)</onclick>
 						<onup condition="ListItem.IsResumable">9503</onup>
 						<onup condition="!ListItem.IsResumable">9511</onup>
-						<ondown>9515</ondown>
+						<ondown condition="$EXP[hasSimilar]">9516</ondown>
+						<ondown condition="!$EXP[hasSimilar]">9515</ondown>
 					</include>
 				</control>
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>$EXP[isMovie] + $EXP[hasSimilarFilms]</visible>
+					<visible>$EXP[isMovie] + $EXP[hasSimilar]</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9506" />
 						<param name="label" value="31975" />
-						<onclick>RunScript(plugin.video.videoteka,action=similar,dbid=$INFO[ListItem.DBID])</onclick>
+						<onclick>RunScript(plugin.video.videoteka,action=similar,type=movie,dbid=$INFO[ListItem.DBID])</onclick>
 						<onup>9505</onup>
 						<ondown>9506</ondown>
 					</include>
@@ -1125,7 +1126,7 @@
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>$EXP[isMovie] + !$EXP[hasSimilarFilms]</visible>
+					<visible>$EXP[isMovie] + !$EXP[hasSimilar]</visible>
 					<control type="image">
 						<left>100</left>
 						<width>900</width>
@@ -1134,6 +1135,33 @@
 					</control>
 					<include content="FilmPopupRowText">
 						<param name="label" value="$LOCALIZE[31976]" />
+						<param name="visible" value="true" />
+					</include>
+				</control>
+				<control type="group">
+					<width>1100</width>
+					<height>120</height>
+					<visible>$EXP[isEpisode] + $EXP[hasSimilar]</visible>
+					<include content="FilmPopupRow">
+						<param name="id" value="9516" />
+						<param name="label" value="31984" />
+						<onclick>RunScript(plugin.video.videoteka,action=similar,type=episode,dbid=$INFO[ListItem.DBID])</onclick>
+						<onup>9515</onup>
+						<ondown>9516</ondown>
+					</include>
+				</control>
+				<control type="group">
+					<width>1100</width>
+					<height>120</height>
+					<visible>$EXP[isEpisode] + !$EXP[hasSimilar]</visible>
+					<control type="image">
+						<left>100</left>
+						<width>900</width>
+						<height>120</height>
+						<texture colordiffuse="FF4D4D4D" border="5">listselect_fo.png</texture>
+					</control>
+					<include content="FilmPopupRowText">
+						<param name="label" value="$LOCALIZE[31985]" />
 						<param name="visible" value="true" />
 					</include>
 				</control>

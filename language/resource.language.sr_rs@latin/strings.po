@@ -202,3 +202,11 @@ msgstr "Sezona"
 msgctxt "#31983"
 msgid "Episode"
 msgstr "Epizoda"
+
+msgctxt "#31984"
+msgid "Similar shows..."
+msgstr "Pogledaj slične serije..."
+
+msgctxt "#31985"
+msgid "No similar shows"
+msgstr "Nema sličnih serija"

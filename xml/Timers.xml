@@ -15,4 +15,11 @@
 		<stop>true</stop>
 		<onstart>SetFocus(9505)</onstart>
 	</timer>
+	<!-- datoslav: the same for the episode pop-up's Pogledaj slične serije and "Više o epizodi..." -->
+	<timer>
+		<name>datoslav_episode_no_similar</name>
+		<start reset="true">Window.IsActive(movieinformation) + Control.HasFocus(9516) + !Container(350).IsUpdating + ![Integer.IsGreater(Container(350).NumItems,0) + String.IsEqual(Container(350).ListItemAbsolute(0).Property(row.for),Window(movieinformation).Property(datoslav.rowfor))]</start>
+		<stop>true</stop>
+		<onstart>SetFocus(9515)</onstart>
+	</timer>
 </timers>
