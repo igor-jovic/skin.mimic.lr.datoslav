@@ -286,6 +286,7 @@
 			<texture colordiffuse="66000000" border="5">listselect_fo.png</texture>
 		</control>
 		<control type="label">
+            <visible>!$EXP[isVideotekaSimilar]</visible>
             <left>100</left>
             <top>491</top>
             <width>1126</width>
@@ -297,6 +298,22 @@
             <textcolor>TitleTextColor</textcolor>
             <shadowcolor>shadow</shadowcolor>
             <scroll>true</scroll>
+        </control>
+		<!-- datoslav: Slični filmovi and Slične serije name a title "Title [Original title]", which wraps onto two
+		     lines and is cut after them; the info line and the description move down a line to make room -->
+		<control type="label">
+            <visible>$EXP[isVideotekaSimilar]</visible>
+            <left>100</left>
+            <top>491</top>
+            <width>1126</width>
+            <height>120</height>
+            <align>left</align>
+            <aligny>center</aligny>
+            <wrapmultiline>true</wrapmultiline>
+            <font>font35_title</font>
+            <label>[B]$VAR[KeibertzPlusTitle][/B]</label>
+            <textcolor>TitleTextColor</textcolor>
+            <shadowcolor>shadow</shadowcolor>
         </control>
 		<control type="label">
 			<left>100</left>
@@ -310,13 +327,29 @@
 			<textcolor>AltTextColor</textcolor>
 			<shadowcolor>shadow</shadowcolor>
 			<scroll>false</scroll>
+			<animation effect="slide" end="0,60" time="0" condition="$EXP[isVideotekaSimilar]">Conditional</animation>
 		</control>
 		<control type="textbox">
+            <visible>!$EXP[isVideotekaSimilar]</visible>
             <left>100</left>
             <top>636</top>
             <width>1126</width>
             <!-- datoslav: scrolling text draws about 15 below the box, so it ends above the inner panel's edge (1030) -->
             <height>370</height>
+            <align>justify</align>
+            <font>font13</font>
+            <label>$INFO[ListItem.Plot]</label>			
+            <textcolor>NormalTextColor</textcolor>
+            <shadowcolor>shadow</shadowcolor>
+            <autoscroll time="4000" delay="3000" repeat="5000">!Skin.HasSetting(Disable.AutoScroll) + Control.HasFocus(902)</autoscroll>
+        </control>
+		<control type="textbox">
+            <visible>$EXP[isVideotekaSimilar]</visible>
+            <left>100</left>
+            <top>696</top>
+            <width>1126</width>
+            <!-- datoslav: a line lower under the two-line title, ending where the other one ends -->
+            <height>310</height>
             <align>justify</align>
             <font>font13</font>
             <label>$INFO[ListItem.Plot]</label>			
