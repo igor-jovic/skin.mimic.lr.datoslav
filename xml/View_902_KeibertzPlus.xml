@@ -350,6 +350,35 @@
 				<param name="height" value="110" />
 				<param name="font" value="font35_title" />
 			</include>
+			<!-- a title nobody has asked for: videoteka answered, without a status. Two lines need a smaller font. -->
+			<control type="group">
+				<visible>String.IsEqual(ListItem.Property(badge),none)</visible>
+				<control type="image">
+					<width>526</width>
+					<height>110</height>
+					<texture colordiffuse="E6FF8F00">white.png</texture>
+				</control>
+				<control type="label">
+					<width>526</width>
+					<height>110</height>
+					<font>font15_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>[B]$LOCALIZE[31977][/B]</label>
+					<visible>!String.IsEqual(ListItem.DBType,tvshow)</visible>
+				</control>
+				<control type="label">
+					<width>526</width>
+					<height>110</height>
+					<font>font15_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>[B]$LOCALIZE[31978][/B]</label>
+					<visible>String.IsEqual(ListItem.DBType,tvshow)</visible>
+				</control>
+			</control>
 		</control>
 	</include>
 </includes>
