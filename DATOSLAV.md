@@ -99,8 +99,9 @@ layouts in `xml/Includes_Home.xml`. Skin Shortcuts still attaches a widget to ev
 
 ## Film pop-up
 Opening a film's info (`DialogVideoInfo.xml`) shows a pop-up of actions first: play, or play from the beginning
-and resume for a part-watched film; trailer, or a grey "Film nema najavu"; and "Više o ovom filmu...", which
-shows the details page. It is the last group in that file, drawn over the page for films only, so it appears in
+and resume for a part-watched film; trailer, or a grey "Film nema najavu"; "Više o ovom filmu...", which
+shows the details page; and "Slični filmovi", or a grey "Nema sličnih filmova". Rows are 120 high with 15 between
+them, so five fit. It is the last group in that file, drawn over the page for films only, so it appears in
 every view. A skin cannot change what Enter does in one view.
 
 - The pop-up's buttons click Kodi's own buttons on the page underneath: 8 (play), 9 (resume), 11 (trailer).
@@ -115,14 +116,22 @@ every view. A skin cannot change what Enter does in one view.
   invisible, the text drawn over it (regular, or bold with focus, which a button cannot do itself) and
   `FilmPopupFocusMarks` (white frame and pointers). The button's actions are written inside the include tag and
   land at `<nested />`, which Kodi fills only when it is a direct child of a top-level control of the include.
+- "Slični filmovi" runs `RunScript(plugin.video.videoteka,action=similar,dbid=…)`, which closes the page and
+  opens the film's suggestions as a list of the add-on, like its genre lists. The row is greyed out by the
+  expression `hasSimilarFilms` (`includes.xml`): the details page's row (panel 350) holds this film's items, or
+  is still loading. The row loads as the pop-up opens, so it counts as having films until it has loaded empty
+  or with another title's items; a click meanwhile opens the list anyway. When the row turns grey under the
+  focus, the timer `datoslav_film_no_similar` in `Timers.xml` moves focus to "Više o ovom filmu...".
 - Up and down moves are written on every button. Left to the group list, focus would not step over the grey
   row, which is a picture and text, not a button.
 
 ## Details page
 The details page (`DialogVideoInfo.xml`) is cut down to what you read before choosing what to watch next. A
 film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
-scrolls by itself, on the right, side by side; the "more like this" row runs along the bottom under the heading
-"Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions. Its posters are
+scrolls by itself, on the right, side by side; on a show's or episode's page the "more like this" row runs along
+the bottom under the heading "Možda će ti se svideti i ovo", which shows only once the row holds this title's
+suggestions. A film's page has no row: its suggestions are the film pop-up's "Slični filmovi", and its
+description gets the full height (textbox 401). The row's posters are
 225 x 337 with their names in `font16`. The film's or show's title, bold in `font30`, starts about 72 px under the top
 bar; a title too long for the left column is cut with "…" rather than scrolled, so the page stays still. The info
 lines start under it (list 62 at 204). The row starts at 546, so that its
@@ -137,18 +146,21 @@ and the trailer are in the film pop-up.
 - The info lines differ per type: a film shows year, length, rating, genre and director; a show its premiere,
   rating, genre and a seasons line ("1 sezona · 8 epizoda · 8 neodgledano", with the Serbian plural from
   `MltSeasonsWord` and `MltEpisodesWord` in `variables.xml`); an episode its premiere, length and rating.
+- A film's row is still filled, because the pop-up counts its items, but a conditional fade to 0 keeps it from
+  being drawn, and focus never goes to it.
 - The row (panel 350) is filled by the video add-on `plugin.video.videoteka`, whose item paths open its own
   pop-up. Each item has the properties `badge` (`available`, `requested`, `accepted`, `declined` or empty, drawn
   as a coloured strip) and `row.for`. The row is always visible, because Kodi does not fill a hidden list; an
   empty one draws nothing.
 - Kodi keeps the previous title's items until the new list arrives. The page sets `datoslav.rowfor` on
   `movieinformation` to `<type>-<dbid>` when it opens, and an item is drawn only when its `row.for` matches.
-- Focus starts on the row. "Više o ovom filmu..." in the film pop-up puts focus on the row, or on the invisible
-  button 9600 when the row is empty, so Back still returns to the pop-up.
+- Focus starts on the row. "Više o ovom filmu..." in the film pop-up puts focus on the invisible button 9600,
+  so Back still returns to the pop-up.
 - A show's page has one button, "Ostale sezone" (9601), which opens the add-on's pop-up for the show itself.
   Up from the row goes to it, down from it to the row. When the row loads empty, the timer in `Timers.xml`
   moves focus to it.
-- The description gets the full height once the row has loaded empty (textbox 401 instead of 400).
+- The description gets the full height on a film's page, or once the row has loaded empty (textbox 401
+  instead of 400).
 - KeibertzPlus draws no name above the posters in the videoteka add-on's lists (`isVideotekaList`); the
   library's show lists keep theirs.
 - Kodi's own buttons (grouplist 9000) are hidden, not removed: the film pop-up clicks 8, 9 and 11, and the

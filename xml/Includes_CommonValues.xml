@@ -36,21 +36,21 @@
         <control type="group">
             <visible>Control.HasFocus($PARAM[id])</visible>
             <control type="image"><left>100</left><width>900</width><height>10</height><texture>white.png</texture></control>
-            <control type="image"><left>100</left><top>120</top><width>900</width><height>10</height><texture>white.png</texture></control>
-            <control type="image"><left>100</left><width>10</width><height>130</height><texture>white.png</texture></control>
-            <control type="image"><left>990</left><width>10</width><height>130</height><texture>white.png</texture></control>
-            <control type="image"><left>30</left><top>35</top><width>50</width><height>60</height><texture>datoslav/pointer_right.png</texture></control>
-            <control type="image"><left>1020</left><top>35</top><width>50</width><height>60</height><texture flipx="true">datoslav/pointer_right.png</texture></control>
+            <control type="image"><left>100</left><top>110</top><width>900</width><height>10</height><texture>white.png</texture></control>
+            <control type="image"><left>100</left><width>10</width><height>120</height><texture>white.png</texture></control>
+            <control type="image"><left>990</left><width>10</width><height>120</height><texture>white.png</texture></control>
+            <control type="image"><left>30</left><top>30</top><width>50</width><height>60</height><texture>datoslav/pointer_right.png</texture></control>
+            <control type="image"><left>1020</left><top>30</top><width>50</width><height>60</height><texture flipx="true">datoslav/pointer_right.png</texture></control>
         </control>
     </include>
-    <!-- datoslav: what goes inside one selectable row (a 1100 x 130 group) of the film pop-up. Params: id, label
+    <!-- datoslav: what goes inside one selectable row (a 1100 x 120 group) of the film pop-up. Params: id, label
          (text number). What the button does and where Up and Down go is written inside the include tag and lands
          at <nested />, which Kodi only fills when it is a direct child of a top-level control here -->
     <include name="FilmPopupRow">
         <control type="button" id="$PARAM[id]">
             <left>100</left>
             <width>900</width>
-            <height>130</height>
+            <height>120</height>
             <font>font35_title</font>
             <label>$PARAM[label]</label>
             <textcolor>00FFFFFF</textcolor>
@@ -76,7 +76,7 @@
         <control type="label">
             <left>100</left>
             <width>900</width>
-            <height>130</height>
+            <height>120</height>
             <align>center</align>
             <aligny>center</aligny>
             <font>font35_title</font>
