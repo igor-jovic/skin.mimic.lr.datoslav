@@ -1837,3 +1837,11 @@ msgstr ""
 msgctxt "#31983"
 msgid "Episode"
 msgstr ""
+
+msgctxt "#31984"
+msgid "Similar shows..."
+msgstr ""
+
+msgctxt "#31985"
+msgid "No similar shows"
+msgstr ""

@@ -109,7 +109,7 @@ film" (or "ovu seriju" for a show), in the other strips' `font35_title`. "Pritis
 the strip in that font, so it takes three lines, and that strip is 200 px high instead of 110. The poster's strip
 shows nothing for it.
 
-The add-on's screens (its lists, Dodaj novi, Pretraga, Slični filmovi) are maroon where the library is blue: the
+The add-on's screens (its lists, Dodaj novi, Pretraga, Slični filmovi, Slične serije) are maroon where the library is blue: the
 see-through layer over the background picture (`CommonBackground` in `Includes_Backgrounds.xml`) takes its colour
 from `DatoslavBackgroundColor` (`variables.xml`), `F0280A12` while `Container.PluginName` is the add-on and the
 theme's `BackgroundColor` otherwise. The theme's colours cannot do it: a colour theme applies to every screen.
@@ -128,9 +128,10 @@ them, so five fit. It is the last group in that file, drawn over the page for fi
 every view. A skin cannot change what Enter does in one view.
 
 An episode's pop-up has its own "Pusti epizodu" (9511) or, part-watched, the film's "Pusti od početka" and
-"Nastavi gde smo stali"; then "Više o epizodi..." (9515). It has no trailer and no "Slični" rows. Its title is
-two lines, the show's name and then "Sezona 1, Epizoda 6" in bold capitals in `font30`; the group list centres its rows
-vertically, so two or three rows stay clear of the second line.
+"Nastavi gde smo stali"; then "Više o epizodi..." (9515); and "Pogledaj slične serije..." (9516), or a grey
+"Nema sličnih serija". It has no trailer row. Its title is two lines, the show's name and then "Sezona 1,
+Epizoda 6" in bold capitals in `font30`; the group list centres its rows vertically, so its three or four rows
+stay clear of the second line.
 
 - The pop-up's buttons click Kodi's own buttons on the page underneath: 8 (play), 9 (resume), 11 (trailer).
   Button 9 is the fork's addition; while it exists Kodi makes 8 always start from the beginning instead of
@@ -144,22 +145,24 @@ vertically, so two or three rows stay clear of the second line.
   invisible, the text drawn over it (regular, or bold with focus, which a button cannot do itself) and
   `FilmPopupFocusMarks` (white frame and pointers). The button's actions are written inside the include tag and
   land at `<nested />`, which Kodi fills only when it is a direct child of a top-level control of the include.
-- "Slični filmovi" runs `RunScript(plugin.video.videoteka,action=similar,dbid=…)`, which closes the page and
-  opens the film's suggestions as a list of the add-on, like its genre lists. The row is greyed out by the
-  expression `hasSimilarFilms` (`includes.xml`): the details page's row (panel 350) holds this film's items, or
-  is still loading. The row loads as the pop-up opens, so it counts as having films until it has loaded empty
-  or with another title's items; a click meanwhile opens the list anyway. When the row turns grey under the
-  focus, the timer `datoslav_film_no_similar` in `Timers.xml` moves focus to "Više o ovom filmu...".
+- "Slični filmovi" runs `RunScript(plugin.video.videoteka,action=similar,type=movie,dbid=…)`, which closes the
+  page and opens the film's suggestions as a list of the add-on, like its genre lists. "Pogledaj slične
+  serije..." does the same with `type=episode`: the list is the episode's show's suggestions, the same for every
+  episode of a show. The row is greyed out by the expression `hasSimilar` (`includes.xml`): the details page's
+  row (panel 350) holds this title's items, or is still loading. The row loads as the pop-up opens, so it counts
+  as having titles until it has loaded empty or with another title's items; a click meanwhile opens the list
+  anyway. When the row turns grey under the focus, the timers `datoslav_film_no_similar` and
+  `datoslav_episode_no_similar` in `Timers.xml` move focus to the "more about" row.
 - Up and down moves are written on every button. Left to the group list, focus would not step over the grey
   row, which is a picture and text, not a button.
 
 ## Details page
 The details page (`DialogVideoInfo.xml`) is cut down to what you read before choosing what to watch next. A
 film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
-scrolls by itself, on the right, side by side; on a show's or episode's page the "more like this" row runs along
-the bottom under the heading "Možda će ti se svideti i ovo", which shows only once the row holds this title's
-suggestions. A film's page has no row: its suggestions are the film pop-up's "Slični filmovi", and its
-description gets the full height (textbox 401). The row's posters are
+scrolls by itself, on the right, side by side; on a show's page the "more like this" row runs along the bottom
+under the heading "Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions.
+A film's or episode's page has no row: its suggestions are the pop-up's "Slični filmovi" or "Pogledaj slične
+serije...", and its description gets the full height (textbox 401). The row's posters are
 225 x 337 with their names in `font16`. The film's or show's title, bold in `font30`, starts about 72 px under the top
 bar; a title too long for the left column is cut with "…" rather than scrolled, so the page stays still. The info
 lines start under it (list 62 at 204). The row starts at 546, so that its
