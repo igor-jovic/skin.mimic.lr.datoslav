@@ -90,9 +90,15 @@ KeibertzPlus's poster layout draws the add-on's `badge` property as the same col
 this" row (`BadgeStrips` in `Includes_CommonValues.xml`), and the right-hand panel, where the library shows the
 top actors, shows it again as a large strip. Library items have no badge, so nothing changes there. The strips
 read Dostupno, Naručeno, U pripremi (videoteka's "accepted") and Odbijeno. A title videoteka answered for without
-a status has the badge `none`: the large strip only shows it, amber, as "Pritisni OK da naručiš / ovaj film" (or
-"ovu seriju" for a show), in two lines of `font15_title`, since two lines of the other strips' `font35_title`
-do not fit its 110 px. The poster's strip shows nothing for it.
+a status has the badge `none`: the large strip only shows it, dark amber, as "Pritisni OK / da naručiš / ovaj
+film" (or "ovu seriju" for a show), in the other strips' `font35_title`. "Pritisni OK da naručiš" is wider than
+the strip in that font, so it takes three lines, and that strip is 200 px high instead of 110. The poster's strip
+shows nothing for it.
+
+The add-on's screens (its lists, Dodaj novi, Pretraga, Slični filmovi) are maroon where the library is blue: the
+see-through layer over the background picture (`CommonBackground` in `Includes_Backgrounds.xml`) takes its colour
+from `DatoslavBackgroundColor` (`variables.xml`), `F0280A12` while `Container.PluginName` is the add-on and the
+theme's `BackgroundColor` otherwise. The theme's colours cannot do it: a colour theme applies to every screen.
 
 KeibertzPlus's line under the title (`KeibertzPlusInfoLine` in `variables.xml`) reads year, "Ocena: 8.5" and
 genres, in every list, the library's too, and draws a "•" only between two of them.

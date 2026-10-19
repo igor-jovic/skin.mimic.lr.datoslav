@@ -176,9 +176,9 @@ msgid "No similar movies"
 msgstr "Nema sličnih filmova"
 
 msgctxt "#31977"
-msgid "Press OK to request[CR]this movie"
-msgstr "Pritisni OK da naručiš[CR]ovaj film"
+msgid "Press OK[CR]to request[CR]this movie"
+msgstr "Pritisni OK[CR]da naručiš[CR]ovaj film"
 
 msgctxt "#31978"
-msgid "Press OK to request[CR]this show"
-msgstr "Pritisni OK da naručiš[CR]ovu seriju"
+msgid "Press OK[CR]to request[CR]this show"
+msgstr "Pritisni OK[CR]da naručiš[CR]ovu seriju"
