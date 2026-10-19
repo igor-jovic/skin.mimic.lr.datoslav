@@ -129,7 +129,7 @@ every view. A skin cannot change what Enter does in one view.
 
 An episode's pop-up has its own "Pusti epizodu" (9511) or, part-watched, the film's "Pusti od početka" and
 "Nastavi gde smo stali"; then "Više o epizodi..." (9515). It has no trailer and no "Slični" rows. Its title is
-two lines, the show's name and then "Sezona 1, Epizoda 6" in `font15_title`; the group list centres its rows
+two lines, the show's name and then "Sezona 1, Epizoda 6" in bold capitals in `font30`; the group list centres its rows
 vertically, so two or three rows stay clear of the second line.
 
 - The pop-up's buttons click Kodi's own buttons on the page underneath: 8 (play), 9 (resume), 11 (trailer).
