@@ -115,6 +115,10 @@ see-through layer over the background picture (`CommonBackground` in `Includes_B
 from `DatoslavBackgroundColor` (`variables.xml`), `F0280A12` while `Container.PluginName` is the add-on and the
 theme's `BackgroundColor` otherwise. The theme's colours cannot do it: a colour theme applies to every screen.
 
+In the add-on's Slični filmovi and Slične serije (`isVideotekaSimilar`), KeibertzPlus's title names a title
+"Title [Original title]" when the two differ, so it does not scroll: it wraps onto two lines and is cut after
+them, and the info line and the description sit 60 px lower to make room (the description 60 px shorter).
+
 KeibertzPlus's line under the title (`KeibertzPlusInfoLine` in `variables.xml`) reads year, "Ocena: 8.5" and
 genres, in every list, the library's too, and draws a "•" only between two of them.
 

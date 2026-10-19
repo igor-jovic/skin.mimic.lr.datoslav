@@ -67,6 +67,8 @@
 	<expression name="isVideotekaMenu">String.IsEqual(Container.PluginName,plugin.video.videoteka) + String.IsEmpty(Container.Content)</expression>
 	<!-- the details page's row holds this film's or episode's suggestions, or is still loading (it opens with the pop-up) -->
 	<expression name="hasSimilar">Container(350).IsUpdating | Integer.IsGreater(Container(350).NumItems,0) + String.IsEqual(Container(350).ListItemAbsolute(0).Property(row.for),Window(movieinformation).Property(datoslav.rowfor))</expression>
+	<!-- datoslav: the add-on's Slični filmovi and Slične serije -->
+	<expression name="isVideotekaSimilar">String.IsEqual(Container.PluginName,plugin.video.videoteka) + String.Contains(Container.FolderPath,action=similar)</expression>
 	<expression name="isVideotekaList">String.IsEqual(Container.PluginName,plugin.video.videoteka) + [Container.Content(movies) | Container.Content(tvshows)]</expression>
 	<expression name="isSet">String.IsEqual(ListItem.DBTYPE,set)</expression>
 	<expression name="isEpisode">String.IsEqual(ListItem.DBTYPE,episode)</expression>
