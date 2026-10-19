@@ -1251,6 +1251,11 @@
 		<value condition="!String.IsEmpty(Container.ShowTitle)">$INFO[ListItem.Season]x$INFO[ListItem.Episode] $INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
 	</variable>
+	<!-- datoslav: the videoteka add-on's screens are maroon, the library keeps the theme's blue -->
+	<variable name="DatoslavBackgroundColor">
+		<value condition="String.IsEqual(Container.PluginName,plugin.video.videoteka)">F0280A12</value>
+		<value>BackgroundColor</value>
+	</variable>
 	<variable name="CommonBackgroundOverlay">
 		<value condition="!String.IsEmpty(Skin.String(CustomOverlay))">$INFO[Skin.String(CustomOverlay)]</value>
 		<value>white.png</value>

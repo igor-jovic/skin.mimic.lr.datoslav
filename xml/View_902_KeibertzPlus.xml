@@ -350,18 +350,20 @@
 				<param name="height" value="110" />
 				<param name="font" value="font35_title" />
 			</include>
-			<!-- a title nobody has asked for: videoteka answered, without a status. Two lines need a smaller font. -->
+			<!-- a title nobody has asked for: videoteka answered, without a status. Three lines, so it is taller than the others. -->
 			<control type="group">
 				<visible>String.IsEqual(ListItem.Property(badge),none)</visible>
 				<control type="image">
 					<width>526</width>
-					<height>110</height>
-					<texture colordiffuse="E6FF8F00">white.png</texture>
+					<height>200</height>
+					<texture colordiffuse="E6A05000">white.png</texture>
 				</control>
 				<control type="label">
+					<!-- capitals have no descenders, so centred text sits low -->
+					<top>-10</top>
 					<width>526</width>
-					<height>110</height>
-					<font>font15_title</font>
+					<height>200</height>
+					<font>font35_title</font>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>FFFFFFFF</textcolor>
@@ -369,9 +371,10 @@
 					<visible>!String.IsEqual(ListItem.DBType,tvshow)</visible>
 				</control>
 				<control type="label">
+					<top>-10</top>
 					<width>526</width>
-					<height>110</height>
-					<font>font15_title</font>
+					<height>200</height>
+					<font>font35_title</font>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>FFFFFFFF</textcolor>

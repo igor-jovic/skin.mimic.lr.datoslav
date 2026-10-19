@@ -1811,9 +1811,9 @@ msgid "No similar movies"
 msgstr ""
 
 msgctxt "#31977"
-msgid "Press OK to request[CR]this movie"
+msgid "Press OK[CR]to request[CR]this movie"
 msgstr ""
 
 msgctxt "#31978"
-msgid "Press OK to request[CR]this show"
+msgid "Press OK[CR]to request[CR]this show"
 msgstr ""

@@ -59,6 +59,14 @@ button, Povratak (`custom_1140_NoProgress.xml`), and the home screen stays. Home
 fed by the same paths with `limit="1"`, one pixel in size and off the screen (Kodi fills only a visible list), so
 the count is known before OK; the entries' conditional actions come from `shortcuts/overrides.xml`.
 
+The videoteka add-on's Pogledaj opens Svi filmovi (or Sve serije), and Back from there comes home with the menu
+on that entry, not on Dodaj novi film. Pogledaj sets the home window's property `datoslav.homemenu` (`movie` or
+`tv`); Home's `onload` opens that submenu, focuses the entry by its position (`SetFocus(9000,4|5,absolute)`) and
+clears the property. Kodi runs `onload` only after it has drawn home with the cursor it remembered, and the
+highlight plate (in `MainMenuVertical`, `Includes_Menus.xml`) follows the row with 300 ms slides, so the plate is
+hidden while the property is set and, once it clears, fades in after 350 ms, in place. Back to home without
+Pogledaj shows the plate at once, as before.
+
 ## Library views
 Library films, shows, seasons and episodes open in KeibertzPlus (902) unless a view was chosen for that folder.
 With nothing saved, Kodi takes the first visible view of the folder type's default view type in `<views>`, falling
@@ -90,9 +98,15 @@ KeibertzPlus's poster layout draws the add-on's `badge` property as the same col
 this" row (`BadgeStrips` in `Includes_CommonValues.xml`), and the right-hand panel, where the library shows the
 top actors, shows it again as a large strip. Library items have no badge, so nothing changes there. The strips
 read Dostupno, Naručeno, U pripremi (videoteka's "accepted") and Odbijeno. A title videoteka answered for without
-a status has the badge `none`: the large strip only shows it, amber, as "Pritisni OK da naručiš / ovaj film" (or
-"ovu seriju" for a show), in two lines of `font15_title`, since two lines of the other strips' `font35_title`
-do not fit its 110 px. The poster's strip shows nothing for it.
+a status has the badge `none`: the large strip only shows it, dark amber, as "Pritisni OK / da naručiš / ovaj
+film" (or "ovu seriju" for a show), in the other strips' `font35_title`. "Pritisni OK da naručiš" is wider than
+the strip in that font, so it takes three lines, and that strip is 200 px high instead of 110. The poster's strip
+shows nothing for it.
+
+The add-on's screens (its lists, Dodaj novi, Pretraga, Slični filmovi) are maroon where the library is blue: the
+see-through layer over the background picture (`CommonBackground` in `Includes_Backgrounds.xml`) takes its colour
+from `DatoslavBackgroundColor` (`variables.xml`), `F0280A12` while `Container.PluginName` is the add-on and the
+theme's `BackgroundColor` otherwise. The theme's colours cannot do it: a colour theme applies to every screen.
 
 KeibertzPlus's line under the title (`KeibertzPlusInfoLine` in `variables.xml`) reads year, "Ocena: 8.5" and
 genres, in every list, the library's too, and draws a "•" only between two of them.
