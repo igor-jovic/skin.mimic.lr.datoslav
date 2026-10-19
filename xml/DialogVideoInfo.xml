@@ -141,7 +141,8 @@
 					<include>HiddenObject</include>
 				</control>
 
-				<!-- beside the info lines, above the "more like this" row; the full height once the row has loaded empty -->
+				<!-- beside the info lines, above the "more like this" row; the full height for a film, or once the row
+				     has loaded empty -->
 				<control type="textbox" id="400">
 					<description>Plot</description>
 					<animation effect="fade" time="300" start="0" end="100" delay="100">Visible</animation>
@@ -153,7 +154,7 @@
 					<label>$VAR[VideoInfoPlotVar]</label>
 					<pagecontrol>60</pagecontrol>
 					<include>AutoscrollDefault</include>
-					<visible>Container(350).IsUpdating | Integer.IsGreater(Container(350).NumItems,0)</visible>
+					<visible>!$EXP[isMovie] + [Container(350).IsUpdating | Integer.IsGreater(Container(350).NumItems,0)]</visible>
 				</control>
 				<control type="textbox" id="401">
 					<description>Plot, no suggestions</description>
@@ -515,10 +516,12 @@
 				<font>font15</font>
 				<textcolor>LabelTextColor</textcolor>
 				<label>$LOCALIZE[31962]</label>
-				<visible>Integer.IsGreater(Container(350).NumItems,0) + String.IsEqual(Container(350).ListItem(0).Property(row.for),Window(movieinformation).Property(datoslav.rowfor))</visible>
+				<visible>!$EXP[isMovie] + Integer.IsGreater(Container(350).NumItems,0) + String.IsEqual(Container(350).ListItem(0).Property(row.for),Window(movieinformation).Property(datoslav.rowfor))</visible>
 			</control>
-			<!-- MORE LIKE THIS: always visible, because Kodi does not fill a hidden list; an empty one draws nothing -->
+			<!-- MORE LIKE THIS: always visible, because Kodi does not fill a hidden list; an empty one draws nothing.
+			     A film's row is not drawn: it only tells the pop-up whether Slični filmovi has titles -->
 			<control type="panel" id="350">
+				<animation effect="fade" start="0" end="0" time="0" condition="$EXP[isMovie]">Conditional</animation>
 				<include>FilmDetailsBack</include>
 				<description>More like this</description>
 				<left>-21</left>
@@ -955,13 +958,13 @@
 				<scroll>true</scroll>
 			</control>
 			<!-- rows come from the include FilmPopupRow. Up and down moves are explicit: the group list does not step
-			     over the grey "no trailer" row, which is a picture and text, not a button -->
+			     over the grey "no trailer" and "no similar films" rows, which is a picture and text, not a button -->
 			<control type="grouplist" id="9500">
 				<left>410</left>
-				<top>270</top>
+				<top>250</top>
 				<width>1100</width>
-				<height>620</height>
-				<itemgap>20</itemgap>
+				<height>660</height>
+				<itemgap>15</itemgap>
 				<orientation>vertical</orientation>
 				<align>center</align>
 				<onleft>9500</onleft>
@@ -970,7 +973,7 @@
 				<ondown>9500</ondown>
 				<control type="group">
 					<width>1100</width>
-					<height>130</height>
+					<height>120</height>
 					<visible>!ListItem.IsResumable</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9501" />
@@ -983,7 +986,7 @@
 				</control>
 				<control type="group">
 					<width>1100</width>
-					<height>130</height>
+					<height>120</height>
 					<visible>ListItem.IsResumable</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9502" />
@@ -995,7 +998,7 @@
 				</control>
 				<control type="group">
 					<width>1100</width>
-					<height>130</height>
+					<height>120</height>
 					<visible>ListItem.IsResumable</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9503" />
@@ -1008,7 +1011,7 @@
 				</control>
 				<control type="group">
 					<width>1100</width>
-					<height>130</height>
+					<height>120</height>
 					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9504" />
@@ -1021,12 +1024,12 @@
 				</control>
 				<control type="group">
 					<width>1100</width>
-					<height>130</height>
+					<height>120</height>
 					<visible>String.IsEmpty(ListItem.Trailer)</visible>
 					<control type="image">
 						<left>100</left>
 						<width>900</width>
-						<height>130</height>
+						<height>120</height>
 						<texture colordiffuse="FF4D4D4D" border="5">listselect_fo.png</texture>
 					</control>
 					<include content="FilmPopupRowText">
@@ -1036,18 +1039,45 @@
 				</control>
 				<control type="group">
 					<width>1100</width>
-					<height>130</height>
+					<height>120</height>
 					<visible>true</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9505" />
 						<param name="label" value="31635" />
 						<onclick>SetProperty(datoslav.details,1,movieinformation)</onclick>
-						<onclick condition="Integer.IsGreater(Container(350).NumItems,0)">SetFocus(350)</onclick>
-						<onclick condition="!Integer.IsGreater(Container(350).NumItems,0)">SetFocus(9600)</onclick>
+						<onclick>SetFocus(9600)</onclick>
 						<onup condition="!String.IsEmpty(ListItem.Trailer)">9504</onup>
 						<onup condition="String.IsEmpty(ListItem.Trailer) + ListItem.IsResumable">9503</onup>
 						<onup condition="String.IsEmpty(ListItem.Trailer) + !ListItem.IsResumable">9501</onup>
-						<ondown>9505</ondown>
+						<ondown condition="$EXP[hasSimilarFilms]">9506</ondown>
+						<ondown condition="!$EXP[hasSimilarFilms]">9505</ondown>
+					</include>
+				</control>
+				<control type="group">
+					<width>1100</width>
+					<height>120</height>
+					<visible>$EXP[hasSimilarFilms]</visible>
+					<include content="FilmPopupRow">
+						<param name="id" value="9506" />
+						<param name="label" value="31975" />
+						<onclick>RunScript(plugin.video.videoteka,action=similar,dbid=$INFO[ListItem.DBID])</onclick>
+						<onup>9505</onup>
+						<ondown>9506</ondown>
+					</include>
+				</control>
+				<control type="group">
+					<width>1100</width>
+					<height>120</height>
+					<visible>!$EXP[hasSimilarFilms]</visible>
+					<control type="image">
+						<left>100</left>
+						<width>900</width>
+						<height>120</height>
+						<texture colordiffuse="FF4D4D4D" border="5">listselect_fo.png</texture>
+					</control>
+					<include content="FilmPopupRowText">
+						<param name="label" value="$LOCALIZE[31976]" />
+						<param name="visible" value="true" />
 					</include>
 				</control>
 			</control>

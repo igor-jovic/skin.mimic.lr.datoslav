@@ -166,3 +166,11 @@ msgstr "Sve serije"
 msgctxt "#31974"
 msgid "Add a new show"
 msgstr "Dodaj novu seriju"
+
+msgctxt "#31975"
+msgid "Similar movies"
+msgstr "Slični filmovi"
+
+msgctxt "#31976"
+msgid "No similar movies"
+msgstr "Nema sličnih filmova"
