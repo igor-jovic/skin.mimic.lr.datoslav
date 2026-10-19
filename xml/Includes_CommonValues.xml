@@ -85,12 +85,14 @@
             <visible>$PARAM[visible]</visible>
         </control>
     </include>
-    <!-- datoslav: Back on a film's details page returns to the pop-up, on its last row. The second line is a
-         move to that row: without a control to move to, Kodi runs the first line and then closes the page anyway.
+    <!-- datoslav: Back on a film's or an episode's details page returns to the pop-up, on its "more about" row. The
+         lines after the first move to that row: without a control to move to, Kodi runs the first line and then
+         closes the page anyway.
          Goes on the lists and scrollbars, and on the button group, whose buttons inherit it -->
     <include name="FilmDetailsBack">
         <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details))">ClearProperty(datoslav.details,movieinformation)</onback>
-        <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details))">9505</onback>
+        <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details)) + $EXP[isMovie]">9505</onback>
+        <onback condition="!String.IsEmpty(Window(movieinformation).Property(datoslav.details)) + $EXP[isEpisode]">9515</onback>
     </include>
     <!-- datoslav: one poster of the details page's "more like this" row. Items left over from the previous title
          stay until the new list arrives, so an item is drawn only when its row.for matches the page. The poster

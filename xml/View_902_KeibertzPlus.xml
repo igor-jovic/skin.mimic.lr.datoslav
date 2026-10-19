@@ -12,27 +12,8 @@
 	<expression name="KeibertzPlusHideLabels">Container.Content(Episodes) + !Skin.HasSetting(Episodes_902_HideLabels) | [Container.Content(Movies)| Container.Content(sets)] + !Skin.HasSetting(Movies_902_HideLabels) | [Container.Content(TVShows)| Container.Content(seasons)] + !Skin.HasSetting(TVShows_902_HideLabels) | $EXP[GameSupport] + !Skin.HasSetting(Games_902_HideLabels)</expression>
 	<expression name="KeibertzPlusHideReflections">Container.Content(Episodes) + !Skin.HasSetting(Episodes_902_HideReflections) | [Container.Content(Movies)| Container.Content(sets)] + !Skin.HasSetting(Movies_902_HideReflections) | [Container.Content(TVShows)| Container.Content(seasons)] + !Skin.HasSetting(TVShows_902_HideReflections) | $EXP[GameSupport] + !Skin.HasSetting(Games_902_HideReflections)</expression>
 	<expression name="KeibertzPlusStaticIcons">[Container.Content(TVShows)| Container.Content(seasons)] + !Skin.HasSetting(TVShows_902_StaticIcons) | [Container.Content(Movies)| Container.Content(sets)] + !Skin.HasSetting(Movies_902_StaticIcons) | [Container.Content(TVShows)| Container.Content(seasons)] + !Skin.HasSetting(TVShows_902_StaticIcons) | $EXP[GameSupport] + !Skin.HasSetting(Games_902_StaticIcons)</expression>
-	<!-- keibertzplus_label -->
-	<include name="KeibertzPlusCommonLabel">
-		<definition>
-			<control type="label">
-				<left>15</left>
-				<top>$PARAM[top]</top>
-				<width>$PARAM[width]</width>
-				<height>40</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>font35_title</font>
-				<textcolor>TitleTextColor</textcolor>
-				<label>$VAR[ListItemLabel]</label>
-				<scroll>false</scroll>
-				<!-- datoslav: not over the videoteka add-on's posters -->
-				<visible>$EXP[KeibertzPlusHideLabels] + Control.IsVisible(902) + !$EXP[isInfoDialog] + !$EXP[isVideotekaList]</visible>
-			</control>
-		</definition>
-	</include>
 	<!-- datoslav: episodes as 16:9 stills whose bottom lines up with the posters', so they stay above the info panel.
-	     The label is "1x6 Title" inside one show and "Show 1x6" in a list of several shows -->
+	     The label is "Season 1, Episode 6" inside one show and "Show 1x6" in a list of several shows -->
 	<include name="KeibertzPlus_Episode_Still">
 		<param name="bordersize" default="10" />
 		<param name="texture" default="$INFO[ListItem.Art(thumb)]" />
@@ -49,25 +30,57 @@
 		</definition>
 	</include>
 	<include name="KeibertzPlus_Episode_Label">
-		<control type="label">
-			<!-- clear of the focused still, which grows 27 px upwards -->
-			<left>15</left>
-			<top>110</top>
-			<width>450</width>
-			<height>40</height>
-			<aligny>center</aligny>
-			<font>font35_title</font>
-			<textcolor>TitleTextColor</textcolor>
-			<label>$VAR[KeibertzPlusEpisodeLabel]</label>
-			<visible>$EXP[KeibertzPlusHideLabels] + Control.IsVisible(902) + !$EXP[isInfoDialog]</visible>
-		</control>
+		<param name="label" default="$VAR[KeibertzPlusEpisodeLabel]" />
+		<definition>
+			<control type="label">
+				<!-- clear of the focused still, which grows 27 px upwards -->
+				<left>15</left>
+				<top>110</top>
+				<width>450</width>
+				<height>40</height>
+				<aligny>center</aligny>
+				<font>font15_title</font>
+				<textcolor>TitleTextColor</textcolor>
+				<label>$PARAM[label]</label>
+				<visible>$EXP[KeibertzPlusHideLabels] + Control.IsVisible(902) + !$EXP[isInfoDialog]</visible>
+			</control>
+		</definition>
+	</include>
+	<!-- datoslav: a band across the middle of a watched episode's still, like the videoteka lists' status strips -->
+	<include name="KeibertzPlus_Episode_Watched">
+		<param name="inset" default="10" />
+		<param name="width" default="460" />
+		<definition>
+			<control type="group">
+				<visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
+				<control type="image">
+					<left>$PARAM[inset]</left>
+					<top>266</top>
+					<width>$PARAM[width]</width>
+					<height>110</height>
+					<texture colordiffuse="E61565C0">white.png</texture>
+				</control>
+				<control type="label">
+					<left>$PARAM[inset]</left>
+					<top>266</top>
+					<width>$PARAM[width]</width>
+					<height>110</height>
+					<font>font35_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>[B]$LOCALIZE[31981][/B]</label>
+				</control>
+			</control>
+		</definition>
 	</include>
 	<include name="KeibertzPlus_Episode_Includes">
 		<itemlayout width="500" height="512" condition="Container.Content(episodes)">
 			<control type="image">
 				<include content="KeibertzPlus_Episode_Still" />
 			</control>
-			<include>KeibertzPlus_Episode_Label</include>
+			<include content="KeibertzPlus_Episode_Watched" />
+			<include content="KeibertzPlus_Episode_Label" />
 		</itemlayout>
 		<focusedlayout width="500" height="512" condition="Container.Content(episodes)">
 			<control type="group">
@@ -87,8 +100,14 @@
 						<param name="bordersize">12</param>
 					</include>
 				</control>
+				<include content="KeibertzPlus_Episode_Watched">
+					<param name="inset">12</param>
+					<param name="width">456</param>
+				</include>
 			</control>
-			<include>KeibertzPlus_Episode_Label</include>
+			<include content="KeibertzPlus_Episode_Label">
+				<param name="label">[B]$VAR[KeibertzPlusEpisodeLabel][/B]</param>
+			</include>
 		</focusedlayout>
 	</include>
 	<!-- view -->
@@ -274,7 +293,7 @@
             <align>left</align>
             <aligny>center</aligny>
             <font>font35_title</font>
-            <label>[B]$VAR[ListItemLabel][/B]</label>			
+            <label>[B]$VAR[KeibertzPlusTitle][/B]</label>			
             <textcolor>TitleTextColor</textcolor>
             <shadowcolor>shadow</shadowcolor>
             <scroll>true</scroll>

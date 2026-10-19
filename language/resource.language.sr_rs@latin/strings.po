@@ -182,3 +182,23 @@ msgstr "Pritisni OK[CR]da naručiš[CR]ovaj film"
 msgctxt "#31978"
 msgid "Press OK[CR]to request[CR]this show"
 msgstr "Pritisni OK[CR]da naručiš[CR]ovu seriju"
+
+msgctxt "#31979"
+msgid "Play episode"
+msgstr "Pusti epizodu"
+
+msgctxt "#31980"
+msgid "More about this episode..."
+msgstr "Više o epizodi..."
+
+msgctxt "#31981"
+msgid "Watched"
+msgstr "Odgledano"
+
+msgctxt "#31982"
+msgid "Season"
+msgstr "Sezona"
+
+msgctxt "#31983"
+msgid "Episode"
+msgstr "Epizoda"

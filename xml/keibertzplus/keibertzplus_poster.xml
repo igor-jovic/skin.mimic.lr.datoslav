@@ -55,10 +55,6 @@
 				</include>
   						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 			</control>
-			<include content="KeibertzPlusCommonLabel">
-				<param name="top">64</param>
-				<param name="width">216</param>
-			</include>
 			<include content="OverlayIcons">
 				<param name="OverlayLeft" value="8"/>
 				<param name="OverlayTop" value="104" />

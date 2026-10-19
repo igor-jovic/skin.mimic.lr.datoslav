@@ -1246,10 +1246,15 @@
 		<value condition="ListItem.IsParentFolder">$LOCALIZE[31625]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
-	<!-- datoslav: a KeibertzPlus episode tile's label: "1x6 Title" inside one show, "Show 1x6" across shows -->
+	<!-- datoslav: a KeibertzPlus episode tile's label: "Season 1, Episode 6" inside one show, "Show 1x6" across shows -->
 	<variable name="KeibertzPlusEpisodeLabel">
-		<value condition="!String.IsEmpty(Container.ShowTitle)">$INFO[ListItem.Season]x$INFO[ListItem.Episode] $INFO[ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container.ShowTitle)">$LOCALIZE[31982] $INFO[ListItem.Season], $LOCALIZE[31983] $INFO[ListItem.Episode]</value>
 		<value>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season]x$INFO[ListItem.Episode]</value>
+	</variable>
+	<!-- datoslav: the KeibertzPlus info area's title; an episode's number is already above its still -->
+	<variable name="KeibertzPlusTitle">
+		<value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Title]</value>
+		<value>$VAR[ListItemLabel]</value>
 	</variable>
 	<!-- datoslav: the videoteka add-on's screens are maroon, the library keeps the theme's blue -->
 	<variable name="DatoslavBackgroundColor">
