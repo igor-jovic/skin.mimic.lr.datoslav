@@ -59,6 +59,14 @@ button, Povratak (`custom_1140_NoProgress.xml`), and the home screen stays. Home
 fed by the same paths with `limit="1"`, one pixel in size and off the screen (Kodi fills only a visible list), so
 the count is known before OK; the entries' conditional actions come from `shortcuts/overrides.xml`.
 
+The videoteka add-on's Pogledaj opens Svi filmovi (or Sve serije), and Back from there comes home with the menu
+on that entry, not on Dodaj novi film. Pogledaj sets the home window's property `datoslav.homemenu` (`movie` or
+`tv`); Home's `onload` opens that submenu, focuses the entry by its position (`SetFocus(9000,4|5,absolute)`) and
+clears the property. Kodi runs `onload` only after it has drawn home with the cursor it remembered, and the
+highlight plate (in `MainMenuVertical`, `Includes_Menus.xml`) follows the row with 300 ms slides, so the plate is
+hidden while the property is set and, once it clears, fades in after 350 ms, in place. Back to home without
+Pogledaj shows the plate at once, as before.
+
 ## Library views
 Library films, shows, seasons and episodes open in KeibertzPlus (902) unless a view was chosen for that folder.
 With nothing saved, Kodi takes the first visible view of the folder type's default view type in `<views>`, falling
