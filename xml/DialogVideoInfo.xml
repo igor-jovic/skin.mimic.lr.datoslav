@@ -976,13 +976,13 @@
 				</control>
 				<control type="label">
 					<left>460</left>
-					<top>240</top>
+					<top>245</top>
 					<width>1000</width>
-					<height>50</height>
+					<height>60</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font15_title</font>
-					<label>$LOCALIZE[31982] $INFO[ListItem.Season], $LOCALIZE[31983] $INFO[ListItem.Episode]</label>
+					<font>font30</font>
+					<label>[B][UPPERCASE]$LOCALIZE[31982] $INFO[ListItem.Season], $LOCALIZE[31983] $INFO[ListItem.Episode][/UPPERCASE][/B]</label>
 					<textcolor>TitleTextColor</textcolor>
 				</control>
 			</control>
