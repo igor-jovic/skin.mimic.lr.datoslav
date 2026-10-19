@@ -957,6 +957,34 @@
 				<label>[B]$INFO[ListItem.Title][/B]</label>
 				<textcolor>TitleTextColor</textcolor>
 				<scroll>true</scroll>
+				<visible>!$EXP[isEpisode]</visible>
+			</control>
+			<!-- an episode's title is two lines: the show, then its season and episode -->
+			<control type="group">
+				<visible>$EXP[isEpisode]</visible>
+				<control type="label">
+					<left>460</left>
+					<top>175</top>
+					<width>1000</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font35_title</font>
+					<label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
+					<textcolor>TitleTextColor</textcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<left>460</left>
+					<top>240</top>
+					<width>1000</width>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font15_title</font>
+					<label>$LOCALIZE[31982] $INFO[ListItem.Season], $LOCALIZE[31983] $INFO[ListItem.Episode]</label>
+					<textcolor>TitleTextColor</textcolor>
+				</control>
 			</control>
 			<!-- rows come from the include FilmPopupRow. Up and down moves are explicit: the group list does not step
 			     over the grey "no trailer" and "no similar films" rows, which is a picture and text, not a button.

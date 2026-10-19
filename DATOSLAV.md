@@ -128,7 +128,9 @@ them, so five fit. It is the last group in that file, drawn over the page for fi
 every view. A skin cannot change what Enter does in one view.
 
 An episode's pop-up has its own "Pusti epizodu" (9511) or, part-watched, the film's "Pusti od početka" and
-"Nastavi gde smo stali"; then "Više o epizodi..." (9515). It has no trailer and no "Slični" rows.
+"Nastavi gde smo stali"; then "Više o epizodi..." (9515). It has no trailer and no "Slični" rows. Its title is
+two lines, the show's name and then "Sezona 1, Epizoda 6" in `font15_title`; the group list centres its rows
+vertically, so two or three rows stay clear of the second line.
 
 - The pop-up's buttons click Kodi's own buttons on the page underneath: 8 (play), 9 (resume), 11 (trailer).
   Button 9 is the fork's addition; while it exists Kodi makes 8 always start from the beginning instead of
