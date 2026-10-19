@@ -2,9 +2,10 @@
 <window>
 	<defaultcontrol always="true">350</defaultcontrol>
 	<onload>SendClick(9000,5)</onload>
-	<!-- datoslav: a film opens as a pop-up of actions (group 9500 at the end); "details" reveals this page -->
+	<!-- datoslav: a film or an episode opens as a pop-up of actions (group 9500 at the end); "details" reveals this page -->
 	<onload condition="String.IsEqual(ListItem.DBTYPE,movie) + !ListItem.IsResumable">SetFocus(9501)</onload>
-	<onload condition="String.IsEqual(ListItem.DBTYPE,movie) + ListItem.IsResumable">SetFocus(9502)</onload>
+	<onload condition="String.IsEqual(ListItem.DBTYPE,episode) + !ListItem.IsResumable">SetFocus(9511)</onload>
+	<onload condition="[String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode)] + ListItem.IsResumable">SetFocus(9502)</onload>
 	<!-- the "more like this" row draws only items made for this title -->
 	<onload>SetProperty(datoslav.rowfor,$INFO[ListItem.DBType]-$INFO[ListItem.DBID],movieinformation)</onload>
 	<onunload>ClearProperty(datoslav.details,movieinformation)</onunload>
@@ -921,7 +922,7 @@
 		</control>
 		<control type="group">
 			<!-- allowhiddenfocus: Back on the details page moves focus here in the same step that makes this visible -->
-			<visible allowhiddenfocus="true">$EXP[isMovie] + String.IsEmpty(Window(movieinformation).Property(datoslav.details))</visible>
+			<visible allowhiddenfocus="true">[$EXP[isMovie] | $EXP[isEpisode]] + String.IsEmpty(Window(movieinformation).Property(datoslav.details))</visible>
 			<control type="image">
 				<include>FullscreenDimensions</include>
 				<texture>black.png</texture>
@@ -958,7 +959,8 @@
 				<scroll>true</scroll>
 			</control>
 			<!-- rows come from the include FilmPopupRow. Up and down moves are explicit: the group list does not step
-			     over the grey "no trailer" and "no similar films" rows, which is a picture and text, not a button -->
+			     over the grey "no trailer" and "no similar films" rows, which is a picture and text, not a button.
+			     An episode has no trailer or similar rows, and its own "play" and "more about" rows -->
 			<control type="grouplist" id="9500">
 				<left>410</left>
 				<top>250</top>
@@ -974,7 +976,7 @@
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>!ListItem.IsResumable</visible>
+					<visible>$EXP[isMovie] + !ListItem.IsResumable</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9501" />
 						<param name="label" value="31631" />
@@ -982,6 +984,18 @@
 						<onup>9501</onup>
 						<ondown condition="!String.IsEmpty(ListItem.Trailer)">9504</ondown>
 						<ondown condition="String.IsEmpty(ListItem.Trailer)">9505</ondown>
+					</include>
+				</control>
+				<control type="group">
+					<width>1100</width>
+					<height>120</height>
+					<visible>$EXP[isEpisode] + !ListItem.IsResumable</visible>
+					<include content="FilmPopupRow">
+						<param name="id" value="9511" />
+						<param name="label" value="31979" />
+						<onclick>SendClick(8)</onclick>
+						<onup>9511</onup>
+						<ondown>9515</ondown>
 					</include>
 				</control>
 				<control type="group">
@@ -1005,14 +1019,15 @@
 						<param name="label" value="31633" />
 						<onclick>SendClick(9)</onclick>
 						<onup>9502</onup>
-						<ondown condition="!String.IsEmpty(ListItem.Trailer)">9504</ondown>
-						<ondown condition="String.IsEmpty(ListItem.Trailer)">9505</ondown>
+						<ondown condition="$EXP[isMovie] + !String.IsEmpty(ListItem.Trailer)">9504</ondown>
+						<ondown condition="$EXP[isMovie] + String.IsEmpty(ListItem.Trailer)">9505</ondown>
+						<ondown condition="$EXP[isEpisode]">9515</ondown>
 					</include>
 				</control>
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
+					<visible>$EXP[isMovie] + !String.IsEmpty(ListItem.Trailer)</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9504" />
 						<param name="label" value="31634" />
@@ -1025,7 +1040,7 @@
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>String.IsEmpty(ListItem.Trailer)</visible>
+					<visible>$EXP[isMovie] + String.IsEmpty(ListItem.Trailer)</visible>
 					<control type="image">
 						<left>100</left>
 						<width>900</width>
@@ -1040,7 +1055,7 @@
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>true</visible>
+					<visible>$EXP[isMovie]</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9505" />
 						<param name="label" value="31635" />
@@ -1056,7 +1071,21 @@
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>$EXP[hasSimilarFilms]</visible>
+					<visible>$EXP[isEpisode]</visible>
+					<include content="FilmPopupRow">
+						<param name="id" value="9515" />
+						<param name="label" value="31980" />
+						<onclick>SetProperty(datoslav.details,1,movieinformation)</onclick>
+						<onclick>SetFocus(9600)</onclick>
+						<onup condition="ListItem.IsResumable">9503</onup>
+						<onup condition="!ListItem.IsResumable">9511</onup>
+						<ondown>9515</ondown>
+					</include>
+				</control>
+				<control type="group">
+					<width>1100</width>
+					<height>120</height>
+					<visible>$EXP[isMovie] + $EXP[hasSimilarFilms]</visible>
 					<include content="FilmPopupRow">
 						<param name="id" value="9506" />
 						<param name="label" value="31975" />
@@ -1068,7 +1097,7 @@
 				<control type="group">
 					<width>1100</width>
 					<height>120</height>
-					<visible>!$EXP[hasSimilarFilms]</visible>
+					<visible>$EXP[isMovie] + !$EXP[hasSimilarFilms]</visible>
 					<control type="image">
 						<left>100</left>
 						<width>900</width>

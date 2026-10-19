@@ -76,8 +76,14 @@ and opens in List (50) as before. A view chosen in the view menu is still saved 
 
 Episodes have a KeibertzPlus layout of their own (`KeibertzPlus_Episode_Includes`): a 480 x 270 still whose bottom
 lines up with the posters', so it stays above the info panel, and a focused still that grows upwards from its bottom
-edge. The label above it is "1x6 Title" in one show's list and "Show 1x6" in a list of several shows
-(`KeibertzPlusEpisodeLabel`, by `Container.ShowTitle`).
+edge. The label above it, in `font15_title` (bold on the focused still), is "Sezona 1, Epizoda 6" in one show's
+list and "Show 1x6" in a list of several shows (`KeibertzPlusEpisodeLabel`, by `Container.ShowTitle`). A watched
+episode's still has a blue "Odgledano" band across its middle, like the add-on's status strips
+(`KeibertzPlus_Episode_Watched`). The info panel's title is the episode's name alone (`KeibertzPlusTitle`), and
+a part-watched episode gets the same progress bar as a film.
+
+KeibertzPlus draws no name above the posters that are not focused, in the library or in the add-on's lists; the
+focused title is in the info panel.
 
 ## The add-on's lists
 The film and show lists of `plugin.video.videoteka` open only in KeibertzPlus: every other view in
@@ -118,14 +124,17 @@ layouts in `xml/Includes_Home.xml`. Skin Shortcuts still attaches a widget to ev
 Opening a film's info (`DialogVideoInfo.xml`) shows a pop-up of actions first: play, or play from the beginning
 and resume for a part-watched film; trailer, or a grey "Film nema najavu"; "Više o ovom filmu...", which
 shows the details page; and "Slični filmovi", or a grey "Nema sličnih filmova". Rows are 120 high with 15 between
-them, so five fit. It is the last group in that file, drawn over the page for films only, so it appears in
+them, so five fit. It is the last group in that file, drawn over the page for films and episodes, so it appears in
 every view. A skin cannot change what Enter does in one view.
+
+An episode's pop-up has its own "Pusti epizodu" (9511) or, part-watched, the film's "Pusti od početka" and
+"Nastavi gde smo stali"; then "Više o epizodi..." (9515). It has no trailer and no "Slični" rows.
 
 - The pop-up's buttons click Kodi's own buttons on the page underneath: 8 (play), 9 (resume), 11 (trailer).
   Button 9 is the fork's addition; while it exists Kodi makes 8 always start from the beginning instead of
   asking. That also holds for episodes.
 - "Details" sets the window property `datoslav.details` on `movieinformation`; it is cleared when the page closes.
-- Back on the details page returns to the pop-up on its last row (include `FilmDetailsBack`, on the page's lists,
+- Back on the details page returns to the pop-up on its "more about" row (include `FilmDetailsBack`, on the page's lists,
   scrollbars and button group). It needs both a move to that row and `allowhiddenfocus` on the pop-up: with
   only actions, Kodi runs them and closes the page anyway, and a hidden group refuses focus.
 - The pop-up always opens on its first row; the page's `onload` focuses it by id.
@@ -178,7 +187,5 @@ and the trailer are in the film pop-up.
   moves focus to it.
 - The description gets the full height on a film's page, or once the row has loaded empty (textbox 401
   instead of 400).
-- KeibertzPlus draws no name above the posters in the videoteka add-on's lists (`isVideotekaList`); the
-  library's show lists keep theirs.
 - Kodi's own buttons (grouplist 9000) are hidden, not removed: the film pop-up clicks 8, 9 and 11, and the
   page's `onload` clicks 5.
