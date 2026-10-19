@@ -106,7 +106,8 @@ top actors, shows it again as a large strip. Library items have no badge, so not
 read Dostupno, Naručeno, U pripremi (videoteka's "accepted") and Odbijeno. A title videoteka answered for without
 a status has the badge `none`: the large strip only shows it, dark amber, as "Pritisni OK / da naručiš / ovaj
 film" (or "ovu seriju" for a show), in the other strips' `font35_title`. "Pritisni OK da naručiš" is wider than
-the strip in that font, so it takes three lines, and that strip is 200 px high instead of 110. The poster's strip
+the strip in that font, so it takes three lines, and that strip is 218 px high instead of 110, starting 18 px
+higher so the text has as much space above as below. The poster's strip
 shows nothing for it.
 
 The add-on's screens (its lists, Dodaj novi, Pretraga, Slični filmovi, Slične serije) are maroon where the library is blue: the
