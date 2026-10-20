@@ -37,6 +37,21 @@ already-open condition, so Enter did nothing. The main entries' own action (`Cle
 in `shortcuts/mainmenu.DATA.xml`) fires while it is open, so Enter toggles. An add-on update overwrites the
 patch; if Enter on Filmovi stops opening its submenu, re-apply it.
 
+## Top bar
+The top bar (`Includes_Topbar.xml`) is 100 px tall, 40 px taller than the original, so the breadcrumbs fit in
+`TopbarBreadcrumbs`, a 60 px font in the default font set: the breadcrumbs (`BreadcrumbsVar`, or the title's name
+on an info window) and the "•" before them. The view-options button, the icon, the date, the weather and the clock
+keep their sizes and are centred in the taller bar: the left group list is as tall as the bar and keeps its items'
+own top (`usecontrolcoords`), so the 60 px items sit at `TopbarItemTop` and the labels without a height take the
+bar's; the right group list keeps its 60 px and sits `TopbarItemTop` down. `font31` and `cirrus_30`, which the bar
+uses, are defined in no font set, so Kodi draws them in `font13`.
+
+How much taller the bar is, X (40), is in the constants at the top of `Includes_Topbar.xml`, with every value that
+follows from it, worked out by hand, since Kodi XML has no arithmetic: the bar's height, the home menu's top, the
+KeibertzPlus list's top, how far the KeibertzPlus info panel and the details page move down, and the details
+page's description heights. Changing X means changing that list and nothing else. The screens under the bar move
+down by X: the home menu, the KeibertzPlus posters and their info panel (not under episodes), and the details page.
+
 ## Home menu
 `shortcuts/mainmenu.DATA.xml` (Filmovi, Serije, Podešavanja) and the submenus in `shortcuts/*.DATA.xml`.
 Nothing is customised through the menu editor on the box; a `*.DATA.xml` in
@@ -46,7 +61,7 @@ The main entries use `DatoslavMainMenuFont` (94 in the default font set, not bol
 `DatoslavSubMenuFont` (53, `SubMenuFont` x1.3 plus one, which the other menus keep; at 52 one box drew a
 sliver of the neighbouring glyph left of every "d"), upright and indented 52 px further,
 about two characters. Rows are 105 high and the menu 760 wide, so "Započeti - Nastavi gledanje" fits without
-scrolling; the menu starts 114 px higher than the original, 68 px under the top bar, so eight rows fit on screen. "Serije" is the skin's own text 31967, not Kodi's "TV shows".
+scrolling; the menu starts 74 px higher than the original, 68 px under the top bar, so eight rows fit on screen. "Serije" is the skin's own text 31967, not Kodi's "TV shows".
 
 The Filmovi submenu is Započeti - Nastavi gledanje, Nedavno dodati filmovi, Filmovi po žanru, Svi filmovi and
 Dodaj novi film; the Serije submenu Započete - Nastavi gledanje, Nedavno dodate serije, Serije po žanru, Sve
@@ -84,6 +99,12 @@ a part-watched episode gets the same progress bar as a film.
 
 KeibertzPlus draws no name above the posters that are not focused, in the library or in the add-on's lists; the
 focused title is in the info panel.
+
+The list starts X lower than the original for the taller top bar; the episode layouts sit in a group X up
+(`TopbarGrowBack`), so episodes stay where they were. The info panel (`KeibertzPlusLayoutDefault`) is drawn twice:
+under episodes as it was, and otherwise in a group X lower whose bottom stays at the screen's, so the title, the info
+line, the progress bar and the status strip move down by X, and the panels, the description and the actor list,
+which are placed by their bottom edge, keep it and are X shorter.
 
 ## The add-on's lists
 The film and show lists of `plugin.video.videoteka` open only in KeibertzPlus: every other view in
@@ -170,9 +191,10 @@ A film's or episode's page has no row: its suggestions are the pop-up's "Slični
 serije...", and its description gets the full height (textbox 401). The row's posters are
 225 x 337 with their names in `font16`. The film's or show's title, bold in `font30`, starts about 72 px under the top
 bar; a title too long for the left column is cut with "…" rather than scrolled, so the page stays still. The info
-lines start under it (list 62 at 204). The row starts at 546, so that its
-two-line titles end 72 px above the bottom of the screen, the same space as under the top bar, and the description
-(textbox 400) is 425 high and scrolls by itself. The focused poster has
+lines start under it (list 62 at 244). The row starts at 586, so that its
+two-line titles end 32 px above the bottom of the screen, and the description (textbox 400) is 385 high and scrolls
+by itself. The whole page sits X lower than the original for the taller top bar, and both descriptions are X
+shorter. The focused poster has
 an 18 px frame (a plate of `listselect_fo.png` 18 px larger than the poster on each side). A panel clips its items
 at its own edges, so `MoreLikeThisItem` sets the poster 18 px in and 3 px down and the panel sits that much further
 out; otherwise the first poster's frame is cut off on the left. The backdrop is dimmed by the same overlay as the

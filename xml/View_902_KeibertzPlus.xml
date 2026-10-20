@@ -75,14 +75,20 @@
 		</definition>
 	</include>
 	<include name="KeibertzPlus_Episode_Includes">
+		<!-- the list sits lower for the taller top bar; episodes are moved back up, where they were -->
 		<itemlayout width="500" height="512" condition="Container.Content(episodes)">
-			<control type="image">
-				<include content="KeibertzPlus_Episode_Still" />
+			<control type="group">
+				<top>TopbarGrowBack</top>
+				<control type="image">
+					<include content="KeibertzPlus_Episode_Still" />
+				</control>
+				<include content="KeibertzPlus_Episode_Watched" />
+				<include content="KeibertzPlus_Episode_Label" />
 			</control>
-			<include content="KeibertzPlus_Episode_Watched" />
-			<include content="KeibertzPlus_Episode_Label" />
 		</itemlayout>
 		<focusedlayout width="500" height="512" condition="Container.Content(episodes)">
+			<control type="group">
+			<top>TopbarGrowBack</top>
 			<control type="group">
 				<!-- grows upwards from its bottom edge, so the frame stays above the panel -->
 				<animation effect="zoom" center="240,456" start="100" end="110" time="400" tween="cubic" easing="out" reversible="false">Focus</animation>
@@ -108,6 +114,7 @@
 			<include content="KeibertzPlus_Episode_Label">
 				<param name="label">[B]$VAR[KeibertzPlusEpisodeLabel][/B]</param>
 			</include>
+			</control>
 		</focusedlayout>
 	</include>
 	<!-- view -->
@@ -122,7 +129,7 @@
 				<!-- datoslav: only for library titles, so other lists fall back to List by default (MyVideoNav's views) -->
 				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<left>-140</left>
-				<top>16</top>
+				<top>KeibertzListTop</top>
 				<width>2475</width>
 				<height>840</height>
 				<onleft>902</onleft>
@@ -146,7 +153,19 @@
 		<control type="group">
 			<visible>Control.IsVisible(902) + !$EXP[isInfoDialog]</visible>
 			<animation effect="fade" start="0" end="100" delay="600" time="300" reversible="false">Visible</animation>
-			<include>KeibertzPlusLayoutDefault</include>
+			<!-- under the episode stills the panel stays where it was; under posters it starts lower, with them -->
+			<control type="group">
+				<visible>Container.Content(episodes)</visible>
+				<include content="KeibertzPlusLayoutDefault">
+					<param name="shift" value="0" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>!Container.Content(episodes)</visible>
+				<include content="KeibertzPlusLayoutDefault">
+					<param name="shift" value="TopbarGrow" />
+				</include>
+			</control>
 		</control>
 	</include>
 	<!-- options -->
@@ -270,6 +289,12 @@
 	</include>
 	<!-- layout_includes -->
 	<include name="KeibertzPlusLayoutDefault">
+		<param name="shift" default="0" />
+		<definition>
+		<!-- datoslav: everything starts shift lower; parts given a bottom keep it, so they are shift shorter -->
+		<control type="group">
+		<top>$PARAM[shift]</top>
+		<bottom>0</bottom>
 		<!-- datoslav: Arcade's two dark panels behind the text; the inner one stops before the actor list -->
 		<control type="image">
 			<left>60</left>
@@ -335,7 +360,7 @@
             <top>636</top>
             <width>1126</width>
             <!-- datoslav: scrolling text draws about 15 below the box, so it ends above the inner panel's edge (1030) -->
-            <height>370</height>
+            <bottom>74</bottom>
             <align>justify</align>
             <font>font13</font>
             <label>$INFO[ListItem.Plot]</label>			
@@ -349,7 +374,7 @@
             <top>696</top>
             <width>1126</width>
             <!-- datoslav: a line lower under the two-line title, ending where the other one ends -->
-            <height>310</height>
+            <bottom>74</bottom>
             <align>justify</align>
             <font>font13</font>
             <label>$INFO[ListItem.Plot]</label>			
@@ -385,7 +410,7 @@
 			<left>606r</left>
 			<top>636</top>
 			<width>526</width>
-			<height>384</height>
+			<bottom>60</bottom>
 			<font>font14</font>
 			<label>$INFO[ListItem.Tagline]</label>
 			<textcolor>NormalTextColor</textcolor>
@@ -437,5 +462,7 @@
 				</control>
 			</control>
 		</control>
+		</control>
+		</definition>
 	</include>
 </includes>

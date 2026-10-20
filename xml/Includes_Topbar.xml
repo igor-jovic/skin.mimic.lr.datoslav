@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<!-- datoslav: these move with X, how much taller the top bar is than the original 60 px (X = 40 now).
+	     Kodi XML has no arithmetic, so each is worked out by hand; the comment says how. -->
+	<constant name="TopbarGrow">40</constant>                <!-- X -->
+	<constant name="TopbarGrowBack">-40</constant>           <!-- -X -->
+	<constant name="TopbarHeight">100</constant>             <!-- 60 + X -->
+	<constant name="TopbarItemTop">20</constant>             <!-- X / 2: centres the 60 px items in the bar -->
+	<constant name="TopbarNowPlayingTop">110</constant>      <!-- 70 + X -->
+	<constant name="HomeMenuTop">46</constant>               <!-- 6 + X -->
+	<constant name="KeibertzListTop">56</constant>           <!-- 16 + X -->
+	<constant name="DetailsPlotHeight">385</constant>        <!-- 425 - X -->
+	<constant name="DetailsPlotFullHeight">800</constant>    <!-- 840 - X -->
+	<constant name="DetailsPlotBarHeight">485</constant>     <!-- 525 - X -->
+
 	<expression name="DatoslavLibraryWindow">Window.IsActive(videos) | Window.IsActive(music) | Window.IsActive(pictures) | Window.IsActive(programs) | Window.IsActive(games)</expression>
 
 
@@ -95,13 +108,13 @@
 				<!-- !$EXP[isInfoDialog] -->
 				<!-- </visible> -->
 				<width>FullscreenWidth</width>
-				<height>60</height>
+				<height>TopbarHeight</height>
 				<texture>background.png</texture>
 				<colordiffuse>ItemDiffuse</colordiffuse>
 			</control>
 			<control type="image">
 				<width>FullscreenWidth</width>
-				<height>60</height>
+				<height>TopbarHeight</height>
 				<colordiffuse>33000000</colordiffuse>
 				<texture>menu_fo.png</texture>
 				<aspectratio>stretch</aspectratio>
@@ -112,8 +125,9 @@
 				<top>0</top>
 				<aligny>center</aligny>
 				<width>1200</width>
-				<height>60</height>
+				<height>TopbarHeight</height>
 				<orientation>horizontal</orientation>
+				<!-- the items' own top is kept, which centres the 60 px ones; labels without a height take the bar's -->
 				<usecontrolcoords>true</usecontrolcoords>
 				<itemgap>5</itemgap>
 
@@ -127,6 +141,7 @@
 					<ondown condition="Control.IsVisible(9063)">9063</ondown>
 					<ondown condition="Control.IsVisible(9064)">9064</ondown>
 					<visible>$EXP[DatoslavLibraryWindow]</visible>
+					<top>TopbarItemTop</top>
 					<width>auto</width>
 					<height>60</height>
 					<font>cirrus_30</font>
@@ -162,6 +177,7 @@
 				</control>
 
 				<control type="image">
+					<top>TopbarItemTop</top>
 					<width>60</width>
 					<height>60</height>
 					<visible>!Skin.HasSetting(Enable.TouchScreen)</visible>
@@ -186,7 +202,7 @@
 					<width>auto</width>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>cirrus_30</font>
+					<font>TopbarBreadcrumbs</font>
 					<textcolor>LabelTextColor</textcolor>
 					<label>•</label>
 					<scroll>false</scroll>
@@ -196,7 +212,7 @@
 					<width>auto</width>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>cirrus_30</font>
+					<font>TopbarBreadcrumbs</font>
 					<textcolor>TitleTextColor</textcolor>
 					<label>$VAR[BreadcrumbsVar]</label>
 					<scroll>false</scroll>
@@ -206,7 +222,7 @@
 					<width>auto</width>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>cirrus_30</font>
+					<font>TopbarBreadcrumbs</font>
 					<textcolor>TitleTextColor</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 <!-- 					<label2>$VAR[HeaderSubLabelInfoDialog]</label2> -->
@@ -233,7 +249,7 @@
 			</control>
 			<control type="grouplist">
 				<left>1100</left>
-				<top>0</top>
+				<top>TopbarItemTop</top>
 				<width>800</width>
 				<height>60</height>
 				<align>right</align>
@@ -325,7 +341,7 @@
 		<control type="group">
 			<visible>!Window.IsActive(extendedprogressdialog)</visible>
 			<width>FullscreenWidth</width>
-			<top>60</top>
+			<top>TopbarHeight</top>
 			<left>60</left>
 			<height>100</height>
 
@@ -352,7 +368,7 @@
 				| Player.HasVideo]
 			</visible>
 			<width>FullscreenWidth</width>
-			<top>70</top>
+			<top>TopbarNowPlayingTop</top>
 			<height>100</height>
 
 			<control type="image">
