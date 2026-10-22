@@ -1803,7 +1803,7 @@ msgid "Add a new show"
 msgstr ""
 
 msgctxt "#31975"
-msgid "Similar movies"
+msgid "Request similar movies..."
 msgstr ""
 
 msgctxt "#31976"
@@ -1839,7 +1839,7 @@ msgid "Episode"
 msgstr ""
 
 msgctxt "#31984"
-msgid "Similar shows..."
+msgid "Request similar shows..."
 msgstr ""
 
 msgctxt "#31985"

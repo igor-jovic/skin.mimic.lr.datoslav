@@ -2,20 +2,23 @@
 <includes>
 	<!-- datoslav: the top bar shows on the videoteka add-on's pages ($EXP[isVideotekaPage]) and where a window
 	     passes the include Topbar the param bar = true (the settings screens); elsewhere the screens start at the
-	     top of the screen and a floating clock takes its place. Kodi XML has no arithmetic, so each value is worked
-	     out by hand; the comment says how. An animation cannot use a constant: the one slide by the bar's height is
-	     the include TopbarSlide. -->
+	     top of the screen. Kodi XML has no arithmetic, so each value is worked out by hand; the comment says how.
+	     An animation cannot use a constant: the one slide by the bar's height is the include TopbarSlide. -->
 	<constant name="TopbarHeight">100</constant>
 	<constant name="TopbarItemTop">20</constant>             <!-- (100 - 60) / 2: centres the 60 px items in the bar -->
+	<!-- the breadcrumbs' widest: after the view-options button and the icon they start about 365 in and end at 1200,
+	     left of the date and time; on Dodaj novi's pages, without both, about 120 in and 40 from the right edge -->
+	<constant name="TopbarBreadcrumbsWidth">835</constant>
+	<constant name="TopbarBreadcrumbsWideWidth">1760</constant>
 	<constant name="NowPlayingTop">10</constant>             <!-- without the bar; TopbarSlide puts it 10 under it -->
 	<constant name="HomeMenuTop">-54</constant>              <!-- the menu panel starts 98 lower, 44 from the top -->
 	<!-- KeibertzPlus: the posters' list is placed for the library and slides down by the bar's height on videoteka's
 	     lists. The info panel's top is shift lower than in the original, its bottom fixed. -->
 	<constant name="KeibertzListTop">-44</constant>          <!-- original 16 - 60; + 100 under the bar -->
-	<constant name="KeibertzEpisodeTop">-40</constant>       <!-- episode stills sit 40 higher than posters -->
+	<constant name="KeibertzEpisodeTop">60</constant>        <!-- episode stills where the original had them: 16 -->
 	<constant name="KeibertzPanelShift">-60</constant>       <!-- library posters: KeibertzListTop - 16 -->
 	<constant name="KeibertzPanelShiftBar">40</constant>     <!-- videoteka's lists: KeibertzPanelShift + 100 -->
-	<constant name="KeibertzEpisodePanelShift">-100</constant> <!-- episodes: KeibertzPanelShift + KeibertzEpisodeTop -->
+	<constant name="KeibertzEpisodePanelShift">0</constant>  <!-- episodes: the panel where the original had it -->
 	<!-- the film and episode details page -->
 	<constant name="DetailsTop">-60</constant>               <!-- 60 above the original -->
 	<constant name="DetailsPlotHeight">385</constant>        <!-- above the "more like this" row, which moves with it -->
@@ -143,7 +146,7 @@
 				<left>20</left>
 				<top>0</top>
 				<aligny>center</aligny>
-				<width>1200</width>
+				<width>1880</width>
 				<height>TopbarHeight</height>
 				<orientation>horizontal</orientation>
 				<!-- the items' own top is kept, which centres the 60 px ones; labels without a height take the bar's -->
@@ -159,7 +162,7 @@
 					<ondown condition="Control.IsVisible(9062)">9062</ondown>
 					<ondown condition="Control.IsVisible(9063)">9063</ondown>
 					<ondown condition="Control.IsVisible(9064)">9064</ondown>
-					<visible>$EXP[DatoslavLibraryWindow]</visible>
+					<visible>$EXP[DatoslavLibraryWindow] + !$EXP[isVideotekaOrder]</visible>
 					<top>TopbarItemTop</top>
 					<width>auto</width>
 					<height>60</height>
@@ -226,9 +229,21 @@
 					<label>•</label>
 					<scroll>false</scroll>
 				</control>
+				<!-- the breadcrumbs end before the date and time; on Dodaj novi's pages, which have neither, at the
+				     screen's right edge -->
 				<control type="label">
-					<visible>![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
-					<width>auto</width>
+					<visible>![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)] + !$EXP[isVideotekaOrder]</visible>
+					<width max="TopbarBreadcrumbsWidth">auto</width>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>TopbarBreadcrumbs</font>
+					<textcolor>TitleTextColor</textcolor>
+					<label>$VAR[BreadcrumbsVar]</label>
+					<scroll>false</scroll>
+				</control>
+				<control type="label">
+					<visible>![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)] + $EXP[isVideotekaOrder]</visible>
+					<width max="TopbarBreadcrumbsWideWidth">auto</width>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>TopbarBreadcrumbs</font>
@@ -267,6 +282,7 @@
 <!-- 				</control> -->
 			</control>
 			<control type="grouplist">
+				<visible>!$EXP[isVideotekaOrder]</visible>
 				<left>1100</left>
 				<top>TopbarItemTop</top>
 				<width>800</width>
@@ -379,22 +395,6 @@
 
 </control>
 
-
-		<!-- datoslav: the floating clock, where the bar is gone: over the content, legible over posters by its shadow -->
-		<control type="label">
-			<visible>!$PARAM[bar] + !Window.IsActive(fullscreenvideo) + !Window.IsActive(videoosd)</visible>
-			<!-- above the episode stills' labels, which start at y 47 -->
-			<left>1290</left>
-			<top>2</top>
-			<width>600</width>
-			<height>40</height>
-			<align>right</align>
-			<aligny>center</aligny>
-			<font>font13</font>
-			<textcolor>TitleTextColor</textcolor>
-			<shadowcolor>FF000000</shadowcolor>
-			<label>$INFO[System.Date]  •  $INFO[System.Time]</label>
-		</control>
 
 		<!-- Now Playing info -->
 
