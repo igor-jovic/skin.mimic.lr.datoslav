@@ -170,6 +170,8 @@
                 </focusedlayout>
             </control>
         </control>
-        <include>Topbar</include>
+        <include content="Topbar">
+            <param name="bar" value="true" />
+        </include>
     </controls>
 </window>

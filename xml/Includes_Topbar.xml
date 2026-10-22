@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- datoslav: these move with X, how much taller the top bar is than the original 60 px (X = 40 now).
-	     Kodi XML has no arithmetic, so each is worked out by hand; the comment says how. -->
-	<constant name="TopbarGrow">40</constant>                <!-- X -->
-	<constant name="TopbarGrowBack">-40</constant>           <!-- -X -->
-	<constant name="TopbarHeight">100</constant>             <!-- 60 + X -->
-	<constant name="TopbarItemTop">20</constant>             <!-- X / 2: centres the 60 px items in the bar -->
-	<constant name="TopbarNowPlayingTop">110</constant>      <!-- 70 + X -->
-	<constant name="HomeMenuTop">46</constant>               <!-- 6 + X -->
-	<constant name="KeibertzListTop">56</constant>           <!-- 16 + X -->
-	<constant name="DetailsPlotHeight">385</constant>        <!-- 425 - X -->
-	<constant name="DetailsPlotFullHeight">800</constant>    <!-- 840 - X -->
-	<constant name="DetailsPlotBarHeight">485</constant>     <!-- 525 - X -->
+	<!-- datoslav: the top bar shows on the videoteka add-on's pages ($EXP[isVideotekaPage]) and where a window
+	     passes the include Topbar the param bar = true (the settings screens); elsewhere the screens start at the
+	     top of the screen and a floating clock takes its place. Kodi XML has no arithmetic, so each value is worked
+	     out by hand; the comment says how. An animation cannot use a constant: the one slide by the bar's height is
+	     the include TopbarSlide. -->
+	<constant name="TopbarHeight">100</constant>
+	<constant name="TopbarItemTop">20</constant>             <!-- (100 - 60) / 2: centres the 60 px items in the bar -->
+	<constant name="NowPlayingTop">10</constant>             <!-- without the bar; TopbarSlide puts it 10 under it -->
+	<constant name="HomeMenuTop">-54</constant>              <!-- the menu panel starts 98 lower, 44 from the top -->
+	<!-- KeibertzPlus: the posters' list is placed for the library and slides down by the bar's height on videoteka's
+	     lists. The info panel's top is shift lower than in the original, its bottom fixed. -->
+	<constant name="KeibertzListTop">-44</constant>          <!-- original 16 - 60; + 100 under the bar -->
+	<constant name="KeibertzEpisodeTop">-40</constant>       <!-- episode stills sit 40 higher than posters -->
+	<constant name="KeibertzPanelShift">-60</constant>       <!-- library posters: KeibertzListTop - 16 -->
+	<constant name="KeibertzPanelShiftBar">40</constant>     <!-- videoteka's lists: KeibertzPanelShift + 100 -->
+	<constant name="KeibertzEpisodePanelShift">-100</constant> <!-- episodes: KeibertzPanelShift + KeibertzEpisodeTop -->
+	<!-- the film and episode details page -->
+	<constant name="DetailsTop">-60</constant>               <!-- 60 above the original -->
+	<constant name="DetailsPlotHeight">385</constant>        <!-- above the "more like this" row, which moves with it -->
+	<constant name="DetailsPlotFullHeight">900</constant>    <!-- the original 840 + 60 -->
+	<constant name="DetailsPlotBarHeight">485</constant>     <!-- DetailsPlotHeight + 100 -->
+
+	<include name="TopbarSlide">
+		<!-- moves a control placed for the screens without the bar down by the bar's height (TopbarHeight) -->
+		<param name="bar" default="$EXP[isVideotekaPage]" />
+		<definition>
+			<animation effect="slide" end="0,100" time="0" condition="$PARAM[bar]">Conditional</animation>
+		</definition>
+	</include>
 
 	<expression name="DatoslavLibraryWindow">Window.IsActive(videos) | Window.IsActive(music) | Window.IsActive(pictures) | Window.IsActive(programs) | Window.IsActive(games)</expression>
 
@@ -73,6 +90,8 @@
 
 
 	<include name="Topbar">
+		<param name="bar" default="$EXP[isVideotekaPage]" />
+		<definition>
 
 		<control type="label" id="10101">
 			<description>Hidden object for normalized View Mode to check against</description>
@@ -102,7 +121,7 @@
 
 		<control type="group">
 
-			<visible>!Control.IsVisible(509)</visible>
+			<visible>!Control.IsVisible(509) + $PARAM[bar]</visible>
 			<control type="image">
 				<!-- <visible>[Control.IsVisible(59) | Control.IsVisible(501)] + -->
 				<!-- !$EXP[isInfoDialog] -->
@@ -361,6 +380,22 @@
 </control>
 
 
+		<!-- datoslav: the floating clock, where the bar is gone: over the content, legible over posters by its shadow -->
+		<control type="label">
+			<visible>!$PARAM[bar] + !Window.IsActive(fullscreenvideo) + !Window.IsActive(videoosd)</visible>
+			<!-- above the episode stills' labels, which start at y 47 -->
+			<left>1290</left>
+			<top>2</top>
+			<width>600</width>
+			<height>40</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font13</font>
+			<textcolor>TitleTextColor</textcolor>
+			<shadowcolor>FF000000</shadowcolor>
+			<label>$INFO[System.Date]  •  $INFO[System.Time]</label>
+		</control>
+
 		<!-- Now Playing info -->
 
 		<control type="group">
@@ -368,8 +403,11 @@
 				| Player.HasVideo]
 			</visible>
 			<width>FullscreenWidth</width>
-			<top>TopbarNowPlayingTop</top>
+			<top>NowPlayingTop</top>
 			<height>100</height>
+			<include content="TopbarSlide">
+				<param name="bar" value="$PARAM[bar]" />
+			</include>
 
 			<control type="image">
 				<visible>[Control.IsVisible(59) | Control.IsVisible(501)] +
@@ -440,5 +478,6 @@
 				</control>
 			</control>
 		</control>
+		</definition>
 	</include>
 </includes>

@@ -11,7 +11,9 @@
             <texture>background.png</texture>
             <colordiffuse>BackgroundColor</colordiffuse>
         </control>
-        <include>Topbar</include>
+        <include content="Topbar">
+            <param name="bar" value="true" />
+        </include>
         <control type="group">
 <!--             <include>Animation.Common</include> -->
 <!--             <control type="group"> -->

@@ -75,10 +75,10 @@
 		</definition>
 	</include>
 	<include name="KeibertzPlus_Episode_Includes">
-		<!-- the list sits lower for the taller top bar; episodes are moved back up, where they were -->
+		<!-- episode stills sit higher in the list than posters -->
 		<itemlayout width="500" height="512" condition="Container.Content(episodes)">
 			<control type="group">
-				<top>TopbarGrowBack</top>
+				<top>KeibertzEpisodeTop</top>
 				<control type="image">
 					<include content="KeibertzPlus_Episode_Still" />
 				</control>
@@ -88,7 +88,7 @@
 		</itemlayout>
 		<focusedlayout width="500" height="512" condition="Container.Content(episodes)">
 			<control type="group">
-			<top>TopbarGrowBack</top>
+			<top>KeibertzEpisodeTop</top>
 			<control type="group">
 				<!-- grows upwards from its bottom edge, so the frame stays above the panel -->
 				<animation effect="zoom" center="240,456" start="100" end="110" time="400" tween="cubic" easing="out" reversible="false">Focus</animation>
@@ -130,6 +130,7 @@
 				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				<left>-140</left>
 				<top>KeibertzListTop</top>
+				<include>TopbarSlide</include>
 				<width>2475</width>
 				<height>840</height>
 				<onleft>902</onleft>
@@ -153,17 +154,23 @@
 		<control type="group">
 			<visible>Control.IsVisible(902) + !$EXP[isInfoDialog]</visible>
 			<animation effect="fade" start="0" end="100" delay="600" time="300" reversible="false">Visible</animation>
-			<!-- under the episode stills the panel stays where it was; under posters it starts lower, with them -->
+			<!-- the panel's top is higher under episode stills than under posters, and lower under the top bar -->
 			<control type="group">
 				<visible>Container.Content(episodes)</visible>
 				<include content="KeibertzPlusLayoutDefault">
-					<param name="shift" value="0" />
+					<param name="shift" value="KeibertzEpisodePanelShift" />
 				</include>
 			</control>
 			<control type="group">
-				<visible>!Container.Content(episodes)</visible>
+				<visible>!Container.Content(episodes) + !$EXP[isVideotekaPage]</visible>
 				<include content="KeibertzPlusLayoutDefault">
-					<param name="shift" value="TopbarGrow" />
+					<param name="shift" value="KeibertzPanelShift" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>!Container.Content(episodes) + $EXP[isVideotekaPage]</visible>
+				<include content="KeibertzPlusLayoutDefault">
+					<param name="shift" value="KeibertzPanelShiftBar" />
 				</include>
 			</control>
 		</control>
