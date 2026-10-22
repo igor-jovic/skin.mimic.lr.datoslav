@@ -42,7 +42,9 @@ The top bar (`Includes_Topbar.xml`) shows only on the pages of the videoteka add
 window's container is the add-on's, which inside a dialog means the window under it) and on the settings
 screens, which pass the `Topbar` include the param `bar` = `true` (Settings, SettingsCategory, SettingsSystemInfo,
 SkinSettings, FileManager, EventLog). Everywhere else there is no bar, and with it no view-options button: the
-screens start at the top of the screen.
+screens start at the top of the screen. On Dodaj novi's pages (`isVideotekaOrder`: the choice of lists, a list of
+titles, Slični filmovi and Slične serije) the bar has only the icon and the breadcrumbs, which reach the screen's
+right edge: no view-options button, date, weather or clock.
 
 The bar is 100 px tall, 40 px taller than the original, so the breadcrumbs fit in
 `TopbarBreadcrumbs`, a 60 px font in the default font set: the breadcrumbs (`BreadcrumbsVar`, or the title's name
@@ -123,7 +125,7 @@ a view per list address with no default for an add-on, so without this each list
 view. The library is not affected. The add-on's choice of lists has no content type and stays in the list view.
 
 That choice of lists (Dodaj novi, `isVideotekaMenu`) has rows of 105 instead of 120 in the two-column list
-(`View_50_List.xml`, with its own "Povratak nazad" button 9065), so all 8 rows of the films' menu fit: the panel
+(`View_50_List.xml`) and no "Povratak nazad" row: Pretraga, its first entry, takes that row's place. The panel
 is 735 high, which still holds 6 rows of 120. It has no scrollbar, and Right on its right column does nothing.
 
 The top bar shows the add-on's own heading for the list (its plugin category, such as "Videoteka: Filmovi",
@@ -158,12 +160,12 @@ layouts in `xml/Includes_Home.xml`. Skin Shortcuts still attaches a widget to ev
 ## Film pop-up
 Opening a film's info (`DialogVideoInfo.xml`) shows a pop-up of actions first: play, or play from the beginning
 and resume for a part-watched film; trailer, or a grey "Film nema najavu"; "Više o ovom filmu...", which
-shows the details page; and "Slični filmovi", or a grey "Nema sličnih filmova". Rows are 120 high with 15 between
+shows the details page; and "Naruči slične filmove...", or a grey "Nema sličnih filmova". Rows are 120 high with 15 between
 them, so five fit. It is the last group in that file, drawn over the page for films and episodes, so it appears in
 every view. A skin cannot change what Enter does in one view.
 
 An episode's pop-up has its own "Pusti epizodu" (9511) or, part-watched, the film's "Pusti od početka" and
-"Nastavi gde smo stali"; then "Više o epizodi..." (9515); and "Pogledaj slične serije..." (9516), or a grey
+"Nastavi gde smo stali"; then "Više o epizodi..." (9515); and "Naruči slične serije..." (9516), or a grey
 "Nema sličnih serija". It has no trailer row. Its title is two lines, the show's name and then "Sezona 1,
 Epizoda 6" in bold capitals in `font30`; the group list centres its rows vertically, so its three or four rows
 stay clear of the second line.
@@ -180,8 +182,8 @@ stay clear of the second line.
   invisible, the text drawn over it (regular, or bold with focus, which a button cannot do itself) and
   `FilmPopupFocusMarks` (white frame and pointers). The button's actions are written inside the include tag and
   land at `<nested />`, which Kodi fills only when it is a direct child of a top-level control of the include.
-- "Slični filmovi" runs `RunScript(plugin.video.videoteka,action=similar,type=movie,dbid=…)`, which closes the
-  page and opens the film's suggestions as a list of the add-on, like its genre lists. "Pogledaj slične
+- "Naruči slične filmove..." runs `RunScript(plugin.video.videoteka,action=similar,type=movie,dbid=…)`, which closes the
+  page and opens the film's suggestions as a list of the add-on, like its genre lists. "Naruči slične
   serije..." does the same with `type=episode`: the list is the episode's show's suggestions, the same for every
   episode of a show. The row is greyed out by the expression `hasSimilar` (`includes.xml`): the details page's
   row (panel 350) holds this title's items, or is still loading. The row loads as the pop-up opens, so it counts
@@ -196,8 +198,8 @@ The details page (`DialogVideoInfo.xml`) is cut down to what you read before cho
 film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
 scrolls by itself, on the right, side by side; on a show's page the "more like this" row runs along the bottom
 under the heading "Možda će ti se svideti i ovo", which shows only once the row holds this title's suggestions.
-A film's or episode's page has no row: its suggestions are the pop-up's "Slični filmovi" or "Pogledaj slične
-serije...", and its description gets the full height (textbox 401). The row's posters are
+A film's or episode's page has no row: its suggestions are the pop-up's "Naruči slične filmove..." or "Naruči
+slične serije...", and its description gets the full height (textbox 401). The row's posters are
 225 x 337 with their names in `font16`. The title, bold in `font30` (for an episode, its numbered name as in the list), starts 59 px from the top of the
 screen; a title too long for the left column is cut with "…" rather than scrolled, so the page stays still. The info
 lines start under it (list 62 at 144). The row starts at 486, and the description beside it (textbox 400) is 385

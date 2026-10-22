@@ -146,7 +146,8 @@
 				<!-- datoslav: "Povratak nazad" as the list's first row (Kodi's ".." is off: it always goes one library
 				     level up, even out of a list opened from the home menu, and the skin can't change that).
 				     A button styled like an entry sits in the first row and the list starts one row lower; Up from
-				     the first entry reaches it, Enter/Left send Back. One per entry width (2-column / normal / wide). -->
+				     the first entry reaches it, Enter/Left send Back. One per entry width (2-column / normal / wide).
+				     Dodaj novi's choice of lists has none. -->
 				<control type="button" id="9062">
 					<visible>Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + !$EXP[isVideotekaMenu]</visible>
 					<left>0</left>
@@ -204,34 +205,6 @@
 					<onup>9061</onup>
 					<ondown>50</ondown>
 				</control>
-				<control type="button" id="9065">
-					<visible>Skin.HasSetting(Enable.2ColumnList) + !Skin.HasSetting(Enable.SlimList) + $EXP[isVideotekaMenu]</visible>
-					<left>0</left>
-					<top>195</top>
-					<width>870</width>
-					<height>105</height>
-					<font>font30</font>
-					<textoffsetx>120</textoffsetx>
-					<aligny>center</aligny>
-					<texturefocus colordiffuse="FocusColor" border="5">listselect_fo.png</texturefocus>
-					<texturenofocus />
-					<label>$LOCALIZE[31625]</label>
-					<onclick>Back</onclick>
-					<onclick>SetFocus(50)</onclick>
-					<onleft>Back</onleft>
-					<onleft>SetFocus(50)</onleft>
-					<onup>9061</onup>
-					<ondown>50</ondown>
-				</control>
-				<control type="image">
-					<visible>Control.IsVisible(9065)</visible>
-					<left>10</left>
-					<top>205</top>
-					<width>85</width>
-					<height>85</height>
-					<aspectratio scalediffuse="false">keep</aspectratio>
-					<texture diffuse="diffuse/list-icon.png">DefaultFolderBack.png</texture>
-				</control>
 				<control type="image">
 					<!-- drawn after the buttons so the focus highlight sits under the icon, like list entries -->
 					<visible>Control.IsVisible(9062) | Control.IsVisible(9063) | Control.IsVisible(9064)</visible>
@@ -251,12 +224,12 @@
 					<height>735</height>
 					<!-- slim rows (60px) have no back row: keep the original position -->
 					<animation effect="slide" end="0,-120" time="0" condition="Skin.HasSetting(Enable.SlimList)">Conditional</animation>
-					<animation effect="slide" end="0,-15" time="0" condition="$EXP[isVideotekaMenu]">Conditional</animation>
+					<!-- Dodaj novi's choice of lists has no back row: Pretraga, its first entry, takes that row's place -->
+					<animation effect="slide" end="0,-120" time="0" condition="$EXP[isVideotekaMenu]">Conditional</animation>
 					<onleft>Back</onleft>
 					<!-- Dodaj novi has no scrollbar: Right on its right column stays put (without an action the panel wraps) -->
 					<onright condition="[Container(50).HasNext | Container(50).HasPrevious] + !$EXP[isVideotekaMenu]">60</onright>
 					<onright condition="$EXP[isVideotekaMenu]">Action(noop)</onright>
-					<onup condition="Control.IsVisible(9065)">9065</onup>
 					<onup condition="Control.IsVisible(9062)">9062</onup>
 					<onup condition="Control.IsVisible(9063)">9063</onup>
 					<onup condition="Control.IsVisible(9064)">9064</onup>
