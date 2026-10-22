@@ -15,7 +15,6 @@
 				<height>792</height>
 				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>9061</onup>
 				<ondown>51</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
@@ -301,7 +300,6 @@
 				<height>840</height>
 				<onleft>Back</onleft>
 				<onright>60</onright>
-				<onup>9061</onup>
 				<ondown>51</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>

@@ -39,7 +39,6 @@
 				<ondown>-</ondown>
 				<onleft>903</onleft>
 				<onright>903</onright>
-				<onup>9061</onup>
 				<orientation>horizontal</orientation>
 				<viewtype label="$LOCALIZE[31568]">list</viewtype>
 				<itemlayout height="1" width="1"></itemlayout>

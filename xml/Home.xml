@@ -7,12 +7,12 @@
 
     <onload>ClearProperty(MediaMenu,Home)</onload>
     <!-- datoslav: the videoteka add-on's Pogledaj marks the library list it opened, so Back to here lands on that
-         entry, set before the first frame. Positions in the combined menu with that submenu open; Pogledaj means the
-         library has films (or shows), so every entry above is there. -->
+         entry: the submenu opens now, and the timer datoslav_home_focus (Timers.xml) moves the focus once the menu
+         lists the entry, which can be a few frames later. -->
     <onload condition="String.IsEqual(Window(home).Property(datoslav.homemenu),movie)">SetProperty(submenuVisibility,movies,home)</onload>
-    <onload condition="String.IsEqual(Window(home).Property(datoslav.homemenu),movie)">SetFocus(9000,4,absolute)</onload>
     <onload condition="String.IsEqual(Window(home).Property(datoslav.homemenu),tv)">SetProperty(submenuVisibility,num-31967,home)</onload>
-    <onload condition="String.IsEqual(Window(home).Property(datoslav.homemenu),tv)">SetFocus(9000,5,absolute)</onload>
+    <onload condition="String.IsEqual(Window(home).Property(datoslav.homemenu),movie)">SetProperty(datoslav.homefocus,movie,home)</onload>
+    <onload condition="String.IsEqual(Window(home).Property(datoslav.homemenu),tv)">SetProperty(datoslav.homefocus,tv,home)</onload>
     <onload>ClearProperty(datoslav.homemenu,home)</onload>
     <controls>
         <!-- datoslav: Nezavršeni and Nezavršene look here before opening, to show a pop-up instead of an empty list.
@@ -79,11 +79,7 @@
                 <include>FullscreenDimensions</include>
             </control>
         </control>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <texture>$VAR[CommonBackgroundOverlay]</texture>
-            <colordiffuse>BackgroundColor</colordiffuse>
-        </control>
+        <!-- datoslav: no dimming overlay (CommonBackgroundOverlay) over the home screen's background -->
         <include>Topbar</include>
         <include condition="!Skin.HasSetting(Enable.HorizontalMenu)">HomeVertical</include>
         <include condition="Skin.HasSetting(Enable.HorizontalMenu)">HomeHorizontal</include>

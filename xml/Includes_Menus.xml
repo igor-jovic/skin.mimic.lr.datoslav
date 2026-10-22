@@ -154,9 +154,9 @@
 					<left>35</left>
 					<width>760</width>
 					<height>105</height>
-					<!-- datoslav: hidden while the videoteka add-on's Pogledaj mark is set, which is before home's first frame;
-					     home's onload then moves the cursor and clears it, and the plate shows once its slide is over -->
-					<visible>String.IsEmpty(Window(home).Property(datoslav.homemenu))</visible>
+					<!-- datoslav: hidden while the videoteka add-on's Pogledaj mark is set, which is before home's first frame,
+					     and until the timer datoslav_home_focus has moved the cursor; the plate shows once its slide is over -->
+					<visible>String.IsEmpty(Window(home).Property(datoslav.homemenu)) + String.IsEmpty(Window(home).Property(datoslav.homefocus))</visible>
 					<animation effect="fade" start="0" end="100" time="0" delay="350">Visible</animation>
 					<animation effect="fade" start="100" end="60" time="300" condition="!Control.HasFocus(9000)">Conditional</animation>
 					<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>

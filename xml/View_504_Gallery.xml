@@ -66,7 +66,6 @@
 				<onleft>504</onleft>
 				<onright>504</onright>
 				<scrolltime tween="sine" easing="inout">400</scrolltime>
-				<onup>9061</onup>
 				<pagecontrol>60</pagecontrol>
 				<focusposition>1</focusposition>
 				<orientation>horizontal</orientation>
