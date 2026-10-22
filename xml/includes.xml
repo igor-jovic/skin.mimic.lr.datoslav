@@ -71,8 +71,6 @@
 	<expression name="isVideotekaSimilar">String.IsEqual(Container.PluginName,plugin.video.videoteka) + String.Contains(Container.FolderPath,action=similar)</expression>
 	<!-- any page of the videoteka add-on; inside a dialog, of the window under it -->
 	<expression name="isVideotekaPage">String.IsEqual(Container.PluginName,plugin.video.videoteka)</expression>
-	<!-- Dodaj novi: the choice of lists, a list of titles, and Slični; their top bar has only the breadcrumbs -->
-	<expression name="isVideotekaOrder">String.IsEqual(Container.PluginName,plugin.video.videoteka) + [String.Contains(Container.FolderPath,action=browse) | String.Contains(Container.FolderPath,action=similar)]</expression>
 	<expression name="isVideotekaList">String.IsEqual(Container.PluginName,plugin.video.videoteka) + [Container.Content(movies) | Container.Content(tvshows)]</expression>
 	<expression name="isSet">String.IsEqual(ListItem.DBTYPE,set)</expression>
 	<expression name="isEpisode">String.IsEqual(ListItem.DBTYPE,episode)</expression>

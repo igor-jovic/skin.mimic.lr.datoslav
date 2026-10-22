@@ -42,9 +42,9 @@ The top bar (`Includes_Topbar.xml`) shows only on the pages of the videoteka add
 window's container is the add-on's, which inside a dialog means the window under it) and on the settings
 screens, which pass the `Topbar` include the param `bar` = `true` (Settings, SettingsCategory, SettingsSystemInfo,
 SkinSettings, FileManager, EventLog). Everywhere else there is no bar, and with it no view-options button: the
-screens start at the top of the screen. On Dodaj novi's pages (`isVideotekaOrder`: the choice of lists, a list of
-titles, Slični filmovi and Slične serije) the bar has only the icon and the breadcrumbs, which reach the screen's
-right edge: no view-options button, date, weather or clock.
+screens start at the top of the screen. On the add-on's pages the bar has only the icon and the breadcrumbs, which
+reach the screen's right edge: no view-options button, date, weather or clock. The settings screens keep the date,
+weather and clock.
 
 The bar is 100 px tall, 40 px taller than the original, so the breadcrumbs fit in
 `TopbarBreadcrumbs`, a 60 px font in the default font set: the breadcrumbs (`BreadcrumbsVar`, or the title's name
