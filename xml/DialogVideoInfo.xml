@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">350</defaultcontrol>
+	<!-- datoslav: there is no show or season page: opened for one (Kodi's Info entry in the context menu), it closes -->
+	<onload condition="$EXP[isTvshow] | String.IsEqual(ListItem.DBTYPE,season)">Dialog.Close(movieinformation,true)</onload>
 	<onload>SendClick(9000,5)</onload>
 	<!-- datoslav: a film or an episode opens as a pop-up of actions (group 9500 at the end); "details" reveals this page -->
 	<onload condition="String.IsEqual(ListItem.DBTYPE,movie) + !ListItem.IsResumable">SetFocus(9501)</onload>

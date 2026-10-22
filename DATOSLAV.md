@@ -41,14 +41,14 @@ patch; if Enter on Filmovi stops opening its submenu, re-apply it.
 The top bar (`Includes_Topbar.xml`) shows only on the pages of the videoteka add-on (`isVideotekaPage`: the
 window's container is the add-on's, which inside a dialog means the window under it) and on the settings
 screens, which pass the `Topbar` include the param `bar` = `true` (Settings, SettingsCategory, SettingsSystemInfo,
-SkinSettings, FileManager, EventLog). Everywhere else there is no bar, and with it no view-options button: the
+SkinSettings, FileManager, EventLog). Everywhere else there is no bar: the
 screens start at the top of the screen. On the add-on's pages the bar has only the icon and the breadcrumbs, which
-reach the screen's right edge: no view-options button, date, weather or clock. The settings screens keep the date,
+reach the screen's right edge: no date, weather or clock. The settings screens keep the date,
 weather and clock.
 
 The bar is 100 px tall, 40 px taller than the original, so the breadcrumbs fit in
 `TopbarBreadcrumbs`, a 60 px font in the default font set: the breadcrumbs (`BreadcrumbsVar`, or the title's name
-on an info window) and the "•" before them. The view-options button, the icon, the date, the weather and the clock
+on an info window) and the "•" before them. The icon, the date, the weather and the clock
 keep their sizes and are centred in the taller bar: the left group list is as tall as the bar and keeps its items'
 own top (`usecontrolcoords`), so the 60 px items sit at `TopbarItemTop` and the labels without a height take the
 bar's; the right group list keeps its 60 px and sits `TopbarItemTop` down. `font31` and `cirrus_30`, which the bar
@@ -85,11 +85,18 @@ the count is known before OK; the entries' conditional actions come from `shortc
 
 The videoteka add-on's Pogledaj opens Svi filmovi (or Sve serije), and Back from there comes home with the menu
 on that entry, not on Dodaj novi film. Pogledaj sets the home window's property `datoslav.homemenu` (`movie` or
-`tv`); Home's `onload` opens that submenu, focuses the entry by its position (`SetFocus(9000,4|5,absolute)`) and
-clears the property. Kodi runs `onload` only after it has drawn home with the cursor it remembered, and the
+`tv`); Home's `onload` opens that submenu, clears the property and sets `datoslav.homefocus` to the same value. The
+menu lists the submenu's entries a few frames later, so the timer `datoslav_home_focus` (`Timers.xml`) waits for
+Svi filmovi at position 4 (or Sve serije at 5, by its `defaultID`) and only then focuses it
+(`SetFocus(9000,4|5,absolute)`); if the entry is not there after half a second, it focuses Filmovi (or Serije).
+Skin timers count whole seconds as a number, so the half second is the elapsed time's text no longer starting with
+0.0 to 0.4. Kodi runs `onload` only after it has drawn home with the cursor it remembered, and the
 highlight plate (in `MainMenuVertical`, `Includes_Menus.xml`) follows the row with 300 ms slides, so the plate is
-hidden while the property is set and, once it clears, fades in after 350 ms, in place. Back to home without
+hidden while either property is set and, once both clear, fades in after 350 ms, in place. Back to home without
 Pogledaj shows the plate at once, as before.
+
+The home screen draws its background without the dimming overlay (`CommonBackgroundOverlay`) that the other
+screens lay over theirs.
 
 ## Library views
 Library films, shows, seasons and episodes open in KeibertzPlus (902) unless a view was chosen for that folder.
@@ -194,6 +201,11 @@ stay clear of the second line.
   row, which is a picture and text, not a button.
 
 ## Details page
+Only films and episodes have a details page, reached from the pop-up's "Više o ovom filmu..." or "Više o
+epizodi...". Opened for a show or a season (Kodi's own Info entry), `DialogVideoInfo.xml` closes itself in its
+`onload`, so the show's page below is never seen. The Info key and the context menu are switched off by the boxes'
+keymaps, not by the skin.
+
 The details page (`DialogVideoInfo.xml`) is cut down to what you read before choosing what to watch next. A
 film's, show's or episode's page has no poster: the info lines sit on the left and the description, which
 scrolls by itself, on the right, side by side; on a show's page the "more like this" row runs along the bottom

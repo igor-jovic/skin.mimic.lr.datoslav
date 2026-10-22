@@ -22,4 +22,18 @@
 		<stop>true</stop>
 		<onstart>SetFocus(9515)</onstart>
 	</timer>
+	<!-- datoslav: Back to the home screen from a list Pogledaj opened (Home.xml sets datoslav.homefocus). The focus
+	     goes to Svi filmovi (position 4 with the films' submenu open) or Sve serije (5) once the menu lists it; if
+	     it is not there after half a second, to Filmovi or Serije. The elapsed time counts only whole seconds as a
+	     number, so half a second is its text no longer starting with 0.0 to 0.4. -->
+	<timer>
+		<name>datoslav_home_focus</name>
+		<start reset="true">Window.IsActive(home) + !String.IsEmpty(Window(home).Property(datoslav.homefocus))</start>
+		<stop>[String.IsEqual(Container(9000).ListItemAbsolute(4).Property(defaultID),allmovies) + String.IsEqual(Window(home).Property(datoslav.homefocus),movie)] | [String.IsEqual(Container(9000).ListItemAbsolute(5).Property(defaultID),allshows) + String.IsEqual(Window(home).Property(datoslav.homefocus),tv)] | [!String.StartsWith(Skin.TimerElapsedSecs(datoslav_home_focus),0.0) + !String.StartsWith(Skin.TimerElapsedSecs(datoslav_home_focus),0.1) + !String.StartsWith(Skin.TimerElapsedSecs(datoslav_home_focus),0.2) + !String.StartsWith(Skin.TimerElapsedSecs(datoslav_home_focus),0.3) + !String.StartsWith(Skin.TimerElapsedSecs(datoslav_home_focus),0.4)]</stop>
+		<onstop condition="Window.IsActive(home) + String.IsEqual(Window(home).Property(datoslav.homefocus),movie) + String.IsEqual(Container(9000).ListItemAbsolute(4).Property(defaultID),allmovies)">SetFocus(9000,4,absolute)</onstop>
+		<onstop condition="Window.IsActive(home) + String.IsEqual(Window(home).Property(datoslav.homefocus),movie) + !String.IsEqual(Container(9000).ListItemAbsolute(4).Property(defaultID),allmovies)">SetFocus(9000,0,absolute)</onstop>
+		<onstop condition="Window.IsActive(home) + String.IsEqual(Window(home).Property(datoslav.homefocus),tv) + String.IsEqual(Container(9000).ListItemAbsolute(5).Property(defaultID),allshows)">SetFocus(9000,5,absolute)</onstop>
+		<onstop condition="Window.IsActive(home) + String.IsEqual(Window(home).Property(datoslav.homefocus),tv) + !String.IsEqual(Container(9000).ListItemAbsolute(5).Property(defaultID),allshows)">SetFocus(9000,1,absolute)</onstop>
+		<onstop>ClearProperty(datoslav.homefocus,home)</onstop>
+	</timer>
 </timers>
