@@ -3,7 +3,7 @@
     <include name="HomeVertical">
         <!-- datoslav: higher than the original, so the gap under the top bar is small and eight rows fit -->
         <control type="group">
-            <top>6</top>
+            <top>HomeMenuTop</top>
             <include>MainMenuVertical</include>
             <control type="button">
                 <width>10</width>
