@@ -42,9 +42,7 @@ The top bar (`Includes_Topbar.xml`) shows only on the pages of the videoteka add
 window's container is the add-on's, which inside a dialog means the window under it) and on the settings
 screens, which pass the `Topbar` include the param `bar` = `true` (Settings, SettingsCategory, SettingsSystemInfo,
 SkinSettings, FileManager, EventLog). Everywhere else there is no bar, and with it no view-options button: the
-screens start at the top of the screen, and a small date and time (`font13`, with a shadow, no background) floats
-at the top right over the content. It stays above the labels of the episode stills. Full-screen video and its
-controls have neither.
+screens start at the top of the screen.
 
 The bar is 100 px tall, 40 px taller than the original, so the breadcrumbs fit in
 `TopbarBreadcrumbs`, a 60 px font in the default font set: the breadcrumbs (`BreadcrumbsVar`, or the title's name
@@ -110,11 +108,12 @@ KeibertzPlus draws no name above the posters that are not focused, in the librar
 focused title is in the info panel.
 
 The list starts 60 px higher than the original (`KeibertzListTop`), and 40 px lower on the add-on's lists, under
-the bar (`TopbarSlide`); the episode layouts sit in a group 40 px up (`KeibertzEpisodeTop`). The info panel
-(`KeibertzPlusLayoutDefault`) is drawn in a group whose bottom stays at the screen's, with the top moved by `shift`:
-100 px up under episodes, 60 px up under the library's posters, and 40 px down on the add-on's lists. The title, the
-info line, the progress bar and the status strip move with the top; the panels, the description and the actor list,
-which are placed by their bottom edge, keep it and grow or shrink by as much.
+the bar (`TopbarSlide`); the episode layouts sit in a group 60 px down (`KeibertzEpisodeTop`), where the original
+had them. The info panel (`KeibertzPlusLayoutDefault`) is drawn in a group whose bottom stays at the screen's, with
+the top moved by `shift`: under episodes where the original had it, 60 px up under the library's posters, and 40 px
+down on the add-on's lists. The title, the info line, the progress bar and the status strip move with the top; the
+panels, the description and the actor list, which are placed by their bottom edge, keep it and grow or shrink by
+as much.
 
 ## The add-on's lists
 The film and show lists of `plugin.video.videoteka` open only in KeibertzPlus: every other view in

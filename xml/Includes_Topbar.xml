@@ -2,9 +2,8 @@
 <includes>
 	<!-- datoslav: the top bar shows on the videoteka add-on's pages ($EXP[isVideotekaPage]) and where a window
 	     passes the include Topbar the param bar = true (the settings screens); elsewhere the screens start at the
-	     top of the screen and a floating clock takes its place. Kodi XML has no arithmetic, so each value is worked
-	     out by hand; the comment says how. An animation cannot use a constant: the one slide by the bar's height is
-	     the include TopbarSlide. -->
+	     top of the screen. Kodi XML has no arithmetic, so each value is worked out by hand; the comment says how.
+	     An animation cannot use a constant: the one slide by the bar's height is the include TopbarSlide. -->
 	<constant name="TopbarHeight">100</constant>
 	<constant name="TopbarItemTop">20</constant>             <!-- (100 - 60) / 2: centres the 60 px items in the bar -->
 	<constant name="NowPlayingTop">10</constant>             <!-- without the bar; TopbarSlide puts it 10 under it -->
@@ -12,10 +11,10 @@
 	<!-- KeibertzPlus: the posters' list is placed for the library and slides down by the bar's height on videoteka's
 	     lists. The info panel's top is shift lower than in the original, its bottom fixed. -->
 	<constant name="KeibertzListTop">-44</constant>          <!-- original 16 - 60; + 100 under the bar -->
-	<constant name="KeibertzEpisodeTop">-40</constant>       <!-- episode stills sit 40 higher than posters -->
+	<constant name="KeibertzEpisodeTop">60</constant>        <!-- episode stills where the original had them: 16 -->
 	<constant name="KeibertzPanelShift">-60</constant>       <!-- library posters: KeibertzListTop - 16 -->
 	<constant name="KeibertzPanelShiftBar">40</constant>     <!-- videoteka's lists: KeibertzPanelShift + 100 -->
-	<constant name="KeibertzEpisodePanelShift">-100</constant> <!-- episodes: KeibertzPanelShift + KeibertzEpisodeTop -->
+	<constant name="KeibertzEpisodePanelShift">0</constant>  <!-- episodes: the panel where the original had it -->
 	<!-- the film and episode details page -->
 	<constant name="DetailsTop">-60</constant>               <!-- 60 above the original -->
 	<constant name="DetailsPlotHeight">385</constant>        <!-- above the "more like this" row, which moves with it -->
@@ -379,22 +378,6 @@
 
 </control>
 
-
-		<!-- datoslav: the floating clock, where the bar is gone: over the content, legible over posters by its shadow -->
-		<control type="label">
-			<visible>!$PARAM[bar] + !Window.IsActive(fullscreenvideo) + !Window.IsActive(videoosd)</visible>
-			<!-- above the episode stills' labels, which start at y 47 -->
-			<left>1290</left>
-			<top>2</top>
-			<width>600</width>
-			<height>40</height>
-			<align>right</align>
-			<aligny>center</aligny>
-			<font>font13</font>
-			<textcolor>TitleTextColor</textcolor>
-			<shadowcolor>FF000000</shadowcolor>
-			<label>$INFO[System.Date]  •  $INFO[System.Time]</label>
-		</control>
 
 		<!-- Now Playing info -->
 
