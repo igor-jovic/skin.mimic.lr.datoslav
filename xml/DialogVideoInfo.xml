@@ -14,11 +14,11 @@
 		<include>Topbar</include>
 
 		<!-- datoslav: no poster on a film's, show's or episode's page; info lines and description side by side.
-		     Below the taller top bar, by as much as the bar grew. -->
+		     Higher than the original, as there is no top bar here. -->
 		<control type="group">
 			<include>Animation.Common</include>
 			<left>72</left>
-			<top>TopbarGrow</top>
+			<top>DetailsTop</top>
 			<control type="group">
 				<top>1</top>
 				<width>1776</width>
@@ -123,6 +123,16 @@
 					<font>font30</font>
 					<label>[B]$INFO[ListItem.Title][/B]</label>
 					<visible>$EXP[isMovie] | $EXP[isTvshow]</visible>
+				</control>
+				<!-- an episode's name with its number, as Kodi labels it in the list -->
+				<control type="label">
+					<left>5</left>
+					<top>118</top>
+					<width>760</width>
+					<height>70</height>
+					<font>font30</font>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<visible>$EXP[isEpisode]</visible>
 				</control>
 
 				<!-- PLOT -->

@@ -249,7 +249,9 @@
             <ondown>60</ondown>
             <onup>60</onup>
         </control>
-        <include>Topbar</include>
+        <include content="Topbar">
+            <param name="bar" value="true" />
+        </include>
         <include>SettingsMediaMenu</include>
     </controls>
 </window>
